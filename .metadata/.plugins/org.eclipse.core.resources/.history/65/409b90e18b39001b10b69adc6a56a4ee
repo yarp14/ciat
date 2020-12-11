@@ -1,0 +1,503 @@
+@gmf
+@namespace(uri="ciat", prefix="ciat")
+package ciat;
+
+//##############
+// Diagrama raiz 
+//##############
+@gmf.diagram()
+class CIATDiagram {
+	val Sociogram[*] itsSociograms;
+	val ProcessDiagram[*] itsProcessDiagrams;
+	val DomainDiagram[*] itsDomainDiagrams;
+	val CTTDiagram[*] itsCttDiagrams;
+	val Link[*] itsLinks;
+}
+
+abstract class Link {}
+
+//########################################
+// Metamodelo que representa un sociograma
+//########################################
+@gmf.node(label="name",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Sociogram.gif")
+class Sociogram {
+	attr String name;
+	@gmf.compartment(layout="free", collapsible="false")
+	val SociogramNode[*] itsSociogramNodes;
+}
+
+class SociogramNode {
+	attr String name = "<...>";
+}
+
+@gmf.node(label="name", tool.name="Rol",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Rol.gif")
+class Rol extends SociogramNode, ComplexLeftNode {
+	ref Team[*] itsTeam;
+	ref Actor[*] itsActor;
+	ref Rol[*] supertype;
+	ref Rol[*] subtype;
+}
+
+@gmf.node(label="name", tool.name="Actor",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Actor.gif")
+class Actor extends SociogramNode, ComplexLeftNode {
+	ref Group[*] itsGroup;
+	ref Rol[*] acts;
+}
+
+@gmf.node(label="name", tool.name="Software Agent",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/SoftwareAgent.gif")
+class SoftwareAgent extends SociogramNode, ComplexLeftNode {}
+
+@gmf.node(label="name", tool.name="Team",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Team.gif")
+class Team extends SociogramNode, ComplexLeftNode {
+	ref Rol[*] contains;
+}
+
+@gmf.node(label="name", tool.name="Group",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Group.gif")
+class Group extends SociogramNode, ComplexLeftNode {
+	ref Actor[*] contains;
+}
+
+class SociogramLink extends Link {
+	ref SociogramNode[1] source;
+  	ref SociogramNode[1] target;
+}
+
+@gmf.link(label="condition", 
+			source="source", target="target", target.decoration="closedarrow",
+			style="solid", width="1", color="0,0,0",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Inheritance.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class Inheritance extends SociogramLink {
+	attr String condition = " ";
+}
+
+@gmf.link(label="name", 
+			source="source", target="target", target.decoration="closedarrow",
+			style="dash", width="1", color="0,0,0",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Acting.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class Acting extends SociogramLink {
+	attr String name = "(n..m)";
+	attr int n;
+	attr int m;
+}
+
+@gmf.link(label="name", 
+			source="source", target="target", style="solid", width="1", color="0,0,0",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Association.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class Association extends SociogramLink {
+	attr String name = "(n..m)";
+	attr int n;
+	attr int m;
+}
+
+//##############################################################################################
+// Metamodelo que representa un diagrama de Procesos (Participacion y Responsabilidad incluidos)
+//##############################################################################################
+@gmf.node(label="name", tool.name="Process Diagram",
+	tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/ProcessDiagram.gif")
+class ProcessDiagram {
+	attr String name = "<...>";
+	@gmf.compartment(layout="free", collapsible="true")
+	val ProcessNode[*] processNodes;
+}
+
+class ProcessNode extends DependencyElement {}
+
+// Nodos inicio y fin
+@gmf.node(figure="figures.InitialFigure", tool.name="Initial",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Initial.gif",
+			label="name", label.icon="false", label.placement="external", resizable="false", size="16,16")
+class Init extends ProcessNode, CooperativeComplexRightNode {
+	readonly attr String name = " ";
+}
+
+@gmf.node(figure="figures.FinalFigure", tool.name="Final",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Final.gif",
+			label="name", label.icon="false", label.placement="external", resizable="false", size="16,16")
+class End extends ProcessNode, CooperativeComplexRightNode {
+	readonly attr String name = " ";
+}
+
+class SimpleTask extends ProcessNode {
+	attr String name = "<...>";
+	@gmf.affixed()
+	val Tool[*] tools;
+}
+
+@gmf.node(label="name", tool.name="Individual",
+	tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/IndividualInteractionTask.gif")
+class IndividualTask extends SimpleTask, CooperativeComplexRightNode {
+	@gmf.compartment(layout="list", collapsible="true")
+	val SociogramNode[1] taskRoles;
+	@gmf.compartment(layout="list", collapsible="true")
+	val Object[*] taskObjects;
+}
+
+@gmf.node(label="name", tool.name="Cooperative",
+	tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/CooperativeInteractionTask.gif")
+class CooperativeTask extends SimpleTask {
+	@gmf.compartment(layout="list", collapsible="true")
+	val SociogramNode[*] taskRoles;
+	@gmf.compartment(layout="list", collapsible="true")
+	val Object[*] taskObjects;
+}
+
+@gmf.node(label="name", tool.name="Collaborative",
+	tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/CollaborativeInteractionTask.gif")
+class CollaborativeTask extends SimpleTask {
+	@gmf.compartment(layout="list", collapsible="true")
+	val SociogramNode[*] taskRoles;
+	@gmf.compartment(layout="list", collapsible="true")
+	val Object[*] taskObjects;
+}
+
+@gmf.node(label="name", tool.name="Abstract",
+	tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/AbstractTask.gif")
+class AbstractTask extends SimpleTask {
+	@gmf.compartment(layout="free", collapsible="true")
+	val ProcessNode[*] processNodes;
+}
+/*@gmf.node(label="name", tool.name="Abstract",
+	tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Abstract.gif")
+class AbstractTask extends SimpleTask {
+	@gmf.compartment(layout="list", collapsible="true")
+	val SociogramNode[*] taskRoles;
+	@gmf.compartment(layout="list", collapsible="true")
+	val Object[*] taskObjects;
+}*/
+
+@gmf.node(label="name", tool.name="Tool", figure="polygon", resizable="false", label.icon="false", polygon.x="0 20 49 69 49 20", 
+	polygon.y="20 0 0 20 40 40", tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Tool.gif")
+class Tool {
+	attr String name = "Tool";
+}
+
+@gmf.node(label="name", tool.name="Object", label.icon="false", figure="rectangle", color="154,236,255", size="100,20",
+	border.color="0,179,255", tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Object.gif")
+class Object extends ComplexLeftNode {
+	attr String name = "C/R/W: Object";
+	ref Object object;
+	attr String modifier;
+	ref SociogramNode[1] modifiedBy;
+}
+
+@gmf.node(label="name", tool.name="Temporal Condition",
+	tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/TemporalCondition.gif")
+class TemporalCondition extends ProcessNode, CooperativeComplexRightNode {
+	attr String name = "...";
+}
+
+@gmf.node(label="name", tool.name="Notification",
+	tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Notification.gif")
+class Notification extends ProcessNode, CooperativeComplexRightNode {
+	attr String name = "...";
+}
+
+@gmf.node(label="name", tool.name="Condition", label.icon="false",
+	tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Condition.gif")
+class Condition extends ProcessNode, CooperativeComplexRightNode {
+	attr String name = "? ...";
+}
+
+//##########################################################
+// Metamodelo que representa una tarea cooperativa compleja
+// Es una tarea perteneciente al diagrama de Procesos
+//##########################################################
+// Para poder poner los roles y los objetos en un mismo compartment (el izquierdo de tareas complejas)
+abstract class ComplexLeftNode {}
+abstract class CooperativeComplexRightNode {}
+
+/*@gmf.node(label="name", tool.name="Cooperative Complex",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/CooperativeInteractionTask.gif")
+class CooperativeComplex extends ProcessNode {
+	attr String name = "<...>";
+	@gmf.compartment(layout="list", collapsible="true")
+	val ComplexLeftNode[*] rolesAndObjects;
+	@gmf.compartment(layout="free", collapsible="true")
+	val CooperativeComplexRightNode[*] cooperativePDiagram;
+	@gmf.affixed()
+	val Tool[*] tools;
+}*/
+
+//#############################################################
+// Metamodelo que representa una tarea colaborativa compleja
+// Es una tarea perteneciente al diagrama de Procesos
+//#############################################################
+/*@gmf.node(label="name", tool.name="Collaborative Complex",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/CollaborativeInteractionTask.gif")
+class CollaborativeComplexTask extends ProcessNode {
+	attr String name = "<...>";
+	@gmf.compartment(layout="list", collapsible="true")
+	val ComplexLeftNode[*] rolesAndObjects;
+	@gmf.compartment(layout="free", collapsible="true")
+	val SharedObject[*] sharedContext;
+	@gmf.compartment(layout="free", collapsible="true")
+	val CTTTask[*] collaborativeCttDiagram;
+	@gmf.affixed()
+	val Tool[*] tools;
+}*/
+
+//########################################################################
+// Metamodelo que representa el dominio de una tarea colaborativa compleja
+//########################################################################
+@gmf.node(label="name", tool.name="Domain Diagram",
+	tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/DomainDiagram.gif")
+class DomainDiagram {
+	attr String name = "<...>";
+	@gmf.compartment(layout="free", collapsible="true")
+	val SharedObject[*] sharedContext;
+}
+
+// Pertenece a una tarea colaborativa compleja dentro de un diagrama de Inter-Accion
+@gmf.node(label="name", tool.name="Class", figure="rectangle",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Object.gif")
+class SharedObject {
+	attr String name = "<...>";
+	attr Visualizations[1] itsVisualization;
+	ref SharedObject[*] incomings;
+	ref SharedObject[*] outgoings;
+	@gmf.compartment(layout="list", collapsible="true")
+	val Attribute[*] attributes;
+	@gmf.compartment(layout="list", collapsible="true")
+	val Operation[*] operations;
+	@gmf.affixed()
+	val VisualizationArea[1] vAreas;
+}
+
+enum Visualizations {
+	None;
+	Exclusive;
+	Individual;
+	Collaborative;
+}
+
+class VisualizationArea {
+	readonly attr String name = " ";
+}
+
+@gmf.node(figure="figures.ExclusiveEditionFigure", tool.name="Exclusive Area",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/ExclusiveEdition.gif",
+			label="name", label.icon="false", label.placement="external", resizable="false", size="16,16")
+class ExclusiveEditionArea extends VisualizationArea {}
+
+@gmf.node(figure="figures.CollaborativeVisualizationFigure", tool.name="Collaborative Area",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/CollaborativeVisualization.gif", 
+			label="name", label.icon="false", label.placement="external", resizable="false", size="16,16")
+class CollaborativeArea extends VisualizationArea {}
+
+@gmf.node(figure="figures.IndividualVisualizationFigure", tool.name="Individual Area",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/IndividualVisualization.gif", 
+			label="name", label.icon="false", label.placement="external", resizable="false", size="16,16")
+class IndividualArea extends VisualizationArea {}
+
+@gmf.node(label="name", tool.name="Attribute", resizable="true", border.style="dash", border.width="1",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Attribute.gif")
+class Attribute {
+	attr String name = "-/+ Attribute";
+}
+
+@gmf.node(label="name", tool.name="Operation", resizable="true", border.style="dash", border.width="1",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Operations.gif")
+class Operation {
+	attr String name = "-/+ Operation()";
+}
+
+class SharedLink extends Link {
+	ref SharedObject[1] source;
+	ref SharedObject[1] target;
+}
+
+@gmf.link(tool.name="Asociation",
+			source="source", target="target", style="solid", width="1", color="0,0,0",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Association.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class ShAssociationLink extends SharedLink {}
+
+@gmf.link(tool.name="Generalization",
+			source="source", target="target", target.decoration="closedarrow",
+			style="solid", width="1", color="0,0,0",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Generalization.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class ShGeneralizationLink extends SharedLink {}
+
+@gmf.link(tool.name="Aggregation",
+			source="source", target="target", target.decoration="rhomb",
+			style="solid", width="1", color="0,0,0",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/Aggregation.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class ShAggregationLink extends SharedLink {}
+
+//#############################################################
+// Metamodelo que representa un diagrama de interaccion CTT
+//#############################################################
+@gmf.node(label="name",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/CTTDiagram.gif")
+class CTTDiagram {
+	attr String name;
+	@gmf.compartment(layout="free", collapsible="true")
+	val CTTTask[*] cttTasks;
+}
+
+class CTTTask extends DependencyElement {
+	attr String name = "<...>";
+  	ref Dependency[*] dependencies;
+}
+
+@gmf.node(figure="figures.ExclusiveEditionFigure", tool.name="Exclusive Edition",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/ExclusiveEdition.gif",
+			label="name", label.icon="false", label.placement="external", resizable="false", size="16,16")
+class ExclusiveEdition extends CTTTask {}
+
+@gmf.node(figure="figures.CollaborativeVisualizationFigure", tool.name="Collaborative Visualization",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/CollaborativeVisualization.gif",
+			label="name", label.icon="false", label.placement="external", resizable="false", size="16,16")
+class CollaborativeVisualization extends CTTTask {}
+
+@gmf.node(figure="figures.IndividualVisualizationFigure", tool.name="Individual Visualization",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/IndividualVisualization.gif",
+			label="name", label.icon="false", label.placement="external", resizable="false", size="16,16")
+class IndividualVisualization extends CTTTask {}
+
+@gmf.node(figure="figures.UserTaskFigure", tool.name="User Task",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/UserTask.gif",
+			label="name", label.icon="false", label.placement="external", resizable="false", size="16,16")
+class UserTask extends CTTTask {}
+
+@gmf.node(figure="figures.AbstractTaskFigure", tool.name="Abstract Task",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/AbstractTask.gif", 
+			label="name", label.icon="false", label.placement="external", resizable="false", size="16,16")
+class CTTAbstractTask extends CTTTask {}
+
+@gmf.node(figure="figures.InteractiveTaskFigure", tool.name="Interactive Task", 
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/InteractionTask.gif",
+			label="name", label.icon="false", label.placement="external", resizable="false", size="16,16")
+class InteractiveTask extends CTTTask {}
+
+@gmf.node(figure="figures.CollaborativeTaskFigure", tool.name="Collaborative Task",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/CollaborativeTask.gif",
+			label="name", label.icon="false", label.placement="external", resizable="false", size="16,16")
+class CTTCollaborativeTask extends CTTTask {}
+
+@gmf.node(figure="figures.ApplicationTaskFigure", tool.name="Application Task",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/ApplicationTask.gif",
+			label="name", label.icon="false", label.placement="external", resizable="false", size="16,16")
+class ApplicationTask extends CTTTask {}
+
+
+//###############################################
+//# Dependencias para diagramas de Procesos y CTT
+//###############################################
+abstract class DependencyElement {}
+
+class Dependency extends Link {
+	ref DependencyElement[1] source;
+	ref DependencyElement[1] target;
+}
+
+@gmf.link(source="source", target="target", style="solid", width="1", color="0,0,0",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/AggregationTransition.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class Aggregation extends Dependency {}
+
+@gmf.link(label="eLabel", source="source", target="target", style="solid", width="1", color="0,0,0",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/EnablingTransition.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class Enabling extends Dependency {
+	readonly attr String eLabel = ">>";
+}
+
+@gmf.link(label="dLabel", source="source", target="target", style="solid", width="1", color="0,0,0",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/DisablingTransition.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class Disabling extends Dependency {
+	readonly attr String dLabel = "[>";
+}
+
+@gmf.link(label="ewLabel", source="source", target="target", style="solid", width="1", color="0,0,0",
+			tool.name="Enabling With Information Passing",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/EnablingWithInformationPassingTransition.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class EnablingWithInformationPassing extends Dependency {
+	attr String ewLabel = "[]>>";
+}
+
+@gmf.link(label="dwLabel", source="source", target="target", style="solid", width="1", color="0,0,0",
+			tool.name="Disabling With Information Passing",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/DisablingWithInformationPassingTransition.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class DisablingWithInformationPassing extends Dependency {
+	readonly attr String dwLabel = "[]|>";
+}
+
+@gmf.link(label="icLabel", source="source", target="target", style="solid", width="1", color="0,0,0",
+			tool.name="Independent Concurrency",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/IndependentConcurrencyTransition.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class IndependentConcurrency extends Dependency {
+	readonly attr String icLabel = "|||";
+}
+
+@gmf.link(label="oiLabel", source="source", target="target", style="solid", width="1", color="0,0,0",
+			tool.name="Order Independence",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/OrderIndependenceTransition.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class OrderIndependence extends Dependency {
+	readonly attr String oiLabel = "|=|";
+}
+
+@gmf.link(label="srLabel", source="source", target="target", style="solid", width="1", color="0,0,0",
+			tool.name="Suspend Resume",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/SuspendResumeTransition.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class SuspendResume extends Dependency {
+	readonly attr String srLabel = "|>";
+}
+
+@gmf.link(label="cLabel", source="source", target="target", style="solid", width="1", color="0,0,0",
+			tool.name="Concurrency With Information Passing",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/ConcurrencyWithInformationPassingTransition.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class ConcurrencyWithInformationPassing extends Dependency {
+	readonly attr String cLabel = "|[]|";
+}
+
+@gmf.link(label="dtLabel", source="source", target="target", style="solid", width="1", color="0,0,0",
+			tool.name="Deterministic Choice",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/DeterministicChoiceTransition.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class DeterministicChoice extends Dependency {
+	readonly attr String dtLabel = "[]";
+}
+
+@gmf.link(label="ucLabel", source="source", target="target", style="solid", width="1", color="0,0,0",
+			tool.name="Undeterministic Choice",
+			tool.small.bundle="org.chico.ciat.figures", tool.small.path="images/UndeterministicChoiceTransition.gif",
+			source.constraint="self <> oppositeEnd",
+			target.constraint="self <> oppositeEnd")
+class UndeterministicChoice extends Dependency {
+	readonly attr String ucLabel ="ç";
+}

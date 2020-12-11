@@ -1,0 +1,1614 @@
+/*
+ * 
+ */
+package ciat.diagram.providers.assistants;
+
+/**
+ * @generated
+ */
+public class CiatModelingAssistantProviderOfTemporalCondition2EditPart extends ciat.diagram.providers.CiatModelingAssistantProvider {
+
+					
+			/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnSource(org.eclipse.core.runtime.IAdaptable source) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnSource((ciat.diagram.edit.parts.TemporalCondition2EditPart) sourceEditPart);
+	}
+	
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnSource(ciat.diagram.edit.parts.TemporalCondition2EditPart source) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(11);
+				types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+				types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+				types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+				types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+				types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+				types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+				types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+				types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+				types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+				types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+				types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+				return types;
+	}
+	
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnSourceAndTarget(
+			org.eclipse.core.runtime.IAdaptable source, org.eclipse.core.runtime.IAdaptable target) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((ciat.diagram.edit.parts.TemporalCondition2EditPart) sourceEditPart, targetEditPart);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnSourceAndTarget(ciat.diagram.edit.parts.TemporalCondition2EditPart source, org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.LinkedList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+							if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InitEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.EndEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.NotificationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Init2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.End2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalCondition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Notification2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Condition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ExclusiveEditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.UserTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTAbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InteractiveTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ApplicationTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+		}
+										if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InitEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.EndEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.NotificationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Init2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.End2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalCondition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Notification2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Condition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ExclusiveEditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.UserTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTAbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InteractiveTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ApplicationTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+		}
+										if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InitEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.EndEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.NotificationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Init2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.End2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalCondition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Notification2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Condition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ExclusiveEditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.UserTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTAbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InteractiveTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ApplicationTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+		}
+										if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InitEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.EndEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.NotificationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Init2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.End2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalCondition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Notification2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Condition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ExclusiveEditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.UserTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTAbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InteractiveTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ApplicationTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+		}
+										if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InitEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.EndEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.NotificationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Init2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.End2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalCondition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Notification2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Condition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ExclusiveEditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.UserTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTAbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InteractiveTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ApplicationTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+		}
+										if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InitEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.EndEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.NotificationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Init2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.End2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalCondition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Notification2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Condition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ExclusiveEditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.UserTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTAbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InteractiveTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ApplicationTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+		}
+										if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InitEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.EndEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.NotificationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Init2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.End2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalCondition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Notification2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Condition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ExclusiveEditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.UserTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTAbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InteractiveTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ApplicationTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+		}
+										if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InitEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.EndEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.NotificationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Init2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.End2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalCondition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Notification2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Condition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ExclusiveEditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.UserTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTAbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InteractiveTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ApplicationTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+		}
+										if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InitEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.EndEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.NotificationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Init2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.End2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalCondition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Notification2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Condition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ExclusiveEditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.UserTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTAbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InteractiveTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ApplicationTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+		}
+										if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InitEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.EndEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.NotificationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Init2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.End2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalCondition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Notification2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Condition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ExclusiveEditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.UserTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTAbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InteractiveTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ApplicationTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+		}
+										if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CooperativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.AbstractTask2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InitEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.EndEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.NotificationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ConditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Init2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.End2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.TemporalCondition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Notification2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.Condition2EditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ExclusiveEditionEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CollaborativeVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.IndividualVisualizationEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.UserTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTAbstractTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.InteractiveTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+					if (targetEditPart instanceof ciat.diagram.edit.parts.ApplicationTaskEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+		}
+							return types;
+	}
+
+			/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForTarget(org.eclipse.core.runtime.IAdaptable source,
+			org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetTypesForTarget((ciat.diagram.edit.parts.TemporalCondition2EditPart) sourceEditPart, relationshipType);
+	}
+	
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetTypesForTarget(ciat.diagram.edit.parts.TemporalCondition2EditPart source, org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+				if (relationshipType == ciat.diagram.providers.CiatElementTypes.Aggregation_4007) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.Enabling_4008) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.Disabling_4009) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.SuspendResume_4014) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+				return types;
+	}
+
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnTarget(org.eclipse.core.runtime.IAdaptable target) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget((ciat.diagram.edit.parts.TemporalCondition2EditPart) targetEditPart);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnTarget(ciat.diagram.edit.parts.TemporalCondition2EditPart target) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(11);
+				types.add(ciat.diagram.providers.CiatElementTypes.Aggregation_4007);
+				types.add(ciat.diagram.providers.CiatElementTypes.Enabling_4008);
+				types.add(ciat.diagram.providers.CiatElementTypes.Disabling_4009);
+				types.add(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010);
+				types.add(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011);
+				types.add(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012);
+				types.add(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+				types.add(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014);
+				types.add(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015);
+				types.add(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016);
+				types.add(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017);
+				return types;
+	}
+
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForSource(org.eclipse.core.runtime.IAdaptable target,
+			org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetTypesForSource((ciat.diagram.edit.parts.TemporalCondition2EditPart) targetEditPart, relationshipType);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetTypesForSource(ciat.diagram.edit.parts.TemporalCondition2EditPart target, org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+				if (relationshipType == ciat.diagram.providers.CiatElementTypes.Aggregation_4007) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.Enabling_4008) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.Disabling_4009) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.SuspendResume_4014) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017) {
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+						types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+						types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+						types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+						types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+						types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+						types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+						types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+						types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049);
+						types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050);
+						types.add(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051);
+						types.add(ciat.diagram.providers.CiatElementTypes.UserTask_3052);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053);
+						types.add(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054);
+						types.add(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055);
+						types.add(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056);
+					}
+				return types;
+	}
+
+	}

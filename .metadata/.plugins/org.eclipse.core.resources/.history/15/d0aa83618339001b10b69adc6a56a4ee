@@ -1,0 +1,338 @@
+/**
+ */
+package ciat.impl;
+
+import ciat.CTTTask;
+import ciat.CiatPackage;
+import ciat.CollaborativeComplexTask;
+import ciat.ComplexLeftNode;
+import ciat.SharedObject;
+import ciat.Tool;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Collaborative Complex Task</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link ciat.impl.CollaborativeComplexTaskImpl#getName <em>Name</em>}</li>
+ *   <li>{@link ciat.impl.CollaborativeComplexTaskImpl#getRolesAndObjects <em>Roles And Objects</em>}</li>
+ *   <li>{@link ciat.impl.CollaborativeComplexTaskImpl#getSharedContext <em>Shared Context</em>}</li>
+ *   <li>{@link ciat.impl.CollaborativeComplexTaskImpl#getCollaborativeCttDiagram <em>Collaborative Ctt Diagram</em>}</li>
+ *   <li>{@link ciat.impl.CollaborativeComplexTaskImpl#getTools <em>Tools</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class CollaborativeComplexTaskImpl extends ProcessNodeImpl implements CollaborativeComplexTask {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = "<...>";
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRolesAndObjects() <em>Roles And Objects</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRolesAndObjects()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ComplexLeftNode> rolesAndObjects;
+
+	/**
+	 * The cached value of the '{@link #getSharedContext() <em>Shared Context</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSharedContext()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SharedObject> sharedContext;
+
+	/**
+	 * The cached value of the '{@link #getCollaborativeCttDiagram() <em>Collaborative Ctt Diagram</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCollaborativeCttDiagram()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CTTTask> collaborativeCttDiagram;
+
+	/**
+	 * The cached value of the '{@link #getTools() <em>Tools</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTools()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Tool> tools;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CollaborativeComplexTaskImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return CiatPackage.Literals.COLLABORATIVE_COMPLEX_TASK;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CiatPackage.COLLABORATIVE_COMPLEX_TASK__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ComplexLeftNode> getRolesAndObjects() {
+		if (rolesAndObjects == null) {
+			rolesAndObjects = new EObjectContainmentEList<ComplexLeftNode>(ComplexLeftNode.class, this, CiatPackage.COLLABORATIVE_COMPLEX_TASK__ROLES_AND_OBJECTS);
+		}
+		return rolesAndObjects;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<SharedObject> getSharedContext() {
+		if (sharedContext == null) {
+			sharedContext = new EObjectContainmentEList<SharedObject>(SharedObject.class, this, CiatPackage.COLLABORATIVE_COMPLEX_TASK__SHARED_CONTEXT);
+		}
+		return sharedContext;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<CTTTask> getCollaborativeCttDiagram() {
+		if (collaborativeCttDiagram == null) {
+			collaborativeCttDiagram = new EObjectContainmentEList<CTTTask>(CTTTask.class, this, CiatPackage.COLLABORATIVE_COMPLEX_TASK__COLLABORATIVE_CTT_DIAGRAM);
+		}
+		return collaborativeCttDiagram;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Tool> getTools() {
+		if (tools == null) {
+			tools = new EObjectContainmentEList<Tool>(Tool.class, this, CiatPackage.COLLABORATIVE_COMPLEX_TASK__TOOLS);
+		}
+		return tools;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__ROLES_AND_OBJECTS:
+				return ((InternalEList<?>)getRolesAndObjects()).basicRemove(otherEnd, msgs);
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__SHARED_CONTEXT:
+				return ((InternalEList<?>)getSharedContext()).basicRemove(otherEnd, msgs);
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__COLLABORATIVE_CTT_DIAGRAM:
+				return ((InternalEList<?>)getCollaborativeCttDiagram()).basicRemove(otherEnd, msgs);
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__TOOLS:
+				return ((InternalEList<?>)getTools()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__NAME:
+				return getName();
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__ROLES_AND_OBJECTS:
+				return getRolesAndObjects();
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__SHARED_CONTEXT:
+				return getSharedContext();
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__COLLABORATIVE_CTT_DIAGRAM:
+				return getCollaborativeCttDiagram();
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__TOOLS:
+				return getTools();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__NAME:
+				setName((String)newValue);
+				return;
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__ROLES_AND_OBJECTS:
+				getRolesAndObjects().clear();
+				getRolesAndObjects().addAll((Collection<? extends ComplexLeftNode>)newValue);
+				return;
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__SHARED_CONTEXT:
+				getSharedContext().clear();
+				getSharedContext().addAll((Collection<? extends SharedObject>)newValue);
+				return;
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__COLLABORATIVE_CTT_DIAGRAM:
+				getCollaborativeCttDiagram().clear();
+				getCollaborativeCttDiagram().addAll((Collection<? extends CTTTask>)newValue);
+				return;
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__TOOLS:
+				getTools().clear();
+				getTools().addAll((Collection<? extends Tool>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__ROLES_AND_OBJECTS:
+				getRolesAndObjects().clear();
+				return;
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__SHARED_CONTEXT:
+				getSharedContext().clear();
+				return;
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__COLLABORATIVE_CTT_DIAGRAM:
+				getCollaborativeCttDiagram().clear();
+				return;
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__TOOLS:
+				getTools().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__ROLES_AND_OBJECTS:
+				return rolesAndObjects != null && !rolesAndObjects.isEmpty();
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__SHARED_CONTEXT:
+				return sharedContext != null && !sharedContext.isEmpty();
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__COLLABORATIVE_CTT_DIAGRAM:
+				return collaborativeCttDiagram != null && !collaborativeCttDiagram.isEmpty();
+			case CiatPackage.COLLABORATIVE_COMPLEX_TASK__TOOLS:
+				return tools != null && !tools.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
+	}
+
+} //CollaborativeComplexTaskImpl

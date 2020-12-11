@@ -1,0 +1,28 @@
+/*
+ * 
+ */
+package ciat.diagram.providers;
+
+/**
+ * @generated
+ */
+public class ElementInitializers {
+
+	protected ElementInitializers() {
+		// use #getInstance to access cached instance
+	} 
+
+			
+	
+	
+	/**
+ * @generated
+ */
+	public static ElementInitializers getInstance() {
+		ElementInitializers cached = ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().getElementInitializers();
+		if (cached == null) {
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().setElementInitializers(cached = new ElementInitializers());
+		}
+		return cached;
+	}
+}

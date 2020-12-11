@@ -1,0 +1,29 @@
+	/*
+ * 
+ */
+package ciat.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class DomainDiagramDomainDiagramSharedContextCompartmentItemSemanticEditPolicy extends ciat.diagram.edit.policies.CiatBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public DomainDiagramDomainDiagramSharedContextCompartmentItemSemanticEditPolicy() {
+				super(ciat.diagram.providers.CiatElementTypes.DomainDiagram_2003);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (ciat.diagram.providers.CiatElementTypes.SharedObject_3043 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.SharedObjectCreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.chico.ciammobile.figures;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: %providerName
+Bundle-Activator: activator.PluginActivator
+Bundle-Localization: plugin
+Export-Package: activator,
+ figures
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.draw2d,
+ org.eclipse.gmf.runtime.draw2d.ui,
+ org.eclipse.ui;bundle-version="3.4.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

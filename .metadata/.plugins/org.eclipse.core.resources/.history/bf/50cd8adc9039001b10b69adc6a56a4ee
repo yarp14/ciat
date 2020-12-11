@@ -1,0 +1,157 @@
+setHorizontalCompartments('IndividualTaskFigure','IndividualTaskLabelFigure','IndividualTaskTaskRolesCompartmentFigure','IndividualTaskTaskObjectsCompartmentFigure','');
+setHorizontalCompartments('CooperativeTaskFigure','CooperativeTaskLabelFigure','CooperativeTaskTaskRolesCompartmentFigure','CooperativeTaskTaskObjectsCompartmentFigure','');
+setHorizontalCompartments('CollaborativeTaskFigure','CollaborativeTaskLabelFigure','CollaborativeTaskTaskRolesCompartmentFigure','CollaborativeTaskTaskObjectsCompartmentFigure','');
+//setHorizontalCompartments('CooperativeComplexFigure','CooperativeComplexLabelFigure','CooperativeComplexRolesAndObjectsCompartmentFigure','CooperativeComplexCooperativePDiagramCompartmentFigure','');
+//setHorizontalCompartments('CollaborativeComplexTaskFigure','CollaborativeComplexTaskLabelFigure','CollaborativeComplexTaskRolesAndObjectsCompartmentFigure','CollaborativeComplexTaskSharedContextCompartmentFigure','CollaborativeComplexTaskCollaborativeCttDiagramCompartmentFigure');
+//setHorizontalCompartments('AbstractTaskFigure','AbstractTaskLabelFigure','AbstractTaskTaskRolesCompartmentFigure','AbstractTaskTaskObjectsCompartmentFigure','');
+
+configureListFigures('RolFigure','ProcessObject');
+configureListFigures('ActorFigure','ProcessObject');
+configureListFigures('TeamFigure','ProcessObject');
+configureListFigures('GroupFigure','ProcessObject');
+configureListFigures('SoftwareAgentFigure','ProcessObject');
+configureListFigures('TemporalConditionFigure','ProcessObject');
+configureListFigures('NotificationFigure','ProcessObject');
+configureListFigures('ConditionFigure','ProcessObject');
+configureListFigures('AttributeFigure','SharedObject');
+configureListFigures('OperationFigure','SharedObject');
+
+var palette = GmfTool!Palette.all.first();
+var currentTools = palette.tools;
+
+var toolGroupSociogram = new GmfTool!ToolGroup;
+toolGroupSociogram.title = "Sociogram";
+toolGroupSociogram.collapsible = true;
+var toolGroupProcess = new GmfTool!ToolGroup;
+toolGroupProcess.title = "Process Diagram";
+toolGroupProcess.collapsible = true;
+var toolGroupDomain = new GmfTool!ToolGroup;
+toolGroupDomain.title = "Domain Diagram";
+toolGroupDomain.collapsible = true;
+var toolGroupCTT = new GmfTool!ToolGroup;
+toolGroupCTT.title = "CTT Diagram";
+toolGroupCTT.collapsible = true;
+var toolGroupDependencies = new GmfTool!ToolGroup;
+toolGroupDependencies.title = "Dependencies";
+toolGroupDependencies.collapsible = true;
+palette.tools.add(toolGroupSociogram);
+palette.tools.add(toolGroupProcess);
+palette.tools.add(toolGroupDomain);
+palette.tools.add(toolGroupCTT);
+palette.tools.add(toolGroupDependencies);
+
+var toolGroupObjects = GmfTool!ToolGroup.all.selectOne(r|r.title = 'Objects');
+var toolGroupConnections = GmfTool!ToolGroup.all.selectOne(r|r.title = 'Connections');
+var toolEntry;
+
+var SociogramObjects : Sequence = Sequence{"Sociogram","Sep","Actor","Rol","Software Agent","Group","Team","Sep"};
+var SociogramConnections : Sequence = Sequence{"Acting","Inheritance","Association"};
+var ProcessObjects : Sequence = Sequence{"Process Diagram","Sep","Initial","Final","Sep","Individual","Cooperative","Collaborative","Abstract","Sep","Object", "Tool", "Temporal Condition","Notification","Condition"};
+var DomainObjects : Sequence = Sequence{"Domain Diagram","Sep","Class","Attribute","Operation","Sep","Individual Area","Exclusive Area","Collaborative Area","Sep"};
+var DomainConnections : Sequence = Sequence{"Asociation","Generalization","Aggregation"};
+var CttObjects : Sequence = Sequence {"CTTDiagram","Sep","Abstract Task","Application Task","Collaborative Task","Interactive Task","User Task", "Sep", "Exclusive Edition", "Collaborative Visualization", "Individual Visualization"};
+var Dependencies : Sequence = Sequence {"Aggregation","Concurrency With Information Passing","Deterministic Choice","Disabling","Disabling With Information Passing",
+"Enabling","Enabling With Information Passing","Independent Concurrency","Order Independence","Suspend Resume","Undeterministic Choice"};
+
+objectsConnectionsToPalette(SociogramObjects, toolGroupSociogram, true);
+objectsConnectionsToPalette(SociogramConnections, toolGroupSociogram, false);
+objectsConnectionsToPalette(ProcessObjects, toolGroupProcess, true);
+objectsConnectionsToPalette(DomainObjects, toolGroupDomain, true);
+objectsConnectionsToPalette(DomainConnections, toolGroupDomain, false);
+objectsConnectionsToPalette(CttObjects, toolGroupCTT, true);
+objectsConnectionsToPalette(Dependencies, toolGroupDependencies, false);
+
+delete toolGroupObjects;
+delete toolGroupConnections;
+
+operation objectsConnectionsToPalette(myseq: Sequence, mytg: GmfTool!ToolGroup, isObject: Boolean) {
+	for (o in myseq) {
+		if (o.matches('Sep')) {
+			mytg.tools.add(new GmfTool!PaletteSeparator);
+		} else {
+			if (isObject) {
+				toolEntry = toolGroupObjects.tools.selectOne(r|r.title = o);
+			} else {
+				toolEntry = toolGroupConnections.tools.selectOne(r|r.title = o);
+			}
+			mytg.tools.add(toolEntry);
+		}
+	}
+}
+
+operation configureListFigures(nodeFigure: String, nodeKind: String) {
+	var objectFigure = GmfGraph!RoundedRectangle.all.selectOne(r|r.name = nodeFigure);
+    
+    delete objectFigure.border;
+	objectFigure.outline = false;
+	
+	var size = new GmfGraph!Dimension;
+	
+	switch(nodeKind) {
+		case "SharedObject" :
+			size.dx = 120;
+			size.dy = 24;
+		case "ProcessObject":
+			size.dx = 100;
+			size.dy = 24;
+		default:
+			"default".println();
+	}
+
+	objectFigure.preferredSize = size;
+}
+
+operation setHorizontalCompartments(nodeFigure: String, labelFigure: String, compartment1: String, compartment2: String, compartment3: String) {
+	var node = GmfGraph!RoundedRectangle.all.selectOne(r|r.name=nodeFigure);
+	delete node.border;
+
+	var titleRectangle = new GmfGraph!Rectangle;
+	titleRectangle.name = node.name+'_Title';
+	titleRectangle.layout = new GmfGraph!BorderLayout;
+	titleRectangle.outline = false;
+	titleRectangle.fill = false;
+	var insets = new GmfGraph!Insets;
+	insets.bottom = 0;
+	insets.top = 5;
+	insets.left = 5;
+	insets.right = 5;
+	var titleSize = new GmfGraph!Dimension;
+	titleSize.dx = 1000;
+	titleSize.dy = 34;
+	titleRectangle.insets = insets;
+	titleRectangle.maximumSize = titleSize;
+	node.children.add(titleRectangle);
+	
+	var label = GmfGraph!Label.all.selectOne(r|r.name=labelFigure);
+	label.layoutData = new GmfGraph!BorderLayoutData;
+	label.layoutData.alignment = GmfGraph!Alignment#BEGINNING;
+	delete label.maximumSize;
+
+	var bodyRectangle = new GmfGraph!Rectangle;
+	bodyRectangle.name = node.name+'_Body';
+	bodyRectangle.layout =  new GmfGraph!BorderLayout;
+	bodyRectangle.outline = false;
+	node.children.add(bodyRectangle);
+
+	var compartmentFigure1 = GmfGraph!Rectangle.all.selectOne(r|r.name=compartment1);
+	compartmentFigure1.layoutData = new GmfGraph!BorderLayoutData;
+	compartmentFigure1.layoutData.alignment = GmfGraph!Alignment#BEGINNING;
+	compartmentFigure1.outline = true;
+
+	var compartmentFigure2 = GmfGraph!Rectangle.all.selectOne(r|r.name=compartment2);
+	compartmentFigure2.layoutData = new GmfGraph!BorderLayoutData;
+	compartmentFigure2.layoutData.alignment = GmfGraph!Alignment#CENTER;
+	compartmentFigure2.outline = true;
+
+	node.children.selectOne(r|r.name=titleRectangle.name).children.add(label);
+	node.children.selectOne(r|r.name=bodyRectangle.name).children.add(compartmentFigure1);
+	node.children.selectOne(r|r.name=bodyRectangle.name).children.add(compartmentFigure2);
+	
+	if (not compartment3.matches('')) {
+		var compartmentFigure3 = GmfGraph!Rectangle.all.selectOne(r|r.name=compartment3);
+		compartmentFigure3.layoutData = new GmfGraph!BorderLayoutData;
+		compartmentFigure3.layoutData.alignment = GmfGraph!Alignment#END;
+		compartmentFigure3.outline = true;
+		node.children.selectOne(r|r.name=bodyRectangle.name).children.add(compartmentFigure3);
+	}
+}

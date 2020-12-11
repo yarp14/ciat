@@ -1,0 +1,81 @@
+	/*
+ * 
+ */
+package ciat.diagram.navigator;
+
+	/**
+ * @generated
+ */
+public class CiatNavigatorItem extends ciat.diagram.navigator.CiatAbstractNavigatorItem {
+
+		/**
+ * @generated
+ */
+static {
+	final Class[] supportedTypes = new Class[] { org.eclipse.gmf.runtime.notation.View.class, org.eclipse.emf.ecore.EObject.class };
+	org.eclipse.core.runtime.Platform.getAdapterManager().registerAdapters(new org.eclipse.core.runtime.IAdapterFactory() {
+		
+		public Object getAdapter(Object adaptableObject, Class adapterType) {
+			if (adaptableObject instanceof ciat.diagram.navigator.CiatNavigatorItem && (adapterType == org.eclipse.gmf.runtime.notation.View.class || adapterType == org.eclipse.emf.ecore.EObject.class)) {
+				return ((ciat.diagram.navigator.CiatNavigatorItem) adaptableObject).getView();
+			}
+			return null;
+		}
+
+		public Class[] getAdapterList() {
+			return supportedTypes;
+		}
+	}, ciat.diagram.navigator.CiatNavigatorItem.class);
+}
+	
+		/**
+ * @generated
+ */
+private org.eclipse.gmf.runtime.notation.View myView;
+	
+	/**
+ * @generated
+ */
+private boolean myLeaf = false;	
+	
+		/**
+ * @generated
+ */
+public CiatNavigatorItem(org.eclipse.gmf.runtime.notation.View view, Object parent, boolean isLeaf) {
+	super(parent);
+	myView = view;
+	myLeaf = isLeaf;
+}
+	
+		/**
+ * @generated
+ */
+public org.eclipse.gmf.runtime.notation.View getView() {
+	return myView;
+}
+	
+		/**
+ * @generated
+ */
+public boolean isLeaf() {
+	return myLeaf;
+}
+
+		/**
+ * @generated
+ */
+public boolean equals(Object obj) {
+	if (obj instanceof ciat.diagram.navigator.CiatNavigatorItem) {
+		return org.eclipse.emf.ecore.util.EcoreUtil.getURI(getView()).equals(org.eclipse.emf.ecore.util.EcoreUtil.getURI(((ciat.diagram.navigator.CiatNavigatorItem) obj).getView()));
+	}
+	return super.equals(obj);
+}
+	
+		/**
+ * @generated
+ */
+public int hashCode() {
+	return org.eclipse.emf.ecore.util.EcoreUtil.getURI(getView()).hashCode();
+}
+
+	}

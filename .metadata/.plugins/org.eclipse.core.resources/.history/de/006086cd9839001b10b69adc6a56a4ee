@@ -1,0 +1,21 @@
+/*
+ * 
+ */
+package ciat.diagram.providers;
+
+/**
+ * @generated
+ */
+public class CiatEditPartProvider extends org.eclipse.gmf.tooling.runtime.providers.DefaultEditPartProvider {
+
+	
+	/**
+ * @generated
+ */
+	public CiatEditPartProvider() {
+		super(new ciat.diagram.edit.parts.CiatEditPartFactory(), 			ciat.diagram.part.CiatVisualIDRegistry.TYPED_INSTANCE, 			ciat.diagram.edit.parts.CIATDiagramEditPart.MODEL_ID			
+		);
+	}
+
+
+	}

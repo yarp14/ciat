@@ -1,0 +1,165 @@
+/*
+ * 
+ */
+package ciat.diagram.providers.assistants;
+
+/**
+ * @generated
+ */
+public class CiatModelingAssistantProviderOfSharedObjectEditPart extends ciat.diagram.providers.CiatModelingAssistantProvider {
+
+				/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForPopupBar(org.eclipse.core.runtime.IAdaptable host) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(5);
+					types.add(ciat.diagram.providers.CiatElementTypes.ExclusiveEditionArea_3044);
+					types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeArea_3045);
+					types.add(ciat.diagram.providers.CiatElementTypes.IndividualArea_3046);
+					types.add(ciat.diagram.providers.CiatElementTypes.Attribute_3047);
+					types.add(ciat.diagram.providers.CiatElementTypes.Operation_3048);
+					return types;	
+	}
+			
+			/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnSource(org.eclipse.core.runtime.IAdaptable source) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnSource((ciat.diagram.edit.parts.SharedObjectEditPart) sourceEditPart);
+	}
+	
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnSource(ciat.diagram.edit.parts.SharedObjectEditPart source) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(3);
+				types.add(ciat.diagram.providers.CiatElementTypes.ShAssociationLink_4004);
+				types.add(ciat.diagram.providers.CiatElementTypes.ShGeneralizationLink_4005);
+				types.add(ciat.diagram.providers.CiatElementTypes.ShAggregationLink_4006);
+				return types;
+	}
+	
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnSourceAndTarget(
+			org.eclipse.core.runtime.IAdaptable source, org.eclipse.core.runtime.IAdaptable target) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((ciat.diagram.edit.parts.SharedObjectEditPart) sourceEditPart, targetEditPart);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnSourceAndTarget(ciat.diagram.edit.parts.SharedObjectEditPart source, org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.LinkedList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+							if (targetEditPart instanceof ciat.diagram.edit.parts.SharedObjectEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ShAssociationLink_4004);
+		}
+										if (targetEditPart instanceof ciat.diagram.edit.parts.SharedObjectEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ShGeneralizationLink_4005);
+		}
+										if (targetEditPart instanceof ciat.diagram.edit.parts.SharedObjectEditPart) {
+			types.add(ciat.diagram.providers.CiatElementTypes.ShAggregationLink_4006);
+		}
+							return types;
+	}
+
+			/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForTarget(org.eclipse.core.runtime.IAdaptable source,
+			org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetTypesForTarget((ciat.diagram.edit.parts.SharedObjectEditPart) sourceEditPart, relationshipType);
+	}
+	
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetTypesForTarget(ciat.diagram.edit.parts.SharedObjectEditPart source, org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+				if (relationshipType == ciat.diagram.providers.CiatElementTypes.ShAssociationLink_4004) {
+						types.add(ciat.diagram.providers.CiatElementTypes.SharedObject_3043);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.ShGeneralizationLink_4005) {
+						types.add(ciat.diagram.providers.CiatElementTypes.SharedObject_3043);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.ShAggregationLink_4006) {
+						types.add(ciat.diagram.providers.CiatElementTypes.SharedObject_3043);
+					}
+				return types;
+	}
+
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnTarget(org.eclipse.core.runtime.IAdaptable target) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget((ciat.diagram.edit.parts.SharedObjectEditPart) targetEditPart);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnTarget(ciat.diagram.edit.parts.SharedObjectEditPart target) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(3);
+				types.add(ciat.diagram.providers.CiatElementTypes.ShAssociationLink_4004);
+				types.add(ciat.diagram.providers.CiatElementTypes.ShGeneralizationLink_4005);
+				types.add(ciat.diagram.providers.CiatElementTypes.ShAggregationLink_4006);
+				return types;
+	}
+
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForSource(org.eclipse.core.runtime.IAdaptable target,
+			org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetTypesForSource((ciat.diagram.edit.parts.SharedObjectEditPart) targetEditPart, relationshipType);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetTypesForSource(ciat.diagram.edit.parts.SharedObjectEditPart target, org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+				if (relationshipType == ciat.diagram.providers.CiatElementTypes.ShAssociationLink_4004) {
+						types.add(ciat.diagram.providers.CiatElementTypes.SharedObject_3043);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.ShGeneralizationLink_4005) {
+						types.add(ciat.diagram.providers.CiatElementTypes.SharedObject_3043);
+					}
+		 else 		if (relationshipType == ciat.diagram.providers.CiatElementTypes.ShAggregationLink_4006) {
+						types.add(ciat.diagram.providers.CiatElementTypes.SharedObject_3043);
+					}
+				return types;
+	}
+
+	}

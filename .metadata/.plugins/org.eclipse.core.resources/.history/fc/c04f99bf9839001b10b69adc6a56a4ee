@@ -1,0 +1,347 @@
+	/*
+ * 
+ */
+package ciat.diagram.edit.policies;
+
+/**
+ * @generated
+ */
+public class EndItemSemanticEditPolicy extends ciat.diagram.edit.policies.CiatBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public EndItemSemanticEditPolicy() {
+				super(ciat.diagram.providers.CiatElementTypes.End_3034);
+	}
+
+	
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest req) {
+	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
+	org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand cmd = new org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand(getEditingDomain(), null);
+	cmd.setTransactionNestingEnabled(false);
+		for (java.util.Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
+		org.eclipse.gmf.runtime.notation.Edge incomingLink = (org.eclipse.gmf.runtime.notation.Edge) it.next();
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.AggregationEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.EnablingEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.DisablingEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.EnablingWithInformationPassingEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.DisablingWithInformationPassingEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.IndependentConcurrencyEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.OrderIndependenceEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.SuspendResumeEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.ConcurrencyWithInformationPassingEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.DeterministicChoiceEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.UndeterministicChoiceEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+	}
+	for (java.util.Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
+		org.eclipse.gmf.runtime.notation.Edge outgoingLink = (org.eclipse.gmf.runtime.notation.Edge) it.next();
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.AggregationEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.EnablingEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.DisablingEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.EnablingWithInformationPassingEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.DisablingWithInformationPassingEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.IndependentConcurrencyEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.OrderIndependenceEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.SuspendResumeEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.ConcurrencyWithInformationPassingEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.DeterministicChoiceEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.UndeterministicChoiceEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+	}
+	org.eclipse.emf.ecore.EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
+	if (annotation == null) {
+		// there are indirectly referenced children, need extra commands: false
+		addDestroyShortcutsCommand(cmd, view);
+		// delete host element
+		cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(req));
+	} else {
+		cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), view));
+	}
+	return getGEFWrapper(cmd.reduce());
+}
+					
+/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getCreateRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	org.eclipse.gef.commands.Command command = req.getTarget() == null ?
+			getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+	return command != null ? command : super.getCreateRelationshipCommand(req);
+}
+
+/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getStartCreateRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	if (ciat.diagram.providers.CiatElementTypes.Aggregation_4007 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.AggregationCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.Enabling_4008 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.EnablingCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.Disabling_4009 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.DisablingCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.EnablingWithInformationPassingCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.DisablingWithInformationPassingCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.IndependentConcurrencyCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.OrderIndependenceCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.SuspendResume_4014 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.SuspendResumeCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.ConcurrencyWithInformationPassingCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.DeterministicChoiceCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.UndeterministicChoiceCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+	return null;
+}
+
+/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getCompleteCreateRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	if (ciat.diagram.providers.CiatElementTypes.Aggregation_4007 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.AggregationCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.Enabling_4008 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.EnablingCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.Disabling_4009 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.DisablingCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.EnablingWithInformationPassingCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.DisablingWithInformationPassingCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.IndependentConcurrencyCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.OrderIndependenceCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.SuspendResume_4014 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.SuspendResumeCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.ConcurrencyWithInformationPassingCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.DeterministicChoiceCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.UndeterministicChoiceCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+	return null;
+}
+				
+/**
+ * Returns command to reorient EClass based link. New link target or source
+ * should be the domain model element associated with this node.
+ * 
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getReorientRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest req) {
+	switch (getVisualID(req)) {
+	case ciat.diagram.edit.parts.AggregationEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.AggregationReorientCommand(req));
+case ciat.diagram.edit.parts.EnablingEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.EnablingReorientCommand(req));
+case ciat.diagram.edit.parts.DisablingEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.DisablingReorientCommand(req));
+case ciat.diagram.edit.parts.EnablingWithInformationPassingEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.EnablingWithInformationPassingReorientCommand(req));
+case ciat.diagram.edit.parts.DisablingWithInformationPassingEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.DisablingWithInformationPassingReorientCommand(req));
+case ciat.diagram.edit.parts.IndependentConcurrencyEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.IndependentConcurrencyReorientCommand(req));
+case ciat.diagram.edit.parts.OrderIndependenceEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.OrderIndependenceReorientCommand(req));
+case ciat.diagram.edit.parts.SuspendResumeEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.SuspendResumeReorientCommand(req));
+case ciat.diagram.edit.parts.ConcurrencyWithInformationPassingEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.ConcurrencyWithInformationPassingReorientCommand(req));
+case ciat.diagram.edit.parts.DeterministicChoiceEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.DeterministicChoiceReorientCommand(req));
+case ciat.diagram.edit.parts.UndeterministicChoiceEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.UndeterministicChoiceReorientCommand(req));
+	}
+	return super.getReorientRelationshipCommand(req);
+}
+		
+	}

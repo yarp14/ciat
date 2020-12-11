@@ -1,0 +1,871 @@
+	/*
+ * 
+ */
+package ciat.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class CIATDiagramCanonicalEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy {
+	
+
+		
+	/**
+ * @generated
+ */
+	private java.util.Set<org.eclipse.emf.ecore.EStructuralFeature> myFeaturesToSynchronize;
+
+		/**
+ * @generated
+ */
+	protected void refreshOnActivate() {
+		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
+		java.util.List<?> c = getHost().getChildren();
+		for (int i = 0; i < c.size(); i++) {
+			((org.eclipse.gef.EditPart) c.get(i)).activate();
+		}
+		super.refreshOnActivate();
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected java.util.Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new java.util.HashSet<org.eclipse.emf.ecore.EStructuralFeature>();
+			myFeaturesToSynchronize.add(ciat.CiatPackage.eINSTANCE.getCIATDiagram_ItsSociograms());
+myFeaturesToSynchronize.add(ciat.CiatPackage.eINSTANCE.getCIATDiagram_ItsProcessDiagrams());
+myFeaturesToSynchronize.add(ciat.CiatPackage.eINSTANCE.getCIATDiagram_ItsDomainDiagrams());
+myFeaturesToSynchronize.add(ciat.CiatPackage.eINSTANCE.getCIATDiagram_ItsCttDiagrams());
+		}
+		return myFeaturesToSynchronize;
+	}
+	
+	/**
+ * @generated
+ */
+@SuppressWarnings("rawtypes")
+
+protected java.util.List getSemanticChildrenList() {
+		org.eclipse.gmf.runtime.notation.View viewObject = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
+	java.util.LinkedList<org.eclipse.emf.ecore.EObject> result = new java.util.LinkedList<org.eclipse.emf.ecore.EObject>();
+	java.util.List<ciat.diagram.part.CiatNodeDescriptor> childDescriptors = ciat.diagram.part.CiatDiagramUpdater.getCIATDiagram_1000SemanticChildren(viewObject);
+	for (ciat.diagram.part.CiatNodeDescriptor d : childDescriptors) {
+		result.add(d.getModelElement());
+	}
+	return result;
+	}
+
+	/**
+ * @generated
+ */
+protected boolean isOrphaned(java.util.Collection<org.eclipse.emf.ecore.EObject> semanticChildren, final org.eclipse.gmf.runtime.notation.View view) {
+			if (isShortcut(view)) {
+			return ciat.diagram.part.CiatDiagramUpdater.isShortcutOrphaned(view);
+		}
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
+}
+
+	/**
+ * @generated
+ */
+private boolean isMyDiagramElement(org.eclipse.gmf.runtime.notation.View view) {
+		int visualID = ciat.diagram.part.CiatVisualIDRegistry.getVisualID(view);
+		switch (visualID) {
+		case ciat.diagram.edit.parts.SociogramEditPart.VISUAL_ID:case ciat.diagram.edit.parts.ProcessDiagramEditPart.VISUAL_ID:case ciat.diagram.edit.parts.DomainDiagramEditPart.VISUAL_ID:case ciat.diagram.edit.parts.CTTDiagramEditPart.VISUAL_ID:
+		return true;
+	}
+	return false;
+		}
+	
+	/**
+ * @generated
+ */
+protected static boolean isShortcut(org.eclipse.gmf.runtime.notation.View view) {
+	return view.getEAnnotation("Shortcut") != null;  //$NON-NLS-1$
+}
+
+
+	/**
+ * @generated
+ */
+protected void refreshSemantic() {
+	if (resolveSemanticElement() == null) {
+		return;
+	}
+	java.util.LinkedList<org.eclipse.core.runtime.IAdaptable> createdViews = new java.util.LinkedList<org.eclipse.core.runtime.IAdaptable>();
+			java.util.List<ciat.diagram.part.CiatNodeDescriptor> childDescriptors = 							ciat.diagram.part.CiatDiagramUpdater.getCIATDiagram_1000SemanticChildren((org.eclipse.gmf.runtime.notation.View) getHost().getModel());
+					java.util.LinkedList<org.eclipse.gmf.runtime.notation.View> orphaned = new java.util.LinkedList<org.eclipse.gmf.runtime.notation.View>();
+				// we care to check only views we recognize as ours and not shortcuts
+		java.util.LinkedList<org.eclipse.gmf.runtime.notation.View> knownViewChildren = new java.util.LinkedList<org.eclipse.gmf.runtime.notation.View>();
+		for (org.eclipse.gmf.runtime.notation.View v : getViewChildren()) {
+			if (isShortcut(v)) {
+				if (ciat.diagram.part.CiatDiagramUpdater.isShortcutOrphaned(v)) {
+					orphaned.add(v);
+				}
+				continue;
+			} 
+			if (isMyDiagramElement(v)) {
+				knownViewChildren.add(v);
+			}
+		}
+				// alternative to #cleanCanonicalSemanticChildren(getViewChildren(), semanticChildren)
+				//
+		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
+		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
+		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
+		for (java.util.Iterator<ciat.diagram.part.CiatNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator.hasNext();) {
+	ciat.diagram.part.CiatNodeDescriptor next = descriptorsIterator.next();
+			String hint = ciat.diagram.part.CiatVisualIDRegistry.getType(next.getVisualID());
+			java.util.LinkedList<org.eclipse.gmf.runtime.notation.View> perfectMatch = new java.util.LinkedList<org.eclipse.gmf.runtime.notation.View>(); // both semanticElement and hint match that of NodeDescriptor
+						for (org.eclipse.gmf.runtime.notation.View childView : getViewChildren()) {
+				org.eclipse.emf.ecore.EObject semanticElement = childView.getElement();
+				if (next.getModelElement().equals(semanticElement)) {
+					if (hint.equals(childView.getType())) {
+						perfectMatch.add(childView);
+						// actually, can stop iteration over view children here, but
+						// may want to use not the first view but last one as a 'real' match (the way original CEP does
+						// with its trick with viewToSemanticMap inside #cleanCanonicalSemanticChildren
+										}
+									}
+			}
+			if (perfectMatch.size() > 0) {
+				descriptorsIterator.remove(); // precise match found no need to create anything for the NodeDescriptor
+				// use only one view (first or last?), keep rest as orphaned for further consideration
+				knownViewChildren.remove(perfectMatch.getFirst());
+						}
+		}
+		// those left in knownViewChildren are subject to removal - they are our diagram elements we didn't find match to,
+		// or those we have potential matches to, and thus need to be recreated, preserving size/location information.
+		orphaned.addAll(knownViewChildren);
+		//
+				java.util.ArrayList<org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor> viewDescriptors = new java.util.ArrayList<org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor>(childDescriptors.size());		
+		for (ciat.diagram.part.CiatNodeDescriptor next : childDescriptors) {
+			String hint = ciat.diagram.part.CiatVisualIDRegistry.getType(next.getVisualID());
+			org.eclipse.core.runtime.IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor descriptor = new org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor(elementAdapter, org.eclipse.gmf.runtime.notation.Node.class, hint, org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
+			viewDescriptors.add(descriptor);
+				}
+
+		boolean changed = deleteViews(orphaned.iterator());
+		//
+		org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest request = getCreateViewRequest(viewDescriptors);
+		org.eclipse.gef.commands.Command cmd = getCreateViewCommand(request);
+		if (cmd != null && cmd.canExecute() ) {
+			org.eclipse.gmf.runtime.diagram.ui.commands.SetViewMutabilityCommand.makeMutable(new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(host().getNotationView())).execute();
+			executeCommand(cmd);
+						@SuppressWarnings("unchecked")
+
+			java.util.List<org.eclipse.core.runtime.IAdaptable> nl = (java.util.List<org.eclipse.core.runtime.IAdaptable>) request.getNewObject();
+			createdViews.addAll(nl);
+		}
+		if (changed || createdViews.size() > 0) {
+			postProcessRefreshSemantic(createdViews);
+		}
+
+			java.util.Collection<org.eclipse.core.runtime.IAdaptable> createdConnectionViews = refreshConnections();
+	
+		if (createdViews.size() > 1) {
+		// perform a layout of the container
+		org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand layoutCmd = new org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
+		executeCommand(new org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy(layoutCmd));
+	}
+
+			createdViews.addAll(createdConnectionViews);
+	
+	makeViewsImmutable(createdViews);
+}
+					/**
+ * @generated
+ */
+	private java.util.Collection<org.eclipse.core.runtime.IAdaptable> refreshConnections() {
+			Domain2Notation domain2NotationMap = new Domain2Notation();
+	java.util.Collection<ciat.diagram.part.CiatLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
+	java.util.Collection existingLinks = new java.util.LinkedList(getDiagram().getEdges());
+	for (java.util.Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
+		org.eclipse.gmf.runtime.notation.Edge nextDiagramLink = (org.eclipse.gmf.runtime.notation.Edge) linksIterator.next();
+		int diagramLinkVisualID = ciat.diagram.part.CiatVisualIDRegistry.getVisualID(nextDiagramLink);
+		if (diagramLinkVisualID == -1) {
+			if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
+				linksIterator.remove();
+			}
+			continue;
+		}
+		org.eclipse.emf.ecore.EObject diagramLinkObject = nextDiagramLink.getElement();
+		org.eclipse.emf.ecore.EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
+		org.eclipse.emf.ecore.EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
+		for (java.util.Iterator<ciat.diagram.part.CiatLinkDescriptor> linkDescriptorsIterator = linkDescriptors.iterator(); linkDescriptorsIterator.hasNext();) {
+	ciat.diagram.part.CiatLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
+			if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination() && diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
+				linksIterator.remove();
+				linkDescriptorsIterator.remove();
+				break;
+			}
+		}
+	}
+	deleteViews(existingLinks.iterator());
+	return createConnections(linkDescriptors, domain2NotationMap);
+	}
+		
+			/**
+ * @generated
+ */
+private java.util.Collection<ciat.diagram.part.CiatLinkDescriptor> collectAllLinks(org.eclipse.gmf.runtime.notation.View view, Domain2Notation domain2NotationMap) {
+	if (!ciat.diagram.edit.parts.CIATDiagramEditPart.MODEL_ID.equals(ciat.diagram.part.CiatVisualIDRegistry.getModelID(view))) {
+		return java.util.Collections.emptyList();
+	}
+	java.util.LinkedList<ciat.diagram.part.CiatLinkDescriptor> result = new java.util.LinkedList<ciat.diagram.part.CiatLinkDescriptor>();
+	switch (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(view)) {
+		case ciat.diagram.edit.parts.CIATDiagramEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getCIATDiagram_1000ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.SociogramEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getSociogram_2001ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.ProcessDiagramEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getProcessDiagram_2002ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.DomainDiagramEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getDomainDiagram_2003ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.CTTDiagramEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getCTTDiagram_2004ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.RolEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getRol_3001ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.ActorEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getActor_3002ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.SoftwareAgentEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getSoftwareAgent_3003ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.TeamEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getTeam_3004ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.GroupEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getGroup_3005ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.IndividualTaskEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getIndividualTask_3006ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Rol2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getRol_3007ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Actor2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getActor_3008ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.SoftwareAgent2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getSoftwareAgent_3009ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Team2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getTeam_3010ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Group2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getGroup_3011ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getTool_3012ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.ObjectEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getObject_3013ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.CooperativeTaskEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getCooperativeTask_3014ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Rol3EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getRol_3015ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Actor3EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getActor_3016ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.SoftwareAgent3EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getSoftwareAgent_3017ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Team3EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getTeam_3018ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Group3EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getGroup_3019ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Object2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getObject_3020ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.CollaborativeTaskEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getCollaborativeTask_3021ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Rol4EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getRol_3022ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Actor4EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getActor_3023ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.SoftwareAgent4EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getSoftwareAgent_3024ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Team4EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getTeam_3025ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Group4EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getGroup_3026ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Object3EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getObject_3027ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.AbstractTaskEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getAbstractTask_3028ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.IndividualTask2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getIndividualTask_3029ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.CooperativeTask2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getCooperativeTask_3030ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.CollaborativeTask2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getCollaborativeTask_3031ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.AbstractTask2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getAbstractTask_3032ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.InitEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getInit_3033ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.EndEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getEnd_3034ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.TemporalConditionEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getTemporalCondition_3035ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.NotificationEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getNotification_3036ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.ConditionEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getCondition_3037ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Init2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getInit_3038ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.End2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getEnd_3039ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.TemporalCondition2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getTemporalCondition_3040ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Notification2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getNotification_3041ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.Condition2EditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getCondition_3042ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.SharedObjectEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getSharedObject_3043ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.ExclusiveEditionAreaEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getExclusiveEditionArea_3044ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.CollaborativeAreaEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getCollaborativeArea_3045ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.IndividualAreaEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getIndividualArea_3046ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.AttributeEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getAttribute_3047ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.OperationEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getOperation_3048ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.ExclusiveEditionEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getExclusiveEdition_3049ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.CollaborativeVisualizationEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getCollaborativeVisualization_3050ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.IndividualVisualizationEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getIndividualVisualization_3051ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.UserTaskEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getUserTask_3052ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.CTTAbstractTaskEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getCTTAbstractTask_3053ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.InteractiveTaskEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getInteractiveTask_3054ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getCTTCollaborativeTask_3055ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.ApplicationTaskEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getApplicationTask_3056ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.InheritanceEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getInheritance_4001ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.ActingEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getActing_4002ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.AssociationEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getAssociation_4003ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.ShAssociationLinkEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getShAssociationLink_4004ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.ShGeneralizationLinkEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getShGeneralizationLink_4005ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.ShAggregationLinkEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getShAggregationLink_4006ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.AggregationEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getAggregation_4007ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.EnablingEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getEnabling_4008ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.DisablingEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getDisabling_4009ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.EnablingWithInformationPassingEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getEnablingWithInformationPassing_4010ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.DisablingWithInformationPassingEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getDisablingWithInformationPassing_4011ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.IndependentConcurrencyEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getIndependentConcurrency_4012ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.OrderIndependenceEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getOrderIndependence_4013ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.SuspendResumeEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getSuspendResume_4014ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.ConcurrencyWithInformationPassingEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getConcurrencyWithInformationPassing_4015ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.DeterministicChoiceEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getDeterministicChoice_4016ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case ciat.diagram.edit.parts.UndeterministicChoiceEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(ciat.diagram.part.CiatDiagramUpdater.getUndeterministicChoice_4017ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+	}
+	for (java.util.Iterator children = view.getChildren().iterator(); children.hasNext();) {
+		result.addAll(collectAllLinks((org.eclipse.gmf.runtime.notation.View) children.next(), domain2NotationMap));
+	}
+	for (java.util.Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
+		result.addAll(collectAllLinks((org.eclipse.gmf.runtime.notation.View) edges.next(), domain2NotationMap));
+	}
+	return result;
+}
+	/**
+ * @generated
+ */
+private java.util.Collection<org.eclipse.core.runtime.IAdaptable>  createConnections(java.util.Collection<ciat.diagram.part.CiatLinkDescriptor> linkDescriptors, Domain2Notation domain2NotationMap) {
+	java.util.LinkedList<org.eclipse.core.runtime.IAdaptable> adapters = new java.util.LinkedList<org.eclipse.core.runtime.IAdaptable>();
+	for (ciat.diagram.part.CiatLinkDescriptor nextLinkDescriptor : linkDescriptors) {
+		org.eclipse.gef.EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
+		org.eclipse.gef.EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
+		if (sourceEditPart == null || targetEditPart == null) {
+			continue;
+		}
+		org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), ciat.diagram.part.CiatVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.APPEND, false, ((org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
+		org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest ccr = new org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest(descriptor);
+		ccr.setType(org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants.REQ_CONNECTION_START);
+		ccr.setSourceEditPart(sourceEditPart);
+		sourceEditPart.getCommand(ccr);
+		ccr.setTargetEditPart(targetEditPart);
+		ccr.setType(org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants.REQ_CONNECTION_END);
+		org.eclipse.gef.commands.Command cmd = targetEditPart.getCommand(ccr);
+		if (cmd != null && cmd.canExecute()) {
+			executeCommand(cmd);
+			org.eclipse.core.runtime.IAdaptable viewAdapter = (org.eclipse.core.runtime.IAdaptable) ccr.getNewObject();
+			if (viewAdapter != null) {
+				adapters.add(viewAdapter);
+			}
+		}
+	}
+	return adapters;
+}
+	/**
+ * @generated
+ */
+private org.eclipse.gef.EditPart getEditPart(org.eclipse.emf.ecore.EObject domainModelElement, Domain2Notation domain2NotationMap) {
+	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) domain2NotationMap.get(domainModelElement);
+	if (view != null) {
+		return (org.eclipse.gef.EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+	}
+	return null;
+}
+	/**
+ * @generated
+ */
+private org.eclipse.gmf.runtime.notation.Diagram getDiagram() {
+	return ((org.eclipse.gmf.runtime.notation.View) getHost().getModel()).getDiagram();
+}
+		/**
+ * @generated
+ */
+private org.eclipse.gef.EditPart getSourceEditPart(org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) { 
+	return getEditPart(descriptor.getSource(), domain2NotationMap);
+}
+		/**
+ * @generated
+ */
+private org.eclipse.gef.EditPart getTargetEditPart(org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) { 
+	return getEditPart(descriptor.getDestination(), domain2NotationMap);
+}
+		/**
+ * @generated
+ */
+protected final org.eclipse.gef.EditPart getHintedEditPart(org.eclipse.emf.ecore.EObject domainModelElement, Domain2Notation domain2NotationMap, int hintVisualId) { 
+	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) domain2NotationMap.getHinted(domainModelElement, 											ciat.diagram.part.CiatVisualIDRegistry.getType(hintVisualId));
+	if (view != null) {
+		return (org.eclipse.gef.EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+	}
+	return null;
+}
+			    /**
+ * @generated
+ */
+	@SuppressWarnings("serial")
+	protected static class Domain2Notation extends java.util.HashMap<org.eclipse.emf.ecore.EObject, org.eclipse.gmf.runtime.notation.View> {
+	    /**
+ * @generated
+ */
+		public boolean containsDomainElement(org.eclipse.emf.ecore.EObject domainElement){
+			return this.containsKey(domainElement);
+		}
+		
+		/**
+ * @generated
+ */
+		public org.eclipse.gmf.runtime.notation.View getHinted(org.eclipse.emf.ecore.EObject domainEObject, String hint) {
+			return this.get(domainEObject);
+		}
+		
+		/**
+ * @generated
+ */
+		public void putView(org.eclipse.emf.ecore.EObject domainElement, org.eclipse.gmf.runtime.notation.View view) {
+						if (!containsKey(view.getElement()) || !isShortcut(view)) {
+				this.put(domainElement, view);
+			}
+		}
+		
+	}
+	}

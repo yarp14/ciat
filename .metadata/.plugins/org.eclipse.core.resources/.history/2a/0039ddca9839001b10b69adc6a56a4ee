@@ -1,0 +1,25 @@
+	/*
+ * 
+ */
+package ciat.diagram.edit.policies;
+
+/**
+ * @generated
+ */
+public class OrderIndependenceItemSemanticEditPolicy extends ciat.diagram.edit.policies.CiatBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public OrderIndependenceItemSemanticEditPolicy() {
+				super(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013);
+	}
+
+			/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest req) {
+		return getGEFWrapper(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(req));
+	}
+					
+	}

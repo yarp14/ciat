@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/org.chico.ciat/src" modelPluginID="org.chico.ciat"
+    modelName="Ciat" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>CIAT.emf</foreignModel>
+  <genPackages prefix="Ciat" disposableProviderFactory="true" ecorePackage="CIAT.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CIAT.ecore#//Visualizations">
+      <genEnumLiterals ecoreEnumLiteral="CIAT.ecore#//Visualizations/None"/>
+      <genEnumLiterals ecoreEnumLiteral="CIAT.ecore#//Visualizations/Exclusive"/>
+      <genEnumLiterals ecoreEnumLiteral="CIAT.ecore#//Visualizations/Individual"/>
+      <genEnumLiterals ecoreEnumLiteral="CIAT.ecore#//Visualizations/Collaborative"/>
+    </genEnums>
+    <genClasses ecoreClass="CIAT.ecore#//CIATDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CIATDiagram/itsSociograms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CIATDiagram/itsProcessDiagrams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CIATDiagram/itsDomainDiagrams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CIATDiagram/itsCttDiagrams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CIATDiagram/itsLinks"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="CIAT.ecore#//Link"/>
+    <genClasses ecoreClass="CIAT.ecore#//Sociogram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Sociogram/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//Sociogram/itsSociogramNodes"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//SociogramNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//SociogramNode/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//Rol">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//Rol/itsTeam"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//Rol/itsActor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//Rol/supertype"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//Rol/subtype"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//Actor">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//Actor/itsGroup"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//Actor/acts"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//SoftwareAgent"/>
+    <genClasses ecoreClass="CIAT.ecore#//Team">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//Team/contains"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//Group">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//Group/contains"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//SociogramLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//SociogramLink/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//SociogramLink/target"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//Inheritance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Inheritance/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//Acting">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Acting/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Acting/n"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Acting/m"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//Association">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Association/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Association/n"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Association/m"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//ProcessDiagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//ProcessDiagram/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//ProcessDiagram/processNodes"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//ProcessNode"/>
+    <genClasses ecoreClass="CIAT.ecore#//Init">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Init/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//End">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//End/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//SimpleTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//SimpleTask/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//SimpleTask/tools"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//IndividualTask">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//IndividualTask/taskRoles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//IndividualTask/taskObjects"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//CooperativeTask">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CooperativeTask/taskRoles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CooperativeTask/taskObjects"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//CollaborativeTask">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CollaborativeTask/taskRoles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CollaborativeTask/taskObjects"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//AbstractTask">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//AbstractTask/processNodes"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//Tool">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Tool/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//Object">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Object/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//Object/object"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Object/modifier"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//Object/modifiedBy"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//TemporalCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//TemporalCondition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//Notification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Notification/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Condition/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="CIAT.ecore#//ComplexLeftNode"/>
+    <genClasses image="false" ecoreClass="CIAT.ecore#//CooperativeComplexRightNode"/>
+    <genClasses ecoreClass="CIAT.ecore#//CooperativeComplex">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//CooperativeComplex/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CooperativeComplex/rolesAndObjects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CooperativeComplex/cooperativePDiagram"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CooperativeComplex/tools"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//CollaborativeComplexTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//CollaborativeComplexTask/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CollaborativeComplexTask/rolesAndObjects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CollaborativeComplexTask/sharedContext"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CollaborativeComplexTask/collaborativeCttDiagram"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CollaborativeComplexTask/tools"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//DomainDiagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//DomainDiagram/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//DomainDiagram/sharedContext"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//SharedObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//SharedObject/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//SharedObject/itsVisualization"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//SharedObject/incomings"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//SharedObject/outgoings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//SharedObject/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//SharedObject/operations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//SharedObject/vAreas"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//VisualizationArea">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//VisualizationArea/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//ExclusiveEditionArea"/>
+    <genClasses ecoreClass="CIAT.ecore#//CollaborativeArea"/>
+    <genClasses ecoreClass="CIAT.ecore#//IndividualArea"/>
+    <genClasses ecoreClass="CIAT.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Attribute/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Operation/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//SharedLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//SharedLink/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//SharedLink/target"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//ShAssociationLink"/>
+    <genClasses ecoreClass="CIAT.ecore#//ShGeneralizationLink"/>
+    <genClasses ecoreClass="CIAT.ecore#//ShAggregationLink"/>
+    <genClasses ecoreClass="CIAT.ecore#//CTTDiagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//CTTDiagram/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CIAT.ecore#//CTTDiagram/cttTasks"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//CTTTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//CTTTask/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//CTTTask/dependencies"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//ExclusiveEdition"/>
+    <genClasses ecoreClass="CIAT.ecore#//CollaborativeVisualization"/>
+    <genClasses ecoreClass="CIAT.ecore#//IndividualVisualization"/>
+    <genClasses ecoreClass="CIAT.ecore#//UserTask"/>
+    <genClasses ecoreClass="CIAT.ecore#//CTTAbstractTask"/>
+    <genClasses ecoreClass="CIAT.ecore#//InteractiveTask"/>
+    <genClasses ecoreClass="CIAT.ecore#//CTTCollaborativeTask"/>
+    <genClasses ecoreClass="CIAT.ecore#//ApplicationTask"/>
+    <genClasses image="false" ecoreClass="CIAT.ecore#//DependencyElement"/>
+    <genClasses ecoreClass="CIAT.ecore#//Dependency">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//Dependency/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CIAT.ecore#//Dependency/target"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//Aggregation"/>
+    <genClasses ecoreClass="CIAT.ecore#//Enabling">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Enabling/eLabel"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//Disabling">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//Disabling/dLabel"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//EnablingWithInformationPassing">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//EnablingWithInformationPassing/ewLabel"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//DisablingWithInformationPassing">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//DisablingWithInformationPassing/dwLabel"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//IndependentConcurrency">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//IndependentConcurrency/icLabel"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//OrderIndependence">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//OrderIndependence/oiLabel"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//SuspendResume">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//SuspendResume/srLabel"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//ConcurrencyWithInformationPassing">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//ConcurrencyWithInformationPassing/cLabel"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//DeterministicChoice">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//DeterministicChoice/dtLabel"/>
+    </genClasses>
+    <genClasses ecoreClass="CIAT.ecore#//UndeterministicChoice">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute CIAT.ecore#//UndeterministicChoice/ucLabel"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

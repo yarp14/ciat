@@ -1,0 +1,56 @@
+	/*
+ * 
+ */
+package ciat.diagram.navigator;
+
+	/**
+ * @generated
+ */
+public abstract class CiatAbstractNavigatorItem extends org.eclipse.core.runtime.PlatformObject {
+
+
+		/**
+ * @generated
+ */
+static {
+	final Class[] supportedTypes = new Class[] { org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor.class };
+	final org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor propertySheetPageContributor = new org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor() {
+		public String getContributorId() {
+			return "org.chico.ciat.diagram";  //$NON-NLS-1$
+		}
+	};
+	org.eclipse.core.runtime.Platform.getAdapterManager().registerAdapters(new org.eclipse.core.runtime.IAdapterFactory() {
+		
+		public Object getAdapter(Object adaptableObject, Class adapterType) {
+			if (adaptableObject instanceof ciat.diagram.navigator.CiatAbstractNavigatorItem && adapterType == org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor.class) {
+				return propertySheetPageContributor;				
+			}
+			return null;
+		}
+
+		public Class[] getAdapterList() {
+			return supportedTypes;
+		}
+	}, ciat.diagram.navigator.CiatAbstractNavigatorItem.class);
+}
+	
+		/**
+ * @generated
+ */
+private Object myParent;
+	
+		/**
+ * @generated
+ */
+protected CiatAbstractNavigatorItem(Object parent) {
+	myParent = parent;
+}
+	
+		/**
+ * @generated
+ */
+public Object getParent() {
+	return myParent;
+}
+
+	}

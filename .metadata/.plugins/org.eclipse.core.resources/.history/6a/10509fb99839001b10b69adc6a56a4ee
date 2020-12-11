@@ -1,0 +1,155 @@
+	/*
+ * 
+ */
+package ciat.diagram.edit.policies;
+
+/**
+ * @generated
+ */
+public class Rol3ItemSemanticEditPolicy extends ciat.diagram.edit.policies.CiatBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public Rol3ItemSemanticEditPolicy() {
+				super(ciat.diagram.providers.CiatElementTypes.Rol_3015);
+	}
+
+	
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest req) {
+	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
+	org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand cmd = new org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand(getEditingDomain(), null);
+	cmd.setTransactionNestingEnabled(false);
+		for (java.util.Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
+		org.eclipse.gmf.runtime.notation.Edge incomingLink = (org.eclipse.gmf.runtime.notation.Edge) it.next();
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.InheritanceEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.ActingEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(incomingLink) == ciat.diagram.edit.parts.AssociationEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(incomingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+	}
+	for (java.util.Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
+		org.eclipse.gmf.runtime.notation.Edge outgoingLink = (org.eclipse.gmf.runtime.notation.Edge) it.next();
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.InheritanceEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.ActingEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+		if (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(outgoingLink) == ciat.diagram.edit.parts.AssociationEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(outgoingLink.getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+	}
+	org.eclipse.emf.ecore.EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
+	if (annotation == null) {
+		// there are indirectly referenced children, need extra commands: false
+		addDestroyShortcutsCommand(cmd, view);
+		// delete host element
+		cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(req));
+	} else {
+		cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), view));
+	}
+	return getGEFWrapper(cmd.reduce());
+}
+					
+/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getCreateRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	org.eclipse.gef.commands.Command command = req.getTarget() == null ?
+			getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+	return command != null ? command : super.getCreateRelationshipCommand(req);
+}
+
+/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getStartCreateRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	if (ciat.diagram.providers.CiatElementTypes.Inheritance_4001 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.InheritanceCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.Acting_4002 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.ActingCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.Association_4003 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.AssociationCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+	return null;
+}
+
+/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getCompleteCreateRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	if (ciat.diagram.providers.CiatElementTypes.Inheritance_4001 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.InheritanceCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.Acting_4002 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.ActingCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+if (ciat.diagram.providers.CiatElementTypes.Association_4003 == req.getElementType()) {
+		return getGEFWrapper(new ciat.diagram.edit.commands.AssociationCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+	return null;
+}
+				
+/**
+ * Returns command to reorient EClass based link. New link target or source
+ * should be the domain model element associated with this node.
+ * 
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getReorientRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest req) {
+	switch (getVisualID(req)) {
+	case ciat.diagram.edit.parts.InheritanceEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.InheritanceReorientCommand(req));
+case ciat.diagram.edit.parts.ActingEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.ActingReorientCommand(req));
+case ciat.diagram.edit.parts.AssociationEditPart.VISUAL_ID:
+	return getGEFWrapper(new ciat.diagram.edit.commands.AssociationReorientCommand(req));
+	}
+	return super.getReorientRelationshipCommand(req);
+}
+		
+	}

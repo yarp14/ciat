@@ -1,0 +1,53 @@
+	/*
+ * 
+ */
+package ciat.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class ProcessDiagramProcessDiagramProcessNodesCompartmentItemSemanticEditPolicy extends ciat.diagram.edit.policies.CiatBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public ProcessDiagramProcessDiagramProcessNodesCompartmentItemSemanticEditPolicy() {
+				super(ciat.diagram.providers.CiatElementTypes.ProcessDiagram_2002);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (ciat.diagram.providers.CiatElementTypes.IndividualTask_3006 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.IndividualTaskCreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.CooperativeTaskCreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.CollaborativeTaskCreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.AbstractTask_3028 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.AbstractTaskCreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.Init_3038 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.Init2CreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.End_3039 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.End2CreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.TemporalCondition2CreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.Notification_3041 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.Notification2CreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.Condition_3042 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.Condition2CreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

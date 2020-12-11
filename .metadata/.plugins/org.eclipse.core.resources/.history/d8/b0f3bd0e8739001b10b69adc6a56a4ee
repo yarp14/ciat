@@ -1,0 +1,89 @@
+/**
+ */
+package ciat;
+
+import org.eclipse.emf.common.util.EList;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Cooperative Complex</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link ciat.CooperativeComplex#getName <em>Name</em>}</li>
+ *   <li>{@link ciat.CooperativeComplex#getRolesAndObjects <em>Roles And Objects</em>}</li>
+ *   <li>{@link ciat.CooperativeComplex#getCooperativePDiagram <em>Cooperative PDiagram</em>}</li>
+ *   <li>{@link ciat.CooperativeComplex#getTools <em>Tools</em>}</li>
+ * </ul>
+ *
+ * @see ciat.CiatPackage#getCooperativeComplex()
+ * @model annotation="gmf.node label='name' tool.name='Cooperative Complex' tool.small.bundle='org.chico.ciat.figures' tool.small.path='images/CooperativeInteractionTask.gif'"
+ * @generated
+ */
+public interface CooperativeComplex extends ProcessNode {
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * The default value is <code>"<...>"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see ciat.CiatPackage#getCooperativeComplex_Name()
+	 * @model default="&lt;...&gt;"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link ciat.CooperativeComplex#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Roles And Objects</b></em>' containment reference list.
+	 * The list contents are of type {@link ciat.ComplexLeftNode}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Roles And Objects</em>' containment reference list.
+	 * @see ciat.CiatPackage#getCooperativeComplex_RolesAndObjects()
+	 * @model containment="true"
+	 *        annotation="gmf.compartment layout='list' collapsible='true'"
+	 * @generated
+	 */
+	EList<ComplexLeftNode> getRolesAndObjects();
+
+	/**
+	 * Returns the value of the '<em><b>Cooperative PDiagram</b></em>' containment reference list.
+	 * The list contents are of type {@link ciat.CooperativeComplexRightNode}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cooperative PDiagram</em>' containment reference list.
+	 * @see ciat.CiatPackage#getCooperativeComplex_CooperativePDiagram()
+	 * @model containment="true"
+	 *        annotation="gmf.compartment layout='free' collapsible='true'"
+	 * @generated
+	 */
+	EList<CooperativeComplexRightNode> getCooperativePDiagram();
+
+	/**
+	 * Returns the value of the '<em><b>Tools</b></em>' containment reference list.
+	 * The list contents are of type {@link ciat.Tool}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tools</em>' containment reference list.
+	 * @see ciat.CiatPackage#getCooperativeComplex_Tools()
+	 * @model containment="true"
+	 *        annotation="gmf.affixed"
+	 * @generated
+	 */
+	EList<Tool> getTools();
+
+} // CooperativeComplex

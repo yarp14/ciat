@@ -1,0 +1,29 @@
+	/*
+ * 
+ */
+package ciat.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class CooperativeTaskCooperativeTaskTaskObjectsCompartmentItemSemanticEditPolicy extends ciat.diagram.edit.policies.CiatBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public CooperativeTaskCooperativeTaskTaskObjectsCompartmentItemSemanticEditPolicy() {
+				super(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (ciat.diagram.providers.CiatElementTypes.Object_3020 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.Object2CreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

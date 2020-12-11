@@ -1,0 +1,41 @@
+	/*
+ * 
+ */
+package ciat.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class IndividualTaskIndividualTaskTaskRolesCompartmentItemSemanticEditPolicy extends ciat.diagram.edit.policies.CiatBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public IndividualTaskIndividualTaskTaskRolesCompartmentItemSemanticEditPolicy() {
+				super(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (ciat.diagram.providers.CiatElementTypes.Rol_3007 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.Rol2CreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.Actor_3008 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.Actor2CreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.SoftwareAgent_3009 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.SoftwareAgent2CreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.Team_3010 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.Team2CreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.Group_3011 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.Group2CreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

@@ -1,0 +1,30 @@
+/*
+ * 
+ */
+package ciat.diagram.preferences;
+
+/**
+ * @generated
+ */
+public class DiagramPreferenceInitializer extends org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer {
+
+	/**
+ * @generated
+ */
+	public void initializeDefaultPreferences() {
+		org.eclipse.jface.preference.IPreferenceStore store = getPreferenceStore();
+		ciat.diagram.preferences.DiagramGeneralPreferencePage.initDefaults(store);
+ciat.diagram.preferences.DiagramAppearancePreferencePage.initDefaults(store);
+ciat.diagram.preferences.DiagramConnectionsPreferencePage.initDefaults(store);
+ciat.diagram.preferences.DiagramPrintingPreferencePage.initDefaults(store);
+ciat.diagram.preferences.DiagramRulersAndGridPreferencePage.initDefaults(store);
+
+	}
+
+	/**
+ * @generated
+ */
+	protected org.eclipse.jface.preference.IPreferenceStore getPreferenceStore() {
+		return ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().getPreferenceStore();
+	}
+} 

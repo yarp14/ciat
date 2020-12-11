@@ -1,0 +1,699 @@
+
+/*
+ * 
+ */
+package ciat.diagram.part;
+
+/**
+ * @generated
+ */
+public class CiatPaletteFactory {
+
+	/**
+ * @generated
+ */
+	public void fillPalette(org.eclipse.gef.palette.PaletteRoot paletteRoot) {
+		paletteRoot.add(createSociogram1Group());
+paletteRoot.add(createProcessDiagram2Group());
+paletteRoot.add(createDomainDiagram3Group());
+paletteRoot.add(createCTTDiagram4Group());
+paletteRoot.add(createDependencies5Group());
+	}
+
+	/**
+ * Creates "Sociogram" palette tool group
+ * @generated
+ */
+	private org.eclipse.gef.palette.PaletteContainer createSociogram1Group() {
+				org.eclipse.gef.palette.PaletteDrawer paletteContainer = new org.eclipse.gef.palette.PaletteDrawer(ciat.diagram.part.Messages.Sociogram1Group_title);
+				 paletteContainer.setId("createSociogram1Group"); //$NON-NLS-1$
+								paletteContainer.add(createSociogram1CreationTool());
+paletteContainer.add(new org.eclipse.gef.palette.PaletteSeparator());
+paletteContainer.add(createActor3CreationTool());
+paletteContainer.add(createRol4CreationTool());
+paletteContainer.add(createSoftwareAgent5CreationTool());
+paletteContainer.add(createGroup6CreationTool());
+paletteContainer.add(createTeam7CreationTool());
+paletteContainer.add(new org.eclipse.gef.palette.PaletteSeparator());
+paletteContainer.add(createActing9CreationTool());
+paletteContainer.add(createInheritance10CreationTool());
+paletteContainer.add(createAssociation11CreationTool());
+		return paletteContainer;
+	}
+	/**
+ * Creates "Process Diagram" palette tool group
+ * @generated
+ */
+	private org.eclipse.gef.palette.PaletteContainer createProcessDiagram2Group() {
+				org.eclipse.gef.palette.PaletteDrawer paletteContainer = new org.eclipse.gef.palette.PaletteDrawer(ciat.diagram.part.Messages.ProcessDiagram2Group_title);
+				 paletteContainer.setId("createProcessDiagram2Group"); //$NON-NLS-1$
+								paletteContainer.add(createProcessDiagram1CreationTool());
+paletteContainer.add(new org.eclipse.gef.palette.PaletteSeparator());
+paletteContainer.add(createInitial3CreationTool());
+paletteContainer.add(createFinal4CreationTool());
+paletteContainer.add(new org.eclipse.gef.palette.PaletteSeparator());
+paletteContainer.add(createIndividual6CreationTool());
+paletteContainer.add(createCooperative7CreationTool());
+paletteContainer.add(createCollaborative8CreationTool());
+paletteContainer.add(createAbstract9CreationTool());
+paletteContainer.add(new org.eclipse.gef.palette.PaletteSeparator());
+paletteContainer.add(createObject11CreationTool());
+paletteContainer.add(createTool12CreationTool());
+paletteContainer.add(createTemporalCondition13CreationTool());
+paletteContainer.add(createNotification14CreationTool());
+paletteContainer.add(createCondition15CreationTool());
+		return paletteContainer;
+	}
+	/**
+ * Creates "Domain Diagram" palette tool group
+ * @generated
+ */
+	private org.eclipse.gef.palette.PaletteContainer createDomainDiagram3Group() {
+				org.eclipse.gef.palette.PaletteDrawer paletteContainer = new org.eclipse.gef.palette.PaletteDrawer(ciat.diagram.part.Messages.DomainDiagram3Group_title);
+				 paletteContainer.setId("createDomainDiagram3Group"); //$NON-NLS-1$
+								paletteContainer.add(createDomainDiagram1CreationTool());
+paletteContainer.add(new org.eclipse.gef.palette.PaletteSeparator());
+paletteContainer.add(createClass3CreationTool());
+paletteContainer.add(createAttribute4CreationTool());
+paletteContainer.add(createOperation5CreationTool());
+paletteContainer.add(new org.eclipse.gef.palette.PaletteSeparator());
+paletteContainer.add(createIndividualArea7CreationTool());
+paletteContainer.add(createExclusiveArea8CreationTool());
+paletteContainer.add(createCollaborativeArea9CreationTool());
+paletteContainer.add(new org.eclipse.gef.palette.PaletteSeparator());
+paletteContainer.add(createAsociation11CreationTool());
+paletteContainer.add(createGeneralization12CreationTool());
+paletteContainer.add(createAggregation13CreationTool());
+		return paletteContainer;
+	}
+	/**
+ * Creates "CTT Diagram" palette tool group
+ * @generated
+ */
+	private org.eclipse.gef.palette.PaletteContainer createCTTDiagram4Group() {
+				org.eclipse.gef.palette.PaletteDrawer paletteContainer = new org.eclipse.gef.palette.PaletteDrawer(ciat.diagram.part.Messages.CTTDiagram4Group_title);
+				 paletteContainer.setId("createCTTDiagram4Group"); //$NON-NLS-1$
+								paletteContainer.add(createCTTDiagram1CreationTool());
+paletteContainer.add(new org.eclipse.gef.palette.PaletteSeparator());
+paletteContainer.add(createAbstractTask3CreationTool());
+paletteContainer.add(createApplicationTask4CreationTool());
+paletteContainer.add(createCollaborativeTask5CreationTool());
+paletteContainer.add(createInteractiveTask6CreationTool());
+paletteContainer.add(createUserTask7CreationTool());
+paletteContainer.add(new org.eclipse.gef.palette.PaletteSeparator());
+paletteContainer.add(createExclusiveEdition9CreationTool());
+paletteContainer.add(createCollaborativeVisualization10CreationTool());
+paletteContainer.add(createIndividualVisualization11CreationTool());
+		return paletteContainer;
+	}
+	/**
+ * Creates "Dependencies" palette tool group
+ * @generated
+ */
+	private org.eclipse.gef.palette.PaletteContainer createDependencies5Group() {
+				org.eclipse.gef.palette.PaletteDrawer paletteContainer = new org.eclipse.gef.palette.PaletteDrawer(ciat.diagram.part.Messages.Dependencies5Group_title);
+				 paletteContainer.setId("createDependencies5Group"); //$NON-NLS-1$
+								paletteContainer.add(createAggregation1CreationTool());
+paletteContainer.add(createConcurrencyWithInformationPassing2CreationTool());
+paletteContainer.add(createDeterministicChoice3CreationTool());
+paletteContainer.add(createDisabling4CreationTool());
+paletteContainer.add(createDisablingWithInformationPassing5CreationTool());
+paletteContainer.add(createEnabling6CreationTool());
+paletteContainer.add(createEnablingWithInformationPassing7CreationTool());
+paletteContainer.add(createIndependentConcurrency8CreationTool());
+paletteContainer.add(createOrderIndependence9CreationTool());
+paletteContainer.add(createSuspendResume10CreationTool());
+paletteContainer.add(createUndeterministicChoice11CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createSociogram1CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Sociogram1CreationTool_title, ciat.diagram.part.Messages.Sociogram1CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.Sociogram_2001));
+				 entry.setId("createSociogram1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Sociogram.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createActor3CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+types.add(ciat.diagram.providers.CiatElementTypes.Actor_3002);
+types.add(ciat.diagram.providers.CiatElementTypes.Actor_3008);
+types.add(ciat.diagram.providers.CiatElementTypes.Actor_3016);
+types.add(ciat.diagram.providers.CiatElementTypes.Actor_3023);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Actor3CreationTool_title, ciat.diagram.part.Messages.Actor3CreationTool_desc, types);
+				 entry.setId("createActor3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Actor.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createRol4CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+types.add(ciat.diagram.providers.CiatElementTypes.Rol_3001);
+types.add(ciat.diagram.providers.CiatElementTypes.Rol_3007);
+types.add(ciat.diagram.providers.CiatElementTypes.Rol_3015);
+types.add(ciat.diagram.providers.CiatElementTypes.Rol_3022);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Rol4CreationTool_title, ciat.diagram.part.Messages.Rol4CreationTool_desc, types);
+				 entry.setId("createRol4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Rol.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createSoftwareAgent5CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+types.add(ciat.diagram.providers.CiatElementTypes.SoftwareAgent_3003);
+types.add(ciat.diagram.providers.CiatElementTypes.SoftwareAgent_3009);
+types.add(ciat.diagram.providers.CiatElementTypes.SoftwareAgent_3017);
+types.add(ciat.diagram.providers.CiatElementTypes.SoftwareAgent_3024);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.SoftwareAgent5CreationTool_title, ciat.diagram.part.Messages.SoftwareAgent5CreationTool_desc, types);
+				 entry.setId("createSoftwareAgent5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/SoftwareAgent.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createGroup6CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+types.add(ciat.diagram.providers.CiatElementTypes.Group_3005);
+types.add(ciat.diagram.providers.CiatElementTypes.Group_3011);
+types.add(ciat.diagram.providers.CiatElementTypes.Group_3019);
+types.add(ciat.diagram.providers.CiatElementTypes.Group_3026);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Group6CreationTool_title, ciat.diagram.part.Messages.Group6CreationTool_desc, types);
+				 entry.setId("createGroup6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Group.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createTeam7CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+types.add(ciat.diagram.providers.CiatElementTypes.Team_3004);
+types.add(ciat.diagram.providers.CiatElementTypes.Team_3010);
+types.add(ciat.diagram.providers.CiatElementTypes.Team_3018);
+types.add(ciat.diagram.providers.CiatElementTypes.Team_3025);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Team7CreationTool_title, ciat.diagram.part.Messages.Team7CreationTool_desc, types);
+				 entry.setId("createTeam7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Team.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createActing9CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.Acting9CreationTool_title, ciat.diagram.part.Messages.Acting9CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.Acting_4002));
+				 entry.setId("createActing9CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Acting.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createInheritance10CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.Inheritance10CreationTool_title, ciat.diagram.part.Messages.Inheritance10CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.Inheritance_4001));
+				 entry.setId("createInheritance10CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Inheritance.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createAssociation11CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.Association11CreationTool_title, ciat.diagram.part.Messages.Association11CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.Association_4003));
+				 entry.setId("createAssociation11CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Association.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createProcessDiagram1CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.ProcessDiagram1CreationTool_title, ciat.diagram.part.Messages.ProcessDiagram1CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.ProcessDiagram_2002));
+				 entry.setId("createProcessDiagram1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/ProcessDiagram.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createInitial3CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(2);
+types.add(ciat.diagram.providers.CiatElementTypes.Init_3033);
+types.add(ciat.diagram.providers.CiatElementTypes.Init_3038);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Initial3CreationTool_title, ciat.diagram.part.Messages.Initial3CreationTool_desc, types);
+				 entry.setId("createInitial3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Initial.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createFinal4CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(2);
+types.add(ciat.diagram.providers.CiatElementTypes.End_3034);
+types.add(ciat.diagram.providers.CiatElementTypes.End_3039);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Final4CreationTool_title, ciat.diagram.part.Messages.Final4CreationTool_desc, types);
+				 entry.setId("createFinal4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Final.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createIndividual6CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(2);
+types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3006);
+types.add(ciat.diagram.providers.CiatElementTypes.IndividualTask_3029);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Individual6CreationTool_title, ciat.diagram.part.Messages.Individual6CreationTool_desc, types);
+				 entry.setId("createIndividual6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/IndividualInteractionTask.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createCooperative7CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(2);
+types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3014);
+types.add(ciat.diagram.providers.CiatElementTypes.CooperativeTask_3030);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Cooperative7CreationTool_title, ciat.diagram.part.Messages.Cooperative7CreationTool_desc, types);
+				 entry.setId("createCooperative7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/CooperativeInteractionTask.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createCollaborative8CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(2);
+types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3021);
+types.add(ciat.diagram.providers.CiatElementTypes.CollaborativeTask_3031);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Collaborative8CreationTool_title, ciat.diagram.part.Messages.Collaborative8CreationTool_desc, types);
+				 entry.setId("createCollaborative8CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/CollaborativeInteractionTask.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createAbstract9CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(2);
+types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3028);
+types.add(ciat.diagram.providers.CiatElementTypes.AbstractTask_3032);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Abstract9CreationTool_title, ciat.diagram.part.Messages.Abstract9CreationTool_desc, types);
+				 entry.setId("createAbstract9CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Abstract.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createObject11CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(3);
+types.add(ciat.diagram.providers.CiatElementTypes.Object_3013);
+types.add(ciat.diagram.providers.CiatElementTypes.Object_3020);
+types.add(ciat.diagram.providers.CiatElementTypes.Object_3027);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Object11CreationTool_title, ciat.diagram.part.Messages.Object11CreationTool_desc, types);
+				 entry.setId("createObject11CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Object.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createTool12CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Tool12CreationTool_title, ciat.diagram.part.Messages.Tool12CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.Tool_3012));
+				 entry.setId("createTool12CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Tool.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createTemporalCondition13CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(2);
+types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3035);
+types.add(ciat.diagram.providers.CiatElementTypes.TemporalCondition_3040);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.TemporalCondition13CreationTool_title, ciat.diagram.part.Messages.TemporalCondition13CreationTool_desc, types);
+				 entry.setId("createTemporalCondition13CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/TemporalCondition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createNotification14CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(2);
+types.add(ciat.diagram.providers.CiatElementTypes.Notification_3036);
+types.add(ciat.diagram.providers.CiatElementTypes.Notification_3041);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Notification14CreationTool_title, ciat.diagram.part.Messages.Notification14CreationTool_desc, types);
+				 entry.setId("createNotification14CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Notification.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createCondition15CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(2);
+types.add(ciat.diagram.providers.CiatElementTypes.Condition_3037);
+types.add(ciat.diagram.providers.CiatElementTypes.Condition_3042);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Condition15CreationTool_title, ciat.diagram.part.Messages.Condition15CreationTool_desc, types);
+				 entry.setId("createCondition15CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Condition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createDomainDiagram1CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.DomainDiagram1CreationTool_title, ciat.diagram.part.Messages.DomainDiagram1CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.DomainDiagram_2003));
+				 entry.setId("createDomainDiagram1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/DomainDiagram.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createClass3CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Class3CreationTool_title, ciat.diagram.part.Messages.Class3CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.SharedObject_3043));
+				 entry.setId("createClass3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Object.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createAttribute4CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Attribute4CreationTool_title, ciat.diagram.part.Messages.Attribute4CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.Attribute_3047));
+				 entry.setId("createAttribute4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Attribute.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createOperation5CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.Operation5CreationTool_title, ciat.diagram.part.Messages.Operation5CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.Operation_3048));
+				 entry.setId("createOperation5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Operations.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createIndividualArea7CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.IndividualArea7CreationTool_title, ciat.diagram.part.Messages.IndividualArea7CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.IndividualArea_3046));
+				 entry.setId("createIndividualArea7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/IndividualVisualization.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createExclusiveArea8CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.ExclusiveArea8CreationTool_title, ciat.diagram.part.Messages.ExclusiveArea8CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.ExclusiveEditionArea_3044));
+				 entry.setId("createExclusiveArea8CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/ExclusiveEdition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createCollaborativeArea9CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.CollaborativeArea9CreationTool_title, ciat.diagram.part.Messages.CollaborativeArea9CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.CollaborativeArea_3045));
+				 entry.setId("createCollaborativeArea9CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/CollaborativeVisualization.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createAsociation11CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.Asociation11CreationTool_title, ciat.diagram.part.Messages.Asociation11CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.ShAssociationLink_4004));
+				 entry.setId("createAsociation11CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Association.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createGeneralization12CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.Generalization12CreationTool_title, ciat.diagram.part.Messages.Generalization12CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.ShGeneralizationLink_4005));
+				 entry.setId("createGeneralization12CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Generalization.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createAggregation13CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.Aggregation13CreationTool_title, ciat.diagram.part.Messages.Aggregation13CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.ShAggregationLink_4006));
+				 entry.setId("createAggregation13CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/Aggregation.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createCTTDiagram1CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.CTTDiagram1CreationTool_title, ciat.diagram.part.Messages.CTTDiagram1CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.CTTDiagram_2004));
+				 entry.setId("createCTTDiagram1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/CTTDiagram.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createAbstractTask3CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.AbstractTask3CreationTool_title, ciat.diagram.part.Messages.AbstractTask3CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053));
+				 entry.setId("createAbstractTask3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/AbstractTask.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createApplicationTask4CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.ApplicationTask4CreationTool_title, ciat.diagram.part.Messages.ApplicationTask4CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056));
+				 entry.setId("createApplicationTask4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/ApplicationTask.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createCollaborativeTask5CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.CollaborativeTask5CreationTool_title, ciat.diagram.part.Messages.CollaborativeTask5CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055));
+				 entry.setId("createCollaborativeTask5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/CollaborativeTask.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createInteractiveTask6CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.InteractiveTask6CreationTool_title, ciat.diagram.part.Messages.InteractiveTask6CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054));
+				 entry.setId("createInteractiveTask6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/InteractionTask.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createUserTask7CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.UserTask7CreationTool_title, ciat.diagram.part.Messages.UserTask7CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.UserTask_3052));
+				 entry.setId("createUserTask7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/UserTask.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createExclusiveEdition9CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.ExclusiveEdition9CreationTool_title, ciat.diagram.part.Messages.ExclusiveEdition9CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049));
+				 entry.setId("createExclusiveEdition9CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/ExclusiveEdition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createCollaborativeVisualization10CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.CollaborativeVisualization10CreationTool_title, ciat.diagram.part.Messages.CollaborativeVisualization10CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050));
+				 entry.setId("createCollaborativeVisualization10CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/CollaborativeVisualization.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createIndividualVisualization11CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(ciat.diagram.part.Messages.IndividualVisualization11CreationTool_title, ciat.diagram.part.Messages.IndividualVisualization11CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051));
+				 entry.setId("createIndividualVisualization11CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/IndividualVisualization.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createAggregation1CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.Aggregation1CreationTool_title, ciat.diagram.part.Messages.Aggregation1CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.Aggregation_4007));
+				 entry.setId("createAggregation1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/AggregationTransition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createConcurrencyWithInformationPassing2CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.ConcurrencyWithInformationPassing2CreationTool_title, ciat.diagram.part.Messages.ConcurrencyWithInformationPassing2CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.ConcurrencyWithInformationPassing_4015));
+				 entry.setId("createConcurrencyWithInformationPassing2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/ConcurrencyWithInformationPassingTransition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createDeterministicChoice3CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.DeterministicChoice3CreationTool_title, ciat.diagram.part.Messages.DeterministicChoice3CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.DeterministicChoice_4016));
+				 entry.setId("createDeterministicChoice3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/DeterministicChoiceTransition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createDisabling4CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.Disabling4CreationTool_title, ciat.diagram.part.Messages.Disabling4CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.Disabling_4009));
+				 entry.setId("createDisabling4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/DisablingTransition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createDisablingWithInformationPassing5CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.DisablingWithInformationPassing5CreationTool_title, ciat.diagram.part.Messages.DisablingWithInformationPassing5CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.DisablingWithInformationPassing_4011));
+				 entry.setId("createDisablingWithInformationPassing5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/DisablingWithInformationPassingTransition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createEnabling6CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.Enabling6CreationTool_title, ciat.diagram.part.Messages.Enabling6CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.Enabling_4008));
+				 entry.setId("createEnabling6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/EnablingTransition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createEnablingWithInformationPassing7CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.EnablingWithInformationPassing7CreationTool_title, ciat.diagram.part.Messages.EnablingWithInformationPassing7CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.EnablingWithInformationPassing_4010));
+				 entry.setId("createEnablingWithInformationPassing7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/EnablingWithInformationPassingTransition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createIndependentConcurrency8CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.IndependentConcurrency8CreationTool_title, ciat.diagram.part.Messages.IndependentConcurrency8CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.IndependentConcurrency_4012));
+				 entry.setId("createIndependentConcurrency8CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/IndependentConcurrencyTransition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createOrderIndependence9CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.OrderIndependence9CreationTool_title, ciat.diagram.part.Messages.OrderIndependence9CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.OrderIndependence_4013));
+				 entry.setId("createOrderIndependence9CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/OrderIndependenceTransition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createSuspendResume10CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.SuspendResume10CreationTool_title, ciat.diagram.part.Messages.SuspendResume10CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.SuspendResume_4014));
+				 entry.setId("createSuspendResume10CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/SuspendResumeTransition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createUndeterministicChoice11CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(ciat.diagram.part.Messages.UndeterministicChoice11CreationTool_title, ciat.diagram.part.Messages.UndeterministicChoice11CreationTool_desc, java.util.Collections.singletonList(ciat.diagram.providers.CiatElementTypes.UndeterministicChoice_4017));
+				 entry.setId("createUndeterministicChoice11CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ciat.diagram.part.CiatDiagramEditorPlugin.findImageDescriptor("/org.chico.ciat.figures/images/UndeterministicChoiceTransition.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+
+
+		
+}

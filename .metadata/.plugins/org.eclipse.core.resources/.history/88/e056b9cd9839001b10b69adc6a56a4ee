@@ -1,0 +1,1698 @@
+/*
+ * 
+ */
+package ciat.diagram.providers;
+
+/**
+ * @generated
+ */
+public class CiatParserProvider extends org.eclipse.gmf.runtime.common.core.service.AbstractProvider implements org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider {
+	
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser sociogramName_5006Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getSociogramName_5006Parser() {
+		if (sociogramName_5006Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogram_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								sociogramName_5006Parser = parser;
+		}
+		return sociogramName_5006Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser processDiagramName_5044Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getProcessDiagramName_5044Parser() {
+		if (processDiagramName_5044Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getProcessDiagram_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								processDiagramName_5044Parser = parser;
+		}
+		return processDiagramName_5044Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser domainDiagramName_5051Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getDomainDiagramName_5051Parser() {
+		if (domainDiagramName_5051Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getDomainDiagram_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								domainDiagramName_5051Parser = parser;
+		}
+		return domainDiagramName_5051Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser cTTDiagramName_5060Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getCTTDiagramName_5060Parser() {
+		if (cTTDiagramName_5060Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getCTTDiagram_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								cTTDiagramName_5060Parser = parser;
+		}
+		return cTTDiagramName_5060Parser;
+	}
+
+
+	
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser rolName_5001Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getRolName_5001Parser() {
+		if (rolName_5001Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								rolName_5001Parser = parser;
+		}
+		return rolName_5001Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser actorName_5002Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getActorName_5002Parser() {
+		if (actorName_5002Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								actorName_5002Parser = parser;
+		}
+		return actorName_5002Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser softwareAgentName_5003Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getSoftwareAgentName_5003Parser() {
+		if (softwareAgentName_5003Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								softwareAgentName_5003Parser = parser;
+		}
+		return softwareAgentName_5003Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser teamName_5004Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getTeamName_5004Parser() {
+		if (teamName_5004Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								teamName_5004Parser = parser;
+		}
+		return teamName_5004Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser groupName_5005Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getGroupName_5005Parser() {
+		if (groupName_5005Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								groupName_5005Parser = parser;
+		}
+		return groupName_5005Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser individualTaskName_5014Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getIndividualTaskName_5014Parser() {
+		if (individualTaskName_5014Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSimpleTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								individualTaskName_5014Parser = parser;
+		}
+		return individualTaskName_5014Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser rolName_5007Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getRolName_5007Parser() {
+		if (rolName_5007Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								rolName_5007Parser = parser;
+		}
+		return rolName_5007Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser actorName_5008Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getActorName_5008Parser() {
+		if (actorName_5008Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								actorName_5008Parser = parser;
+		}
+		return actorName_5008Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser softwareAgentName_5009Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getSoftwareAgentName_5009Parser() {
+		if (softwareAgentName_5009Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								softwareAgentName_5009Parser = parser;
+		}
+		return softwareAgentName_5009Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser teamName_5010Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getTeamName_5010Parser() {
+		if (teamName_5010Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								teamName_5010Parser = parser;
+		}
+		return teamName_5010Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser groupName_5011Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getGroupName_5011Parser() {
+		if (groupName_5011Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								groupName_5011Parser = parser;
+		}
+		return groupName_5011Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser toolName_5012Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getToolName_5012Parser() {
+		if (toolName_5012Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getTool_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								toolName_5012Parser = parser;
+		}
+		return toolName_5012Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser objectName_5013Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getObjectName_5013Parser() {
+		if (objectName_5013Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getObject_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								objectName_5013Parser = parser;
+		}
+		return objectName_5013Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser cooperativeTaskName_5021Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getCooperativeTaskName_5021Parser() {
+		if (cooperativeTaskName_5021Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSimpleTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								cooperativeTaskName_5021Parser = parser;
+		}
+		return cooperativeTaskName_5021Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser rolName_5015Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getRolName_5015Parser() {
+		if (rolName_5015Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								rolName_5015Parser = parser;
+		}
+		return rolName_5015Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser actorName_5016Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getActorName_5016Parser() {
+		if (actorName_5016Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								actorName_5016Parser = parser;
+		}
+		return actorName_5016Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser softwareAgentName_5017Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getSoftwareAgentName_5017Parser() {
+		if (softwareAgentName_5017Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								softwareAgentName_5017Parser = parser;
+		}
+		return softwareAgentName_5017Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser teamName_5018Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getTeamName_5018Parser() {
+		if (teamName_5018Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								teamName_5018Parser = parser;
+		}
+		return teamName_5018Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser groupName_5019Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getGroupName_5019Parser() {
+		if (groupName_5019Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								groupName_5019Parser = parser;
+		}
+		return groupName_5019Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser objectName_5020Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getObjectName_5020Parser() {
+		if (objectName_5020Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getObject_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								objectName_5020Parser = parser;
+		}
+		return objectName_5020Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser collaborativeTaskName_5028Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getCollaborativeTaskName_5028Parser() {
+		if (collaborativeTaskName_5028Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSimpleTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								collaborativeTaskName_5028Parser = parser;
+		}
+		return collaborativeTaskName_5028Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser rolName_5022Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getRolName_5022Parser() {
+		if (rolName_5022Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								rolName_5022Parser = parser;
+		}
+		return rolName_5022Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser actorName_5023Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getActorName_5023Parser() {
+		if (actorName_5023Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								actorName_5023Parser = parser;
+		}
+		return actorName_5023Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser softwareAgentName_5024Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getSoftwareAgentName_5024Parser() {
+		if (softwareAgentName_5024Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								softwareAgentName_5024Parser = parser;
+		}
+		return softwareAgentName_5024Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser teamName_5025Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getTeamName_5025Parser() {
+		if (teamName_5025Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								teamName_5025Parser = parser;
+		}
+		return teamName_5025Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser groupName_5026Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getGroupName_5026Parser() {
+		if (groupName_5026Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSociogramNode_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								groupName_5026Parser = parser;
+		}
+		return groupName_5026Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser objectName_5027Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getObjectName_5027Parser() {
+		if (objectName_5027Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getObject_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								objectName_5027Parser = parser;
+		}
+		return objectName_5027Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser abstractTaskName_5038Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getAbstractTaskName_5038Parser() {
+		if (abstractTaskName_5038Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSimpleTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								abstractTaskName_5038Parser = parser;
+		}
+		return abstractTaskName_5038Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser individualTaskName_5029Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getIndividualTaskName_5029Parser() {
+		if (individualTaskName_5029Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSimpleTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								individualTaskName_5029Parser = parser;
+		}
+		return individualTaskName_5029Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser cooperativeTaskName_5030Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getCooperativeTaskName_5030Parser() {
+		if (cooperativeTaskName_5030Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSimpleTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								cooperativeTaskName_5030Parser = parser;
+		}
+		return cooperativeTaskName_5030Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser collaborativeTaskName_5031Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getCollaborativeTaskName_5031Parser() {
+		if (collaborativeTaskName_5031Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSimpleTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								collaborativeTaskName_5031Parser = parser;
+		}
+		return collaborativeTaskName_5031Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser abstractTaskName_5037Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getAbstractTaskName_5037Parser() {
+		if (abstractTaskName_5037Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSimpleTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								abstractTaskName_5037Parser = parser;
+		}
+		return abstractTaskName_5037Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser initName_5032Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getInitName_5032Parser() {
+		if (initName_5032Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getInit_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								initName_5032Parser = parser;
+		}
+		return initName_5032Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser endName_5033Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getEndName_5033Parser() {
+		if (endName_5033Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getEnd_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								endName_5033Parser = parser;
+		}
+		return endName_5033Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser temporalConditionName_5034Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getTemporalConditionName_5034Parser() {
+		if (temporalConditionName_5034Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getTemporalCondition_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								temporalConditionName_5034Parser = parser;
+		}
+		return temporalConditionName_5034Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser notificationName_5035Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getNotificationName_5035Parser() {
+		if (notificationName_5035Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getNotification_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								notificationName_5035Parser = parser;
+		}
+		return notificationName_5035Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser conditionName_5036Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getConditionName_5036Parser() {
+		if (conditionName_5036Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getCondition_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								conditionName_5036Parser = parser;
+		}
+		return conditionName_5036Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser initName_5039Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getInitName_5039Parser() {
+		if (initName_5039Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getInit_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								initName_5039Parser = parser;
+		}
+		return initName_5039Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser endName_5040Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getEndName_5040Parser() {
+		if (endName_5040Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getEnd_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								endName_5040Parser = parser;
+		}
+		return endName_5040Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser temporalConditionName_5041Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getTemporalConditionName_5041Parser() {
+		if (temporalConditionName_5041Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getTemporalCondition_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								temporalConditionName_5041Parser = parser;
+		}
+		return temporalConditionName_5041Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser notificationName_5042Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getNotificationName_5042Parser() {
+		if (notificationName_5042Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getNotification_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								notificationName_5042Parser = parser;
+		}
+		return notificationName_5042Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser conditionName_5043Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getConditionName_5043Parser() {
+		if (conditionName_5043Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getCondition_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								conditionName_5043Parser = parser;
+		}
+		return conditionName_5043Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser sharedObjectName_5050Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getSharedObjectName_5050Parser() {
+		if (sharedObjectName_5050Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSharedObject_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								sharedObjectName_5050Parser = parser;
+		}
+		return sharedObjectName_5050Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser exclusiveEditionAreaName_5045Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getExclusiveEditionAreaName_5045Parser() {
+		if (exclusiveEditionAreaName_5045Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getVisualizationArea_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								exclusiveEditionAreaName_5045Parser = parser;
+		}
+		return exclusiveEditionAreaName_5045Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser collaborativeAreaName_5046Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getCollaborativeAreaName_5046Parser() {
+		if (collaborativeAreaName_5046Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getVisualizationArea_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								collaborativeAreaName_5046Parser = parser;
+		}
+		return collaborativeAreaName_5046Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser individualAreaName_5047Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getIndividualAreaName_5047Parser() {
+		if (individualAreaName_5047Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getVisualizationArea_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								individualAreaName_5047Parser = parser;
+		}
+		return individualAreaName_5047Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser attributeName_5048Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getAttributeName_5048Parser() {
+		if (attributeName_5048Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getAttribute_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								attributeName_5048Parser = parser;
+		}
+		return attributeName_5048Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser operationName_5049Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getOperationName_5049Parser() {
+		if (operationName_5049Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getOperation_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								operationName_5049Parser = parser;
+		}
+		return operationName_5049Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser exclusiveEditionName_5052Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getExclusiveEditionName_5052Parser() {
+		if (exclusiveEditionName_5052Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getCTTTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								exclusiveEditionName_5052Parser = parser;
+		}
+		return exclusiveEditionName_5052Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser collaborativeVisualizationName_5053Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getCollaborativeVisualizationName_5053Parser() {
+		if (collaborativeVisualizationName_5053Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getCTTTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								collaborativeVisualizationName_5053Parser = parser;
+		}
+		return collaborativeVisualizationName_5053Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser individualVisualizationName_5054Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getIndividualVisualizationName_5054Parser() {
+		if (individualVisualizationName_5054Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getCTTTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								individualVisualizationName_5054Parser = parser;
+		}
+		return individualVisualizationName_5054Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser userTaskName_5055Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getUserTaskName_5055Parser() {
+		if (userTaskName_5055Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getCTTTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								userTaskName_5055Parser = parser;
+		}
+		return userTaskName_5055Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser cTTAbstractTaskName_5056Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getCTTAbstractTaskName_5056Parser() {
+		if (cTTAbstractTaskName_5056Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getCTTTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								cTTAbstractTaskName_5056Parser = parser;
+		}
+		return cTTAbstractTaskName_5056Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser interactiveTaskName_5057Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getInteractiveTaskName_5057Parser() {
+		if (interactiveTaskName_5057Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getCTTTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								interactiveTaskName_5057Parser = parser;
+		}
+		return interactiveTaskName_5057Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser cTTCollaborativeTaskName_5058Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getCTTCollaborativeTaskName_5058Parser() {
+		if (cTTCollaborativeTaskName_5058Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getCTTTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								cTTCollaborativeTaskName_5058Parser = parser;
+		}
+		return cTTCollaborativeTaskName_5058Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser applicationTaskName_5059Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getApplicationTaskName_5059Parser() {
+		if (applicationTaskName_5059Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getCTTTask_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								applicationTaskName_5059Parser = parser;
+		}
+		return applicationTaskName_5059Parser;
+	}
+
+
+	
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser inheritanceCondition_6001Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getInheritanceCondition_6001Parser() {
+		if (inheritanceCondition_6001Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getInheritance_Condition()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								inheritanceCondition_6001Parser = parser;
+		}
+		return inheritanceCondition_6001Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser actingName_6002Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getActingName_6002Parser() {
+		if (actingName_6002Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getActing_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								actingName_6002Parser = parser;
+		}
+		return actingName_6002Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser associationName_6003Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getAssociationName_6003Parser() {
+		if (associationName_6003Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getAssociation_Name()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								associationName_6003Parser = parser;
+		}
+		return associationName_6003Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser enablingELabel_6004Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getEnablingELabel_6004Parser() {
+		if (enablingELabel_6004Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getEnabling_ELabel()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								enablingELabel_6004Parser = parser;
+		}
+		return enablingELabel_6004Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser disablingDLabel_6005Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getDisablingDLabel_6005Parser() {
+		if (disablingDLabel_6005Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getDisabling_DLabel()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								disablingDLabel_6005Parser = parser;
+		}
+		return disablingDLabel_6005Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser enablingWithInformationPassingEwLabel_6006Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getEnablingWithInformationPassingEwLabel_6006Parser() {
+		if (enablingWithInformationPassingEwLabel_6006Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getEnablingWithInformationPassing_EwLabel()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								enablingWithInformationPassingEwLabel_6006Parser = parser;
+		}
+		return enablingWithInformationPassingEwLabel_6006Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser disablingWithInformationPassingDwLabel_6007Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getDisablingWithInformationPassingDwLabel_6007Parser() {
+		if (disablingWithInformationPassingDwLabel_6007Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getDisablingWithInformationPassing_DwLabel()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								disablingWithInformationPassingDwLabel_6007Parser = parser;
+		}
+		return disablingWithInformationPassingDwLabel_6007Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser independentConcurrencyIcLabel_6008Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getIndependentConcurrencyIcLabel_6008Parser() {
+		if (independentConcurrencyIcLabel_6008Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getIndependentConcurrency_IcLabel()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								independentConcurrencyIcLabel_6008Parser = parser;
+		}
+		return independentConcurrencyIcLabel_6008Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser orderIndependenceOiLabel_6009Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getOrderIndependenceOiLabel_6009Parser() {
+		if (orderIndependenceOiLabel_6009Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getOrderIndependence_OiLabel()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								orderIndependenceOiLabel_6009Parser = parser;
+		}
+		return orderIndependenceOiLabel_6009Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser suspendResumeSrLabel_6010Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getSuspendResumeSrLabel_6010Parser() {
+		if (suspendResumeSrLabel_6010Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getSuspendResume_SrLabel()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								suspendResumeSrLabel_6010Parser = parser;
+		}
+		return suspendResumeSrLabel_6010Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser concurrencyWithInformationPassingCLabel_6011Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getConcurrencyWithInformationPassingCLabel_6011Parser() {
+		if (concurrencyWithInformationPassingCLabel_6011Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getConcurrencyWithInformationPassing_CLabel()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								concurrencyWithInformationPassingCLabel_6011Parser = parser;
+		}
+		return concurrencyWithInformationPassingCLabel_6011Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser deterministicChoiceDtLabel_6012Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getDeterministicChoiceDtLabel_6012Parser() {
+		if (deterministicChoiceDtLabel_6012Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getDeterministicChoice_DtLabel()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								deterministicChoiceDtLabel_6012Parser = parser;
+		}
+		return deterministicChoiceDtLabel_6012Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser undeterministicChoiceUcLabel_6013Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getUndeterministicChoiceUcLabel_6013Parser() {
+		if (undeterministicChoiceUcLabel_6013Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				ciat.CiatPackage.eINSTANCE.getUndeterministicChoice_UcLabel()
+			};
+				ciat.diagram.parsers.MessageFormatParser parser = new ciat.diagram.parsers.MessageFormatParser(features);
+								undeterministicChoiceUcLabel_6013Parser = parser;
+		}
+		return undeterministicChoiceUcLabel_6013Parser;
+	}
+
+
+
+		/**
+ * @generated
+ */
+	protected org.eclipse.gmf.runtime.common.ui.services.parser.IParser getParser(int visualID) {
+		switch (visualID) {
+				case ciat.diagram.edit.parts.SociogramNameEditPart.VISUAL_ID: return getSociogramName_5006Parser();
+		case ciat.diagram.edit.parts.ProcessDiagramNameEditPart.VISUAL_ID: return getProcessDiagramName_5044Parser();
+		case ciat.diagram.edit.parts.DomainDiagramNameEditPart.VISUAL_ID: return getDomainDiagramName_5051Parser();
+		case ciat.diagram.edit.parts.CTTDiagramNameEditPart.VISUAL_ID: return getCTTDiagramName_5060Parser();
+				case ciat.diagram.edit.parts.RolNameEditPart.VISUAL_ID: return getRolName_5001Parser();
+		case ciat.diagram.edit.parts.ActorNameEditPart.VISUAL_ID: return getActorName_5002Parser();
+		case ciat.diagram.edit.parts.SoftwareAgentNameEditPart.VISUAL_ID: return getSoftwareAgentName_5003Parser();
+		case ciat.diagram.edit.parts.TeamNameEditPart.VISUAL_ID: return getTeamName_5004Parser();
+		case ciat.diagram.edit.parts.GroupNameEditPart.VISUAL_ID: return getGroupName_5005Parser();
+		case ciat.diagram.edit.parts.IndividualTaskNameEditPart.VISUAL_ID: return getIndividualTaskName_5014Parser();
+		case ciat.diagram.edit.parts.RolName2EditPart.VISUAL_ID: return getRolName_5007Parser();
+		case ciat.diagram.edit.parts.ActorName2EditPart.VISUAL_ID: return getActorName_5008Parser();
+		case ciat.diagram.edit.parts.SoftwareAgentName2EditPart.VISUAL_ID: return getSoftwareAgentName_5009Parser();
+		case ciat.diagram.edit.parts.TeamName2EditPart.VISUAL_ID: return getTeamName_5010Parser();
+		case ciat.diagram.edit.parts.GroupName2EditPart.VISUAL_ID: return getGroupName_5011Parser();
+		case ciat.diagram.edit.parts.ToolNameEditPart.VISUAL_ID: return getToolName_5012Parser();
+		case ciat.diagram.edit.parts.ObjectNameEditPart.VISUAL_ID: return getObjectName_5013Parser();
+		case ciat.diagram.edit.parts.CooperativeTaskNameEditPart.VISUAL_ID: return getCooperativeTaskName_5021Parser();
+		case ciat.diagram.edit.parts.RolName3EditPart.VISUAL_ID: return getRolName_5015Parser();
+		case ciat.diagram.edit.parts.ActorName3EditPart.VISUAL_ID: return getActorName_5016Parser();
+		case ciat.diagram.edit.parts.SoftwareAgentName3EditPart.VISUAL_ID: return getSoftwareAgentName_5017Parser();
+		case ciat.diagram.edit.parts.TeamName3EditPart.VISUAL_ID: return getTeamName_5018Parser();
+		case ciat.diagram.edit.parts.GroupName3EditPart.VISUAL_ID: return getGroupName_5019Parser();
+		case ciat.diagram.edit.parts.ObjectName2EditPart.VISUAL_ID: return getObjectName_5020Parser();
+		case ciat.diagram.edit.parts.CollaborativeTaskNameEditPart.VISUAL_ID: return getCollaborativeTaskName_5028Parser();
+		case ciat.diagram.edit.parts.RolName4EditPart.VISUAL_ID: return getRolName_5022Parser();
+		case ciat.diagram.edit.parts.ActorName4EditPart.VISUAL_ID: return getActorName_5023Parser();
+		case ciat.diagram.edit.parts.SoftwareAgentName4EditPart.VISUAL_ID: return getSoftwareAgentName_5024Parser();
+		case ciat.diagram.edit.parts.TeamName4EditPart.VISUAL_ID: return getTeamName_5025Parser();
+		case ciat.diagram.edit.parts.GroupName4EditPart.VISUAL_ID: return getGroupName_5026Parser();
+		case ciat.diagram.edit.parts.ObjectName3EditPart.VISUAL_ID: return getObjectName_5027Parser();
+		case ciat.diagram.edit.parts.AbstractTaskNameEditPart.VISUAL_ID: return getAbstractTaskName_5038Parser();
+		case ciat.diagram.edit.parts.IndividualTaskName2EditPart.VISUAL_ID: return getIndividualTaskName_5029Parser();
+		case ciat.diagram.edit.parts.CooperativeTaskName2EditPart.VISUAL_ID: return getCooperativeTaskName_5030Parser();
+		case ciat.diagram.edit.parts.CollaborativeTaskName2EditPart.VISUAL_ID: return getCollaborativeTaskName_5031Parser();
+		case ciat.diagram.edit.parts.AbstractTaskName2EditPart.VISUAL_ID: return getAbstractTaskName_5037Parser();
+		case ciat.diagram.edit.parts.InitNameEditPart.VISUAL_ID: return getInitName_5032Parser();
+		case ciat.diagram.edit.parts.EndNameEditPart.VISUAL_ID: return getEndName_5033Parser();
+		case ciat.diagram.edit.parts.TemporalConditionNameEditPart.VISUAL_ID: return getTemporalConditionName_5034Parser();
+		case ciat.diagram.edit.parts.NotificationNameEditPart.VISUAL_ID: return getNotificationName_5035Parser();
+		case ciat.diagram.edit.parts.ConditionNameEditPart.VISUAL_ID: return getConditionName_5036Parser();
+		case ciat.diagram.edit.parts.InitName2EditPart.VISUAL_ID: return getInitName_5039Parser();
+		case ciat.diagram.edit.parts.EndName2EditPart.VISUAL_ID: return getEndName_5040Parser();
+		case ciat.diagram.edit.parts.TemporalConditionName2EditPart.VISUAL_ID: return getTemporalConditionName_5041Parser();
+		case ciat.diagram.edit.parts.NotificationName2EditPart.VISUAL_ID: return getNotificationName_5042Parser();
+		case ciat.diagram.edit.parts.ConditionName2EditPart.VISUAL_ID: return getConditionName_5043Parser();
+		case ciat.diagram.edit.parts.SharedObjectNameEditPart.VISUAL_ID: return getSharedObjectName_5050Parser();
+		case ciat.diagram.edit.parts.ExclusiveEditionAreaNameEditPart.VISUAL_ID: return getExclusiveEditionAreaName_5045Parser();
+		case ciat.diagram.edit.parts.CollaborativeAreaNameEditPart.VISUAL_ID: return getCollaborativeAreaName_5046Parser();
+		case ciat.diagram.edit.parts.IndividualAreaNameEditPart.VISUAL_ID: return getIndividualAreaName_5047Parser();
+		case ciat.diagram.edit.parts.AttributeNameEditPart.VISUAL_ID: return getAttributeName_5048Parser();
+		case ciat.diagram.edit.parts.OperationNameEditPart.VISUAL_ID: return getOperationName_5049Parser();
+		case ciat.diagram.edit.parts.ExclusiveEditionNameEditPart.VISUAL_ID: return getExclusiveEditionName_5052Parser();
+		case ciat.diagram.edit.parts.CollaborativeVisualizationNameEditPart.VISUAL_ID: return getCollaborativeVisualizationName_5053Parser();
+		case ciat.diagram.edit.parts.IndividualVisualizationNameEditPart.VISUAL_ID: return getIndividualVisualizationName_5054Parser();
+		case ciat.diagram.edit.parts.UserTaskNameEditPart.VISUAL_ID: return getUserTaskName_5055Parser();
+		case ciat.diagram.edit.parts.CTTAbstractTaskNameEditPart.VISUAL_ID: return getCTTAbstractTaskName_5056Parser();
+		case ciat.diagram.edit.parts.InteractiveTaskNameEditPart.VISUAL_ID: return getInteractiveTaskName_5057Parser();
+		case ciat.diagram.edit.parts.CTTCollaborativeTaskNameEditPart.VISUAL_ID: return getCTTCollaborativeTaskName_5058Parser();
+		case ciat.diagram.edit.parts.ApplicationTaskNameEditPart.VISUAL_ID: return getApplicationTaskName_5059Parser();
+				case ciat.diagram.edit.parts.InheritanceConditionEditPart.VISUAL_ID: return getInheritanceCondition_6001Parser();
+		case ciat.diagram.edit.parts.ActingNameEditPart.VISUAL_ID: return getActingName_6002Parser();
+		case ciat.diagram.edit.parts.AssociationNameEditPart.VISUAL_ID: return getAssociationName_6003Parser();
+		case ciat.diagram.edit.parts.EnablingELabelEditPart.VISUAL_ID: return getEnablingELabel_6004Parser();
+		case ciat.diagram.edit.parts.DisablingDLabelEditPart.VISUAL_ID: return getDisablingDLabel_6005Parser();
+		case ciat.diagram.edit.parts.EnablingWithInformationPassingEwLabelEditPart.VISUAL_ID: return getEnablingWithInformationPassingEwLabel_6006Parser();
+		case ciat.diagram.edit.parts.DisablingWithInformationPassingDwLabelEditPart.VISUAL_ID: return getDisablingWithInformationPassingDwLabel_6007Parser();
+		case ciat.diagram.edit.parts.IndependentConcurrencyIcLabelEditPart.VISUAL_ID: return getIndependentConcurrencyIcLabel_6008Parser();
+		case ciat.diagram.edit.parts.OrderIndependenceOiLabelEditPart.VISUAL_ID: return getOrderIndependenceOiLabel_6009Parser();
+		case ciat.diagram.edit.parts.SuspendResumeSrLabelEditPart.VISUAL_ID: return getSuspendResumeSrLabel_6010Parser();
+		case ciat.diagram.edit.parts.ConcurrencyWithInformationPassingCLabelEditPart.VISUAL_ID: return getConcurrencyWithInformationPassingCLabel_6011Parser();
+		case ciat.diagram.edit.parts.DeterministicChoiceDtLabelEditPart.VISUAL_ID: return getDeterministicChoiceDtLabel_6012Parser();
+		case ciat.diagram.edit.parts.UndeterministicChoiceUcLabelEditPart.VISUAL_ID: return getUndeterministicChoiceUcLabel_6013Parser();
+		}
+		return null;
+	}
+		/**
+ * Utility method that consults ParserService
+ * @generated
+ */
+	public static org.eclipse.gmf.runtime.common.ui.services.parser.IParser getParser(org.eclipse.gmf.runtime.emf.type.core.IElementType type, org.eclipse.emf.ecore.EObject object, String parserHint) {
+		return org.eclipse.gmf.runtime.common.ui.services.parser.ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
+	}
+		/**
+ * @generated
+ */
+	public org.eclipse.gmf.runtime.common.ui.services.parser.IParser getParser(
+			org.eclipse.core.runtime.IAdaptable hint) {
+		String vid = (String) hint.getAdapter(String.class);
+		if (vid != null) {
+			return getParser(ciat.diagram.part.CiatVisualIDRegistry.getVisualID(vid));
+		}
+		org.eclipse.gmf.runtime.notation.View view =
+				(org.eclipse.gmf.runtime.notation.View) hint.getAdapter(org.eclipse.gmf.runtime.notation.View.class);
+		if (view != null) {
+			return getParser(ciat.diagram.part.CiatVisualIDRegistry.getVisualID(view));
+		}
+		return null;
+	}
+
+		/**
+ * @generated
+ */
+	public boolean provides(org.eclipse.gmf.runtime.common.core.service.IOperation operation) {
+		if (operation instanceof org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation) {
+			org.eclipse.core.runtime.IAdaptable hint =
+					((org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation) operation).getHint();
+			if (ciat.diagram.providers.CiatElementTypes.getElement(hint) == null) {
+				return false;
+			}
+			return getParser(hint) != null;
+		}
+		return false;
+	}
+
+		/**
+ * @generated
+ */
+	private static class HintAdapter extends org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter {
+
+		/**
+ * @generated
+ */
+		private final org.eclipse.gmf.runtime.emf.type.core.IElementType elementType;
+
+		/**
+ * @generated
+ */
+		public HintAdapter(org.eclipse.gmf.runtime.emf.type.core.IElementType type,
+				org.eclipse.emf.ecore.EObject object, String parserHint) {
+			super(object, parserHint);
+			assert type != null;
+			elementType = type;
+		}
+
+		/**
+ * @generated
+ */
+		public Object getAdapter(Class adapter) {
+			if (org.eclipse.gmf.runtime.emf.type.core.IElementType.class.equals(adapter)) {
+				return elementType;
+			}
+			return super.getAdapter(adapter);
+		}
+	}
+
+	}

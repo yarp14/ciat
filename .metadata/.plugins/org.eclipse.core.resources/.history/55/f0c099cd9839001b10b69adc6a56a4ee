@@ -1,0 +1,18 @@
+/*
+ * 
+ */
+package ciat.diagram.providers;
+
+/**
+ * @generated
+ */
+public class CiatIconProvider extends org.eclipse.gmf.tooling.runtime.providers.DefaultElementTypeIconProvider implements org.eclipse.gmf.runtime.common.ui.services.icon.IIconProvider {
+
+		/**
+ * @generated
+ */
+	public CiatIconProvider() {
+		super(ciat.diagram.providers.CiatElementTypes.TYPED_INSTANCE);
+	}
+
+	}

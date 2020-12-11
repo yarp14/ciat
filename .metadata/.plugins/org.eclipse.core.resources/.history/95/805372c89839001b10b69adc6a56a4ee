@@ -1,0 +1,10 @@
+/*
+ * 
+ */
+package ciat.diagram.edit.helpers;
+
+/**
+ * @generated
+ */
+public class InheritanceEditHelper extends ciat.diagram.edit.helpers.CiatBaseEditHelper {
+	}

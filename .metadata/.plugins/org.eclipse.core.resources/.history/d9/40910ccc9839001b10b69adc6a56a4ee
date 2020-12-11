@@ -1,0 +1,920 @@
+/*
+ * 
+ */
+package ciat.diagram.edit.policies;
+
+/**
+ * @generated
+ */
+public class CiatBaseItemSemanticEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editpolicies.SemanticEditPolicy {
+
+		/**
+ * Extended request data key to hold editpart visual id.
+ * @generated
+ */
+	public static final String VISUAL_ID_KEY = "visual_id";  //$NON-NLS-1$
+
+	/**
+ * @generated
+ */
+	private final org.eclipse.gmf.runtime.emf.type.core.IElementType myElementType;
+	
+		/**
+ * @generated
+ */
+	protected CiatBaseItemSemanticEditPolicy(org.eclipse.gmf.runtime.emf.type.core.IElementType elementType) {
+		myElementType = elementType;
+	}
+
+	/**
+ * Extended request data key to hold editpart visual id.
+ * Add visual id of edited editpart to extended data of the request
+ * so command switch can decide what kind of diagram element is being edited.
+ * It is done in those cases when it's not possible to deduce diagram
+ * element kind from domain element.
+ * 
+ * @generated
+ */
+	public org.eclipse.gef.commands.Command getCommand(org.eclipse.gef.Request request) {
+		if (request instanceof org.eclipse.gef.requests.ReconnectRequest) {
+			Object view = ((org.eclipse.gef.requests.ReconnectRequest) request).getConnectionEditPart().getModel();
+			if (view instanceof org.eclipse.gmf.runtime.notation.View) {
+				Integer id = new Integer(ciat.diagram.part.CiatVisualIDRegistry.getVisualID((org.eclipse.gmf.runtime.notation.View) view));
+				request.getExtendedData().put(VISUAL_ID_KEY, id);
+			}
+		}
+		return super.getCommand(request);
+	}
+	
+	/**
+ * Returns visual id from request parameters.
+ * @generated
+ */
+	protected int getVisualID(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest request) {
+		Object id = request.getParameter(VISUAL_ID_KEY);
+		return id instanceof Integer ? ((Integer) id).intValue() : -1;
+	}
+
+		/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getSemanticCommand(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest request) {
+	org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest completedRequest = completeRequest(request);
+	org.eclipse.gef.commands.Command semanticCommand = getSemanticCommandSwitch(completedRequest);
+	semanticCommand = getEditHelperCommand(completedRequest, semanticCommand);
+	if (completedRequest instanceof org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest) {
+		org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest destroyRequest = (org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest) completedRequest;
+		return shouldProceed(destroyRequest) ? addDeleteViewCommand(semanticCommand, destroyRequest) : null;
+		}
+		return semanticCommand;
+	}
+	
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command addDeleteViewCommand(org.eclipse.gef.commands.Command mainCommand, org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest completedRequest){
+		org.eclipse.gef.commands.Command deleteViewCommand = getGEFWrapper(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), (org.eclipse.gmf.runtime.notation.View) getHost().getModel()));
+		return mainCommand == null ? deleteViewCommand : mainCommand.chain(deleteViewCommand);
+}
+	
+		/**
+ * @generated
+ */
+	private org.eclipse.gef.commands.Command getEditHelperCommand(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest request, org.eclipse.gef.commands.Command editPolicyCommand) {
+		if (editPolicyCommand != null) {
+			org.eclipse.gmf.runtime.common.core.command.ICommand command = editPolicyCommand instanceof org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy ? ((org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy) editPolicyCommand).getICommand() : new org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy(editPolicyCommand);
+			request.setParameter(org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase.EDIT_POLICY_COMMAND, command);
+		}
+		org.eclipse.gmf.runtime.emf.type.core.IElementType requestContextElementType = getContextElementType(request);
+		request.setParameter(org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, requestContextElementType);
+		org.eclipse.gmf.runtime.common.core.command.ICommand command = requestContextElementType.getEditCommand(request);
+		request.setParameter(org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase.EDIT_POLICY_COMMAND, null);
+		request.setParameter(org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, null);
+		if (command != null) {
+			if (!(command instanceof org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand)) {
+				command = new org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand(getEditingDomain(), command.getLabel()).compose(command);
+			}
+			return new org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy(command);
+		}
+		return editPolicyCommand;
+	}
+	
+		/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.emf.type.core.IElementType getContextElementType(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest request) {
+		org.eclipse.gmf.runtime.emf.type.core.IElementType requestContextElementType = ciat.diagram.providers.CiatElementTypes.getElementType(getVisualID(request));
+		return requestContextElementType != null ? requestContextElementType : myElementType;
+	}
+	
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getSemanticCommandSwitch(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest req) {
+	if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest) {
+		return getCreateRelationshipCommand((org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) {
+		return getCreateCommand((org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest) {
+		return getConfigureCommand((org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest) {
+		return getDestroyElementCommand((org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest) {
+		return getDestroyReferenceCommand((org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest) {
+		return getDuplicateCommand((org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.GetEditContextRequest) {
+		return getEditContextCommand((org.eclipse.gmf.runtime.emf.type.core.requests.GetEditContextRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest) {
+		return getMoveCommand((org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest) {
+		return getReorientReferenceRelationshipCommand((org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest) {
+		return getReorientRelationshipCommand((org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest) {
+		return getSetCommand((org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest) req);
+	}
+	return null;
+}
+	
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getConfigureCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getCreateRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getSetCommand(org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getEditContextCommand(org.eclipse.gmf.runtime.emf.type.core.requests.GetEditContextRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getDestroyReferenceCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getDuplicateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getMoveCommand(org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getReorientReferenceRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest req) {
+	return org.eclipse.gef.commands.UnexecutableCommand.INSTANCE;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getReorientRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest req) {
+	return org.eclipse.gef.commands.UnexecutableCommand.INSTANCE;
+}
+	
+		/**
+ * @generated
+ */
+	protected final org.eclipse.gef.commands.Command getGEFWrapper(org.eclipse.gmf.runtime.common.core.command.ICommand cmd) {
+		return new org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy(cmd);
+	}
+
+	/**
+ * Returns editing domain from the host edit part.
+ * @generated
+ */
+	protected org.eclipse.emf.transaction.TransactionalEditingDomain getEditingDomain() {
+		return ((org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) getHost()).getEditingDomain();
+	}
+
+		/**
+ * Clean all shortcuts to the host element from the same diagram
+ * @generated
+ */
+	protected void addDestroyShortcutsCommand(org.eclipse.gmf.runtime.common.core.command.ICompositeCommand cmd, org.eclipse.gmf.runtime.notation.View view) {
+		assert view.getEAnnotation("Shortcut") == null; //$NON-NLS-1$
+		for (java.util.Iterator it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
+			org.eclipse.gmf.runtime.notation.View nextView = (org.eclipse.gmf.runtime.notation.View) it.next();
+			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() || nextView.getElement() != view.getElement()) { //$NON-NLS-1$
+				continue;
+			}
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), nextView));
+		}
+	}
+
+	
+	/**
+ * @generated
+ */
+	public static LinkConstraints getLinkConstraints() {
+		LinkConstraints cached = ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().getLinkConstraints();
+		if (cached == null) {
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
+		}
+		return cached;
+	}
+
+
+/**
+ * @generated
+ */
+public static class LinkConstraints {
+
+	/**
+ * @generated
+ */
+	LinkConstraints() {
+		// use static method #getLinkConstraints() to access instance
+	}
+
+	
+/**
+ * @generated
+ */
+public boolean canCreateInheritance_4001(ciat.CIATDiagram container, ciat.SociogramNode source, ciat.SociogramNode target) {
+						return canExistInheritance_4001(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateActing_4002(ciat.CIATDiagram container, ciat.SociogramNode source, ciat.SociogramNode target) {
+						return canExistActing_4002(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateAssociation_4003(ciat.CIATDiagram container, ciat.SociogramNode source, ciat.SociogramNode target) {
+						return canExistAssociation_4003(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateShAssociationLink_4004(ciat.CIATDiagram container, ciat.SharedObject source, ciat.SharedObject target) {
+						return canExistShAssociationLink_4004(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateShGeneralizationLink_4005(ciat.CIATDiagram container, ciat.SharedObject source, ciat.SharedObject target) {
+						return canExistShGeneralizationLink_4005(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateShAggregationLink_4006(ciat.CIATDiagram container, ciat.SharedObject source, ciat.SharedObject target) {
+						return canExistShAggregationLink_4006(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateAggregation_4007(ciat.CIATDiagram container, ciat.DependencyElement source, ciat.DependencyElement target) {
+						return canExistAggregation_4007(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateEnabling_4008(ciat.CIATDiagram container, ciat.DependencyElement source, ciat.DependencyElement target) {
+						return canExistEnabling_4008(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateDisabling_4009(ciat.CIATDiagram container, ciat.DependencyElement source, ciat.DependencyElement target) {
+						return canExistDisabling_4009(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateEnablingWithInformationPassing_4010(ciat.CIATDiagram container, ciat.DependencyElement source, ciat.DependencyElement target) {
+						return canExistEnablingWithInformationPassing_4010(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateDisablingWithInformationPassing_4011(ciat.CIATDiagram container, ciat.DependencyElement source, ciat.DependencyElement target) {
+						return canExistDisablingWithInformationPassing_4011(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateIndependentConcurrency_4012(ciat.CIATDiagram container, ciat.DependencyElement source, ciat.DependencyElement target) {
+						return canExistIndependentConcurrency_4012(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateOrderIndependence_4013(ciat.CIATDiagram container, ciat.DependencyElement source, ciat.DependencyElement target) {
+						return canExistOrderIndependence_4013(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateSuspendResume_4014(ciat.CIATDiagram container, ciat.DependencyElement source, ciat.DependencyElement target) {
+						return canExistSuspendResume_4014(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateConcurrencyWithInformationPassing_4015(ciat.CIATDiagram container, ciat.DependencyElement source, ciat.DependencyElement target) {
+						return canExistConcurrencyWithInformationPassing_4015(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateDeterministicChoice_4016(ciat.CIATDiagram container, ciat.DependencyElement source, ciat.DependencyElement target) {
+						return canExistDeterministicChoice_4016(container, null, source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateUndeterministicChoice_4017(ciat.CIATDiagram container, ciat.DependencyElement source, ciat.DependencyElement target) {
+						return canExistUndeterministicChoice_4017(container, null, source, target);
+}
+
+	
+	/**
+ * @generated
+ */
+	public boolean canExistInheritance_4001(ciat.CIATDiagram container, ciat.Inheritance linkInstance, ciat.SociogramNode source, ciat.SociogramNode target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getSociogramNode()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(0, ciat.CiatPackage.eINSTANCE.getSociogramNode(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getSociogramNode()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(1, ciat.CiatPackage.eINSTANCE.getSociogramNode(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistActing_4002(ciat.CIATDiagram container, ciat.Acting linkInstance, ciat.SociogramNode source, ciat.SociogramNode target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getSociogramNode()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(2, ciat.CiatPackage.eINSTANCE.getSociogramNode(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getSociogramNode()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(3, ciat.CiatPackage.eINSTANCE.getSociogramNode(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistAssociation_4003(ciat.CIATDiagram container, ciat.Association linkInstance, ciat.SociogramNode source, ciat.SociogramNode target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getSociogramNode()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(4, ciat.CiatPackage.eINSTANCE.getSociogramNode(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getSociogramNode()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(5, ciat.CiatPackage.eINSTANCE.getSociogramNode(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistShAssociationLink_4004(ciat.CIATDiagram container, ciat.ShAssociationLink linkInstance, ciat.SharedObject source, ciat.SharedObject target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getSharedObject()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(6, ciat.CiatPackage.eINSTANCE.getSharedObject(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getSharedObject()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(7, ciat.CiatPackage.eINSTANCE.getSharedObject(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistShGeneralizationLink_4005(ciat.CIATDiagram container, ciat.ShGeneralizationLink linkInstance, ciat.SharedObject source, ciat.SharedObject target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getSharedObject()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(8, ciat.CiatPackage.eINSTANCE.getSharedObject(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getSharedObject()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(9, ciat.CiatPackage.eINSTANCE.getSharedObject(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistShAggregationLink_4006(ciat.CIATDiagram container, ciat.ShAggregationLink linkInstance, ciat.SharedObject source, ciat.SharedObject target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getSharedObject()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(10, ciat.CiatPackage.eINSTANCE.getSharedObject(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getSharedObject()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(11, ciat.CiatPackage.eINSTANCE.getSharedObject(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistAggregation_4007(ciat.CIATDiagram container, ciat.Aggregation linkInstance, ciat.DependencyElement source, ciat.DependencyElement target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(12, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(13, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistEnabling_4008(ciat.CIATDiagram container, ciat.Enabling linkInstance, ciat.DependencyElement source, ciat.DependencyElement target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(14, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(15, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistDisabling_4009(ciat.CIATDiagram container, ciat.Disabling linkInstance, ciat.DependencyElement source, ciat.DependencyElement target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(16, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(17, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistEnablingWithInformationPassing_4010(ciat.CIATDiagram container, ciat.EnablingWithInformationPassing linkInstance, ciat.DependencyElement source, ciat.DependencyElement target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(18, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(19, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistDisablingWithInformationPassing_4011(ciat.CIATDiagram container, ciat.DisablingWithInformationPassing linkInstance, ciat.DependencyElement source, ciat.DependencyElement target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(20, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(21, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistIndependentConcurrency_4012(ciat.CIATDiagram container, ciat.IndependentConcurrency linkInstance, ciat.DependencyElement source, ciat.DependencyElement target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(22, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(23, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistOrderIndependence_4013(ciat.CIATDiagram container, ciat.OrderIndependence linkInstance, ciat.DependencyElement source, ciat.DependencyElement target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(24, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(25, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistSuspendResume_4014(ciat.CIATDiagram container, ciat.SuspendResume linkInstance, ciat.DependencyElement source, ciat.DependencyElement target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(26, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(27, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistConcurrencyWithInformationPassing_4015(ciat.CIATDiagram container, ciat.ConcurrencyWithInformationPassing linkInstance, ciat.DependencyElement source, ciat.DependencyElement target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(28, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(29, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistDeterministicChoice_4016(ciat.CIATDiagram container, ciat.DeterministicChoice linkInstance, ciat.DependencyElement source, ciat.DependencyElement target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(30, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(31, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistUndeterministicChoice_4017(ciat.CIATDiagram container, ciat.UndeterministicChoice linkInstance, ciat.DependencyElement source, ciat.DependencyElement target) {
+		try {
+				if (source == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object sourceVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(32, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(source, java.util.Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+		if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+				if (target == null) {
+		return true;
+	} else {
+		java.util.Map<String, org.eclipse.emf.ecore.EClassifier> env = java.util.Collections.<String, org.eclipse.emf.ecore.EClassifier>singletonMap("oppositeEnd", ciat.CiatPackage.eINSTANCE.getDependencyElement()); //$NON-NLS-1$
+		Object targetVal = ciat.diagram.expressions.CiatOCLFactory.getExpression(33, ciat.CiatPackage.eINSTANCE.getDependencyElement(), env).evaluate(target, java.util.Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+		if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+			return true;
+		} catch(Exception e) {	
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+			return false;
+		}
+	}
+}
+
+	}

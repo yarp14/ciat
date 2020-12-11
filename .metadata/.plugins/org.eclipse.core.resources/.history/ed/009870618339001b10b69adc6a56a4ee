@@ -1,0 +1,39 @@
+/**
+ */
+package ciat.impl;
+
+import ciat.CiatPackage;
+import ciat.CooperativeComplexRightNode;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Cooperative Complex Right Node</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * @generated
+ */
+public abstract class CooperativeComplexRightNodeImpl extends EObjectImpl implements CooperativeComplexRightNode {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CooperativeComplexRightNodeImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return CiatPackage.Literals.COOPERATIVE_COMPLEX_RIGHT_NODE;
+	}
+
+} //CooperativeComplexRightNodeImpl

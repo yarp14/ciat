@@ -1,0 +1,50 @@
+	/*
+ * 
+ */
+package ciat.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class CTTDiagramCTTDiagramCttTasksCompartmentItemSemanticEditPolicy extends ciat.diagram.edit.policies.CiatBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public CTTDiagramCTTDiagramCttTasksCompartmentItemSemanticEditPolicy() {
+				super(ciat.diagram.providers.CiatElementTypes.CTTDiagram_2004);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (ciat.diagram.providers.CiatElementTypes.ExclusiveEdition_3049 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.ExclusiveEditionCreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.CollaborativeVisualization_3050 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.CollaborativeVisualizationCreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.IndividualVisualization_3051 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.IndividualVisualizationCreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.UserTask_3052 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.UserTaskCreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.CTTAbstractTask_3053 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.CTTAbstractTaskCreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.InteractiveTask_3054 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.InteractiveTaskCreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.CTTCollaborativeTask_3055 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.CTTCollaborativeTaskCreateCommand(req));
+}
+		if (ciat.diagram.providers.CiatElementTypes.ApplicationTask_3056 == req.getElementType()) {
+	return getGEFWrapper(new ciat.diagram.edit.commands.ApplicationTaskCreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

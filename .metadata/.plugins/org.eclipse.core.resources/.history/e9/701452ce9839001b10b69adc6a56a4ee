@@ -1,0 +1,1396 @@
+	/*
+ * 
+ */
+package ciat.diagram.part;
+
+	/**
+ * This registry is used to determine which type of visual object should be
+ * created for the corresponding Diagram, Node, ChildNode or Link represented
+ * by a domain model object.
+ * 
+ * @generated
+ */
+public class CiatVisualIDRegistry {
+
+		/**
+ * @generated
+ */
+	private static final String DEBUG_KEY = "org.chico.ciat.diagram/debug/visualID";  //$NON-NLS-1$
+
+		/**
+ * @generated
+ */
+public static int getVisualID(org.eclipse.gmf.runtime.notation.View view) {
+	if (view instanceof org.eclipse.gmf.runtime.notation.Diagram) {
+		if (ciat.diagram.edit.parts.CIATDiagramEditPart.MODEL_ID.equals(view.getType())) {
+			return ciat.diagram.edit.parts.CIATDiagramEditPart.VISUAL_ID;
+		} else {
+			return -1;
+		}
+	}
+	return ciat.diagram.part.CiatVisualIDRegistry.getVisualID(view.getType());
+}
+	
+		/**
+ * @generated
+ */
+public static String getModelID(org.eclipse.gmf.runtime.notation.View view) {
+	org.eclipse.gmf.runtime.notation.View diagram = view.getDiagram();
+	while (view != diagram) {
+		org.eclipse.emf.ecore.EAnnotation annotation = view.getEAnnotation("Shortcut");  //$NON-NLS-1$
+		if (annotation != null) {
+			return (String) annotation.getDetails().get("modelID");  //$NON-NLS-1$
+		}
+		view = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+	}
+	return diagram != null ? diagram.getType() : null;
+}
+	
+		/**
+ * @generated
+ */
+public static int getVisualID(String type) {
+	try {
+		return Integer.parseInt(type);
+	} catch (NumberFormatException e) {
+		if (Boolean.TRUE.toString().equalsIgnoreCase(org.eclipse.core.runtime.Platform.getDebugOption(DEBUG_KEY))) {
+			ciat.diagram.part.CiatDiagramEditorPlugin.getInstance().logError("Unable to parse view type as a visualID number: " + type);
+		}
+	}
+	return -1;
+}
+
+	/**
+ * @generated
+ */
+public static String getType(int visualID) {
+	return Integer.toString(visualID);
+}
+	
+		/**
+ * @generated
+ */
+public static int getDiagramVisualID(org.eclipse.emf.ecore.EObject domainElement) {
+	if (domainElement == null) {
+		return -1;
+	}
+	if (ciat.CiatPackage.eINSTANCE.getCIATDiagram().isSuperTypeOf(domainElement.eClass()) && isDiagram((ciat.CIATDiagram) domainElement)) {
+	return ciat.diagram.edit.parts.CIATDiagramEditPart.VISUAL_ID;
+}
+	return -1;
+}
+	
+		/**
+ * @generated
+ */
+public static int getNodeVisualID(org.eclipse.gmf.runtime.notation.View containerView, org.eclipse.emf.ecore.EObject domainElement) {
+	if (domainElement == null) {
+		return -1;
+	}
+	String containerModelID = ciat.diagram.part.CiatVisualIDRegistry.getModelID(containerView);
+	if (!ciat.diagram.edit.parts.CIATDiagramEditPart.MODEL_ID.equals(containerModelID) && !"ciat".equals(containerModelID)) {  //$NON-NLS-1$
+		return -1;
+	}
+	int containerVisualID;
+	if (ciat.diagram.edit.parts.CIATDiagramEditPart.MODEL_ID.equals(containerModelID)) {
+		containerVisualID = ciat.diagram.part.CiatVisualIDRegistry.getVisualID(containerView);
+	} else {
+		if (containerView instanceof org.eclipse.gmf.runtime.notation.Diagram) {
+			containerVisualID = ciat.diagram.edit.parts.CIATDiagramEditPart.VISUAL_ID;		
+		} else {
+			return -1;
+		}
+	}
+	switch (containerVisualID) {
+			case ciat.diagram.edit.parts.CIATDiagramEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getSociogram().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.SociogramEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getProcessDiagram().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ProcessDiagramEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getDomainDiagram().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.DomainDiagramEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCTTDiagram().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.CTTDiagramEditPart.VISUAL_ID;
+}
+	break;
+											case ciat.diagram.edit.parts.IndividualTaskEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getTool().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID;
+}
+	break;
+									case ciat.diagram.edit.parts.CooperativeTaskEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getTool().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID;
+}
+	break;
+								case ciat.diagram.edit.parts.CollaborativeTaskEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getTool().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID;
+}
+	break;
+								case ciat.diagram.edit.parts.AbstractTaskEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getTool().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.IndividualTask2EditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getTool().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.CooperativeTask2EditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getTool().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.CollaborativeTask2EditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getTool().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.AbstractTask2EditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getTool().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID;
+}
+	break;
+												case ciat.diagram.edit.parts.SharedObjectEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getExclusiveEditionArea().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ExclusiveEditionAreaEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCollaborativeArea().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.CollaborativeAreaEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getIndividualArea().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.IndividualAreaEditPart.VISUAL_ID;
+}
+	break;
+															case ciat.diagram.edit.parts.SociogramSociogramItsSociogramNodesCompartmentEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getRol().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.RolEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getActor().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ActorEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getSoftwareAgent().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.SoftwareAgentEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getTeam().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.TeamEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getGroup().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.GroupEditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.ProcessDiagramProcessDiagramProcessNodesCompartmentEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getIndividualTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.IndividualTaskEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCooperativeTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.CooperativeTaskEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCollaborativeTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.CollaborativeTaskEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getAbstractTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.AbstractTaskEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getInit().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Init2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getEnd().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.End2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getTemporalCondition().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.TemporalCondition2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getNotification().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Notification2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCondition().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Condition2EditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskRolesCompartmentEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getRol().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Rol2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getActor().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Actor2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getSoftwareAgent().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.SoftwareAgent2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getTeam().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Team2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getGroup().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Group2EditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskObjectsCompartmentEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getObject().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ObjectEditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskRolesCompartmentEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getRol().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Rol3EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getActor().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Actor3EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getSoftwareAgent().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.SoftwareAgent3EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getTeam().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Team3EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getGroup().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Group3EditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskObjectsCompartmentEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getObject().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Object2EditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskRolesCompartmentEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getRol().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Rol4EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getActor().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Actor4EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getSoftwareAgent().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.SoftwareAgent4EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getTeam().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Team4EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getGroup().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Group4EditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskObjectsCompartmentEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getObject().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Object3EditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.AbstractTaskAbstractTaskProcessNodesCompartmentEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getIndividualTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.IndividualTask2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCooperativeTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.CooperativeTask2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCollaborativeTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.CollaborativeTask2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getAbstractTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.AbstractTask2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getInit().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.InitEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getEnd().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.EndEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getTemporalCondition().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.TemporalConditionEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getNotification().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.NotificationEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCondition().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ConditionEditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskRolesCompartment2EditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getRol().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Rol2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getActor().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Actor2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getSoftwareAgent().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.SoftwareAgent2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getTeam().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Team2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getGroup().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Group2EditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskObjectsCompartment2EditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getObject().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ObjectEditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskRolesCompartment2EditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getRol().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Rol3EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getActor().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Actor3EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getSoftwareAgent().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.SoftwareAgent3EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getTeam().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Team3EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getGroup().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Group3EditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskObjectsCompartment2EditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getObject().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Object2EditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskRolesCompartment2EditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getRol().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Rol4EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getActor().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Actor4EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getSoftwareAgent().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.SoftwareAgent4EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getTeam().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Team4EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getGroup().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Group4EditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskObjectsCompartment2EditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getObject().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.Object3EditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.AbstractTaskAbstractTaskProcessNodesCompartment2EditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getIndividualTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.IndividualTask2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCooperativeTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.CooperativeTask2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCollaborativeTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.CollaborativeTask2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getAbstractTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.AbstractTask2EditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getInit().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.InitEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getEnd().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.EndEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getTemporalCondition().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.TemporalConditionEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getNotification().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.NotificationEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCondition().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ConditionEditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.DomainDiagramDomainDiagramSharedContextCompartmentEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getSharedObject().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.SharedObjectEditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.SharedObjectSharedObjectAttributesCompartmentEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getAttribute().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.AttributeEditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.SharedObjectSharedObjectOperationsCompartmentEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.OperationEditPart.VISUAL_ID;
+}
+	break;
+		case ciat.diagram.edit.parts.CTTDiagramCTTDiagramCttTasksCompartmentEditPart.VISUAL_ID:
+	if (ciat.CiatPackage.eINSTANCE.getExclusiveEdition().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ExclusiveEditionEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCollaborativeVisualization().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.CollaborativeVisualizationEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getIndividualVisualization().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.IndividualVisualizationEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getUserTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.UserTaskEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCTTAbstractTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.CTTAbstractTaskEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getInteractiveTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.InteractiveTaskEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getCTTCollaborativeTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getApplicationTask().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ApplicationTaskEditPart.VISUAL_ID;
+}
+	break;
+		}
+	return -1;
+}
+	
+		/**
+ * @generated
+ */
+public static boolean canCreateNode(org.eclipse.gmf.runtime.notation.View containerView, int nodeVisualID) {
+	String containerModelID = ciat.diagram.part.CiatVisualIDRegistry.getModelID(containerView);
+	if (!ciat.diagram.edit.parts.CIATDiagramEditPart.MODEL_ID.equals(containerModelID) && !"ciat".equals(containerModelID)) {  //$NON-NLS-1$
+		return false;
+	}
+	int containerVisualID;
+	if (ciat.diagram.edit.parts.CIATDiagramEditPart.MODEL_ID.equals(containerModelID)) {
+		containerVisualID = ciat.diagram.part.CiatVisualIDRegistry.getVisualID(containerView);
+	} else {
+		if (containerView instanceof org.eclipse.gmf.runtime.notation.Diagram) {
+			containerVisualID = ciat.diagram.edit.parts.CIATDiagramEditPart.VISUAL_ID;		
+		} else {
+			return false;
+		}
+	}
+	switch (containerVisualID) {
+		case ciat.diagram.edit.parts.CIATDiagramEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.SociogramEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ProcessDiagramEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.DomainDiagramEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CTTDiagramEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.SociogramEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.SociogramNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.SociogramSociogramItsSociogramNodesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.ProcessDiagramEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ProcessDiagramNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ProcessDiagramProcessDiagramProcessNodesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.DomainDiagramEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.DomainDiagramNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.DomainDiagramDomainDiagramSharedContextCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CTTDiagramEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.CTTDiagramNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CTTDiagramCTTDiagramCttTasksCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.RolEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.RolNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.ActorEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ActorNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.SoftwareAgentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.SoftwareAgentNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.TeamEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.TeamNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.GroupEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.GroupNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.IndividualTaskEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.IndividualTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskRolesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskObjectsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Rol2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.RolName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Actor2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ActorName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.SoftwareAgent2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.SoftwareAgentName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Team2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.TeamName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Group2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.GroupName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ToolNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.ObjectEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ObjectNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CooperativeTaskEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.CooperativeTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskRolesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskObjectsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Rol3EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.RolName3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Actor3EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ActorName3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.SoftwareAgent3EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.SoftwareAgentName3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Team3EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.TeamName3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Group3EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.GroupName3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Object2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ObjectName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CollaborativeTaskEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.CollaborativeTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskRolesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskObjectsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Rol4EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.RolName4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Actor4EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ActorName4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.SoftwareAgent4EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.SoftwareAgentName4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Team4EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.TeamName4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Group4EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.GroupName4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Object3EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ObjectName3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.AbstractTaskEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.AbstractTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.AbstractTaskAbstractTaskProcessNodesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.IndividualTask2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.IndividualTaskName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskRolesCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskObjectsCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CooperativeTask2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.CooperativeTaskName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskRolesCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskObjectsCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CollaborativeTask2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.CollaborativeTaskName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskRolesCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskObjectsCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.AbstractTask2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.AbstractTaskName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.AbstractTaskAbstractTaskProcessNodesCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.InitEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.InitNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.EndEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.EndNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.TemporalConditionEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.TemporalConditionNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.NotificationEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.NotificationNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.ConditionEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ConditionNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Init2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.InitName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.End2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.EndName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.TemporalCondition2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.TemporalConditionName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Notification2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.NotificationName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.Condition2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ConditionName2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.SharedObjectEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.SharedObjectNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.SharedObjectSharedObjectAttributesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.SharedObjectSharedObjectOperationsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ExclusiveEditionAreaEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CollaborativeAreaEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.IndividualAreaEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.ExclusiveEditionAreaEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ExclusiveEditionAreaNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CollaborativeAreaEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.CollaborativeAreaNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.IndividualAreaEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.IndividualAreaNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.AttributeEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.AttributeNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.OperationEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.OperationNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.ExclusiveEditionEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ExclusiveEditionNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CollaborativeVisualizationEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.CollaborativeVisualizationNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.IndividualVisualizationEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.IndividualVisualizationNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.UserTaskEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.UserTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CTTAbstractTaskEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.CTTAbstractTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.InteractiveTaskEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.InteractiveTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.CTTCollaborativeTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.ApplicationTaskEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ApplicationTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.SociogramSociogramItsSociogramNodesCompartmentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.RolEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ActorEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.SoftwareAgentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.TeamEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.GroupEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.ProcessDiagramProcessDiagramProcessNodesCompartmentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.IndividualTaskEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CooperativeTaskEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CollaborativeTaskEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.AbstractTaskEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Init2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.End2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.TemporalCondition2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Notification2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Condition2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskRolesCompartmentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.Rol2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Actor2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.SoftwareAgent2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Team2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Group2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskObjectsCompartmentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ObjectEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskRolesCompartmentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.Rol3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Actor3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.SoftwareAgent3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Team3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Group3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskObjectsCompartmentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.Object2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskRolesCompartmentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.Rol4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Actor4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.SoftwareAgent4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Team4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Group4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskObjectsCompartmentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.Object3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.AbstractTaskAbstractTaskProcessNodesCompartmentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.IndividualTask2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CooperativeTask2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CollaborativeTask2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.AbstractTask2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.InitEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.EndEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.TemporalConditionEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.NotificationEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ConditionEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskRolesCompartment2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.Rol2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Actor2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.SoftwareAgent2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Team2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Group2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskObjectsCompartment2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ObjectEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskRolesCompartment2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.Rol3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Actor3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.SoftwareAgent3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Team3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Group3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskObjectsCompartment2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.Object2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskRolesCompartment2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.Rol4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Actor4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.SoftwareAgent4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Team4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.Group4EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskObjectsCompartment2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.Object3EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.AbstractTaskAbstractTaskProcessNodesCompartment2EditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.IndividualTask2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CooperativeTask2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CollaborativeTask2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.AbstractTask2EditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.InitEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.EndEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.TemporalConditionEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.NotificationEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ConditionEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.DomainDiagramDomainDiagramSharedContextCompartmentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.SharedObjectEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.SharedObjectSharedObjectAttributesCompartmentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.AttributeEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.SharedObjectSharedObjectOperationsCompartmentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.OperationEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.CTTDiagramCTTDiagramCttTasksCompartmentEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ExclusiveEditionEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CollaborativeVisualizationEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.IndividualVisualizationEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.UserTaskEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CTTAbstractTaskEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.InteractiveTaskEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (ciat.diagram.edit.parts.ApplicationTaskEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+		case ciat.diagram.edit.parts.InheritanceEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.InheritanceConditionEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.ActingEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ActingNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.AssociationEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.AssociationNameEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.EnablingEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.EnablingELabelEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.DisablingEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.DisablingDLabelEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.EnablingWithInformationPassingEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.EnablingWithInformationPassingEwLabelEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.DisablingWithInformationPassingEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.DisablingWithInformationPassingDwLabelEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.IndependentConcurrencyEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.IndependentConcurrencyIcLabelEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.OrderIndependenceEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.OrderIndependenceOiLabelEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.SuspendResumeEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.SuspendResumeSrLabelEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.ConcurrencyWithInformationPassingEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.ConcurrencyWithInformationPassingCLabelEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.DeterministicChoiceEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.DeterministicChoiceDtLabelEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case ciat.diagram.edit.parts.UndeterministicChoiceEditPart.VISUAL_ID:
+	if (ciat.diagram.edit.parts.UndeterministicChoiceUcLabelEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+	}
+	return false;
+}
+	
+		/**
+ * @generated
+ */
+public static int getLinkWithClassVisualID(org.eclipse.emf.ecore.EObject domainElement) {
+	if (domainElement == null) {
+		return -1;
+	}
+	if (ciat.CiatPackage.eINSTANCE.getInheritance().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.InheritanceEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getActing().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ActingEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getAssociation().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.AssociationEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getShAssociationLink().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ShAssociationLinkEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getShGeneralizationLink().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ShGeneralizationLinkEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getShAggregationLink().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ShAggregationLinkEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getAggregation().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.AggregationEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getEnabling().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.EnablingEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getDisabling().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.DisablingEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getEnablingWithInformationPassing().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.EnablingWithInformationPassingEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getDisablingWithInformationPassing().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.DisablingWithInformationPassingEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getIndependentConcurrency().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.IndependentConcurrencyEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getOrderIndependence().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.OrderIndependenceEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getSuspendResume().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.SuspendResumeEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getConcurrencyWithInformationPassing().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.ConcurrencyWithInformationPassingEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getDeterministicChoice().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.DeterministicChoiceEditPart.VISUAL_ID;
+}
+if (ciat.CiatPackage.eINSTANCE.getUndeterministicChoice().isSuperTypeOf(domainElement.eClass())) {
+	return ciat.diagram.edit.parts.UndeterministicChoiceEditPart.VISUAL_ID;
+}
+	return -1;
+}
+	
+				/**
+ * User can change implementation of this method to handle some specific
+ * situations not covered by default logic.
+ * 
+ * @generated
+ */
+private static boolean isDiagram(ciat.CIATDiagram element) {
+	return true;
+}
+	
+				
+	
+	
+	/**
+ * @generated
+ */
+	public static boolean checkNodeVisualID(org.eclipse.gmf.runtime.notation.View containerView, org.eclipse.emf.ecore.EObject domainElement, int candidate) {
+		if (candidate == -1){
+			//unrecognized id is always bad
+			return false;
+		}
+				int basic = getNodeVisualID(containerView, domainElement);
+		return basic == candidate;
+	}
+
+		/**
+ * @generated
+ */
+	public static boolean isCompartmentVisualID(int visualID) {
+					switch (visualID) {
+				case ciat.diagram.edit.parts.SociogramSociogramItsSociogramNodesCompartmentEditPart.VISUAL_ID:case ciat.diagram.edit.parts.ProcessDiagramProcessDiagramProcessNodesCompartmentEditPart.VISUAL_ID:case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskRolesCompartmentEditPart.VISUAL_ID:case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskObjectsCompartmentEditPart.VISUAL_ID:case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskRolesCompartmentEditPart.VISUAL_ID:case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskObjectsCompartmentEditPart.VISUAL_ID:case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskRolesCompartmentEditPart.VISUAL_ID:case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskObjectsCompartmentEditPart.VISUAL_ID:case ciat.diagram.edit.parts.AbstractTaskAbstractTaskProcessNodesCompartmentEditPart.VISUAL_ID:case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskRolesCompartment2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskObjectsCompartment2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskRolesCompartment2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskObjectsCompartment2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskRolesCompartment2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskObjectsCompartment2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.AbstractTaskAbstractTaskProcessNodesCompartment2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.DomainDiagramDomainDiagramSharedContextCompartmentEditPart.VISUAL_ID:case ciat.diagram.edit.parts.SharedObjectSharedObjectAttributesCompartmentEditPart.VISUAL_ID:case ciat.diagram.edit.parts.SharedObjectSharedObjectOperationsCompartmentEditPart.VISUAL_ID:case ciat.diagram.edit.parts.CTTDiagramCTTDiagramCttTasksCompartmentEditPart.VISUAL_ID:
+					return true;
+				default:
+					break;
+			}
+				return false;
+	}
+
+		/**
+ * @generated
+ */
+	public static boolean isSemanticLeafVisualID(int visualID) {
+		switch (visualID) {
+						case ciat.diagram.edit.parts.CIATDiagramEditPart.VISUAL_ID:
+				return false;
+									case ciat.diagram.edit.parts.RolEditPart.VISUAL_ID:case ciat.diagram.edit.parts.ActorEditPart.VISUAL_ID:case ciat.diagram.edit.parts.SoftwareAgentEditPart.VISUAL_ID:case ciat.diagram.edit.parts.TeamEditPart.VISUAL_ID:case ciat.diagram.edit.parts.GroupEditPart.VISUAL_ID:case ciat.diagram.edit.parts.Rol2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Actor2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.SoftwareAgent2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Team2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Group2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID:case ciat.diagram.edit.parts.ObjectEditPart.VISUAL_ID:case ciat.diagram.edit.parts.Rol3EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Actor3EditPart.VISUAL_ID:case ciat.diagram.edit.parts.SoftwareAgent3EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Team3EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Group3EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Object2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Rol4EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Actor4EditPart.VISUAL_ID:case ciat.diagram.edit.parts.SoftwareAgent4EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Team4EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Group4EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Object3EditPart.VISUAL_ID:case ciat.diagram.edit.parts.InitEditPart.VISUAL_ID:case ciat.diagram.edit.parts.EndEditPart.VISUAL_ID:case ciat.diagram.edit.parts.TemporalConditionEditPart.VISUAL_ID:case ciat.diagram.edit.parts.NotificationEditPart.VISUAL_ID:case ciat.diagram.edit.parts.ConditionEditPart.VISUAL_ID:case ciat.diagram.edit.parts.Init2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.End2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.TemporalCondition2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Notification2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.Condition2EditPart.VISUAL_ID:case ciat.diagram.edit.parts.ExclusiveEditionAreaEditPart.VISUAL_ID:case ciat.diagram.edit.parts.CollaborativeAreaEditPart.VISUAL_ID:case ciat.diagram.edit.parts.IndividualAreaEditPart.VISUAL_ID:case ciat.diagram.edit.parts.AttributeEditPart.VISUAL_ID:case ciat.diagram.edit.parts.OperationEditPart.VISUAL_ID:case ciat.diagram.edit.parts.ExclusiveEditionEditPart.VISUAL_ID:case ciat.diagram.edit.parts.CollaborativeVisualizationEditPart.VISUAL_ID:case ciat.diagram.edit.parts.IndividualVisualizationEditPart.VISUAL_ID:case ciat.diagram.edit.parts.UserTaskEditPart.VISUAL_ID:case ciat.diagram.edit.parts.CTTAbstractTaskEditPart.VISUAL_ID:case ciat.diagram.edit.parts.InteractiveTaskEditPart.VISUAL_ID:case ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart.VISUAL_ID:case ciat.diagram.edit.parts.ApplicationTaskEditPart.VISUAL_ID:
+				return true;
+									default:
+				break;
+		}
+		return false;
+	}
+
+		/**
+ * @generated
+ */
+	public static final org.eclipse.gmf.tooling.runtime.structure.DiagramStructure TYPED_INSTANCE = new org.eclipse.gmf.tooling.runtime.structure.DiagramStructure() {
+		/**
+ * @generated
+ */
+		@Override
+
+		public int getVisualID(org.eclipse.gmf.runtime.notation.View view) {
+			return ciat.diagram.part.CiatVisualIDRegistry.getVisualID(view);
+		}
+		
+		/**
+ * @generated
+ */
+		@Override
+
+		public String getModelID(org.eclipse.gmf.runtime.notation.View view) {
+			return ciat.diagram.part.CiatVisualIDRegistry.getModelID(view);
+		}
+		
+		/**
+ * @generated
+ */
+		@Override
+
+		public int getNodeVisualID(org.eclipse.gmf.runtime.notation.View containerView, org.eclipse.emf.ecore.EObject domainElement) {
+			return ciat.diagram.part.CiatVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		}
+		
+		/**
+ * @generated
+ */
+		@Override
+
+		public boolean checkNodeVisualID(org.eclipse.gmf.runtime.notation.View containerView, org.eclipse.emf.ecore.EObject domainElement, int candidate) {
+			return ciat.diagram.part.CiatVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
+		}
+
+		/**
+ * @generated
+ */
+		@Override
+
+		public boolean isCompartmentVisualID(int visualID) {
+			return ciat.diagram.part.CiatVisualIDRegistry.isCompartmentVisualID(visualID);
+		}
+
+		/**
+ * @generated
+ */
+		@Override
+
+		public boolean isSemanticLeafVisualID(int visualID) {
+			return ciat.diagram.part.CiatVisualIDRegistry.isSemanticLeafVisualID(visualID);
+		}
+	};
+
+	}

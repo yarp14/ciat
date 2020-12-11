@@ -1,0 +1,14 @@
+/*
+ * 
+ */
+package ciat.diagram.providers.assistants;
+
+/**
+ * @generated
+ */
+public class CiatModelingAssistantProviderOfObject2EditPart extends ciat.diagram.providers.CiatModelingAssistantProvider {
+
+					
+	
+
+	}

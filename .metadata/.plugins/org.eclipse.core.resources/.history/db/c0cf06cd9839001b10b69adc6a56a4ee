@@ -1,0 +1,569 @@
+/*
+ * 
+ */
+package ciat.diagram.edit.parts;
+
+/**
+ * @generated
+ */
+public class CiatEditPartFactory implements org.eclipse.gef.EditPartFactory {
+
+		/**
+ * @generated
+ */
+	public org.eclipse.gef.EditPart createEditPart(org.eclipse.gef.EditPart context, Object model) {
+		if (model instanceof org.eclipse.gmf.runtime.notation.View) {
+			org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) model;
+			switch (ciat.diagram.part.CiatVisualIDRegistry.getVisualID(view)) {
+				
+	case ciat.diagram.edit.parts.CIATDiagramEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CIATDiagramEditPart(view);
+									
+	case ciat.diagram.edit.parts.SociogramEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SociogramEditPart(view);
+					
+	case ciat.diagram.edit.parts.SociogramNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SociogramNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.ProcessDiagramEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ProcessDiagramEditPart(view);
+					
+	case ciat.diagram.edit.parts.ProcessDiagramNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ProcessDiagramNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.DomainDiagramEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.DomainDiagramEditPart(view);
+					
+	case ciat.diagram.edit.parts.DomainDiagramNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.DomainDiagramNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.CTTDiagramEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CTTDiagramEditPart(view);
+					
+	case ciat.diagram.edit.parts.CTTDiagramNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CTTDiagramNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.RolEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.RolEditPart(view);
+					
+	case ciat.diagram.edit.parts.RolNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.RolNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.ActorEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ActorEditPart(view);
+					
+	case ciat.diagram.edit.parts.ActorNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ActorNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.SoftwareAgentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SoftwareAgentEditPart(view);
+					
+	case ciat.diagram.edit.parts.SoftwareAgentNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SoftwareAgentNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.TeamEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.TeamEditPart(view);
+					
+	case ciat.diagram.edit.parts.TeamNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.TeamNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.GroupEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.GroupEditPart(view);
+					
+	case ciat.diagram.edit.parts.GroupNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.GroupNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.IndividualTaskEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndividualTaskEditPart(view);
+					
+	case ciat.diagram.edit.parts.IndividualTaskNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndividualTaskNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.Rol2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Rol2EditPart(view);
+					
+	case ciat.diagram.edit.parts.RolName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.RolName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.Actor2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Actor2EditPart(view);
+					
+	case ciat.diagram.edit.parts.ActorName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ActorName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.SoftwareAgent2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SoftwareAgent2EditPart(view);
+					
+	case ciat.diagram.edit.parts.SoftwareAgentName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SoftwareAgentName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.Team2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Team2EditPart(view);
+					
+	case ciat.diagram.edit.parts.TeamName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.TeamName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.Group2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Group2EditPart(view);
+					
+	case ciat.diagram.edit.parts.GroupName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.GroupName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.ToolEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ToolEditPart(view);
+					
+	case ciat.diagram.edit.parts.ToolNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ToolNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.ObjectEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ObjectEditPart(view);
+					
+	case ciat.diagram.edit.parts.ObjectNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ObjectNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.CooperativeTaskEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CooperativeTaskEditPart(view);
+					
+	case ciat.diagram.edit.parts.CooperativeTaskNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CooperativeTaskNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.Rol3EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Rol3EditPart(view);
+					
+	case ciat.diagram.edit.parts.RolName3EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.RolName3EditPart(view);
+									
+	case ciat.diagram.edit.parts.Actor3EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Actor3EditPart(view);
+					
+	case ciat.diagram.edit.parts.ActorName3EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ActorName3EditPart(view);
+									
+	case ciat.diagram.edit.parts.SoftwareAgent3EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SoftwareAgent3EditPart(view);
+					
+	case ciat.diagram.edit.parts.SoftwareAgentName3EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SoftwareAgentName3EditPart(view);
+									
+	case ciat.diagram.edit.parts.Team3EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Team3EditPart(view);
+					
+	case ciat.diagram.edit.parts.TeamName3EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.TeamName3EditPart(view);
+									
+	case ciat.diagram.edit.parts.Group3EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Group3EditPart(view);
+					
+	case ciat.diagram.edit.parts.GroupName3EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.GroupName3EditPart(view);
+									
+	case ciat.diagram.edit.parts.Object2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Object2EditPart(view);
+					
+	case ciat.diagram.edit.parts.ObjectName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ObjectName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.CollaborativeTaskEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CollaborativeTaskEditPart(view);
+					
+	case ciat.diagram.edit.parts.CollaborativeTaskNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CollaborativeTaskNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.Rol4EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Rol4EditPart(view);
+					
+	case ciat.diagram.edit.parts.RolName4EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.RolName4EditPart(view);
+									
+	case ciat.diagram.edit.parts.Actor4EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Actor4EditPart(view);
+					
+	case ciat.diagram.edit.parts.ActorName4EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ActorName4EditPart(view);
+									
+	case ciat.diagram.edit.parts.SoftwareAgent4EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SoftwareAgent4EditPart(view);
+					
+	case ciat.diagram.edit.parts.SoftwareAgentName4EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SoftwareAgentName4EditPart(view);
+									
+	case ciat.diagram.edit.parts.Team4EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Team4EditPart(view);
+					
+	case ciat.diagram.edit.parts.TeamName4EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.TeamName4EditPart(view);
+									
+	case ciat.diagram.edit.parts.Group4EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Group4EditPart(view);
+					
+	case ciat.diagram.edit.parts.GroupName4EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.GroupName4EditPart(view);
+									
+	case ciat.diagram.edit.parts.Object3EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Object3EditPart(view);
+					
+	case ciat.diagram.edit.parts.ObjectName3EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ObjectName3EditPart(view);
+									
+	case ciat.diagram.edit.parts.AbstractTaskEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.AbstractTaskEditPart(view);
+					
+	case ciat.diagram.edit.parts.AbstractTaskNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.AbstractTaskNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.IndividualTask2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndividualTask2EditPart(view);
+					
+	case ciat.diagram.edit.parts.IndividualTaskName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndividualTaskName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.CooperativeTask2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CooperativeTask2EditPart(view);
+					
+	case ciat.diagram.edit.parts.CooperativeTaskName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CooperativeTaskName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.CollaborativeTask2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CollaborativeTask2EditPart(view);
+					
+	case ciat.diagram.edit.parts.CollaborativeTaskName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CollaborativeTaskName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.AbstractTask2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.AbstractTask2EditPart(view);
+					
+	case ciat.diagram.edit.parts.AbstractTaskName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.AbstractTaskName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.InitEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.InitEditPart(view);
+					
+	case ciat.diagram.edit.parts.InitNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.InitNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.EndEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.EndEditPart(view);
+					
+	case ciat.diagram.edit.parts.EndNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.EndNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.TemporalConditionEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.TemporalConditionEditPart(view);
+					
+	case ciat.diagram.edit.parts.TemporalConditionNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.TemporalConditionNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.NotificationEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.NotificationEditPart(view);
+					
+	case ciat.diagram.edit.parts.NotificationNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.NotificationNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.ConditionEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ConditionEditPart(view);
+					
+	case ciat.diagram.edit.parts.ConditionNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ConditionNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.Init2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Init2EditPart(view);
+					
+	case ciat.diagram.edit.parts.InitName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.InitName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.End2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.End2EditPart(view);
+					
+	case ciat.diagram.edit.parts.EndName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.EndName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.TemporalCondition2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.TemporalCondition2EditPart(view);
+					
+	case ciat.diagram.edit.parts.TemporalConditionName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.TemporalConditionName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.Notification2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Notification2EditPart(view);
+					
+	case ciat.diagram.edit.parts.NotificationName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.NotificationName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.Condition2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.Condition2EditPart(view);
+					
+	case ciat.diagram.edit.parts.ConditionName2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ConditionName2EditPart(view);
+									
+	case ciat.diagram.edit.parts.SharedObjectEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SharedObjectEditPart(view);
+					
+	case ciat.diagram.edit.parts.SharedObjectNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SharedObjectNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.ExclusiveEditionAreaEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ExclusiveEditionAreaEditPart(view);
+					
+	case ciat.diagram.edit.parts.ExclusiveEditionAreaNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ExclusiveEditionAreaNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.CollaborativeAreaEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CollaborativeAreaEditPart(view);
+					
+	case ciat.diagram.edit.parts.CollaborativeAreaNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CollaborativeAreaNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.IndividualAreaEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndividualAreaEditPart(view);
+					
+	case ciat.diagram.edit.parts.IndividualAreaNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndividualAreaNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.AttributeEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.AttributeEditPart(view);
+					
+	case ciat.diagram.edit.parts.AttributeNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.AttributeNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.OperationEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.OperationEditPart(view);
+					
+	case ciat.diagram.edit.parts.OperationNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.OperationNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.ExclusiveEditionEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ExclusiveEditionEditPart(view);
+					
+	case ciat.diagram.edit.parts.ExclusiveEditionNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ExclusiveEditionNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.CollaborativeVisualizationEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CollaborativeVisualizationEditPart(view);
+					
+	case ciat.diagram.edit.parts.CollaborativeVisualizationNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CollaborativeVisualizationNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.IndividualVisualizationEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndividualVisualizationEditPart(view);
+					
+	case ciat.diagram.edit.parts.IndividualVisualizationNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndividualVisualizationNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.UserTaskEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.UserTaskEditPart(view);
+					
+	case ciat.diagram.edit.parts.UserTaskNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.UserTaskNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.CTTAbstractTaskEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CTTAbstractTaskEditPart(view);
+					
+	case ciat.diagram.edit.parts.CTTAbstractTaskNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CTTAbstractTaskNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.InteractiveTaskEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.InteractiveTaskEditPart(view);
+					
+	case ciat.diagram.edit.parts.InteractiveTaskNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.InteractiveTaskNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart(view);
+					
+	case ciat.diagram.edit.parts.CTTCollaborativeTaskNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CTTCollaborativeTaskNameEditPart(view);
+									
+	case ciat.diagram.edit.parts.ApplicationTaskEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ApplicationTaskEditPart(view);
+					
+	case ciat.diagram.edit.parts.ApplicationTaskNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ApplicationTaskNameEditPart(view);
+								
+	case ciat.diagram.edit.parts.SociogramSociogramItsSociogramNodesCompartmentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SociogramSociogramItsSociogramNodesCompartmentEditPart(view);
+
+	case ciat.diagram.edit.parts.ProcessDiagramProcessDiagramProcessNodesCompartmentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ProcessDiagramProcessDiagramProcessNodesCompartmentEditPart(view);
+
+	case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskRolesCompartmentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskRolesCompartmentEditPart(view);
+
+	case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskObjectsCompartmentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskObjectsCompartmentEditPart(view);
+
+	case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskRolesCompartmentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskRolesCompartmentEditPart(view);
+
+	case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskObjectsCompartmentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskObjectsCompartmentEditPart(view);
+
+	case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskRolesCompartmentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskRolesCompartmentEditPart(view);
+
+	case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskObjectsCompartmentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskObjectsCompartmentEditPart(view);
+
+	case ciat.diagram.edit.parts.AbstractTaskAbstractTaskProcessNodesCompartmentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.AbstractTaskAbstractTaskProcessNodesCompartmentEditPart(view);
+
+	case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskRolesCompartment2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskRolesCompartment2EditPart(view);
+
+	case ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskObjectsCompartment2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndividualTaskIndividualTaskTaskObjectsCompartment2EditPart(view);
+
+	case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskRolesCompartment2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskRolesCompartment2EditPart(view);
+
+	case ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskObjectsCompartment2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CooperativeTaskCooperativeTaskTaskObjectsCompartment2EditPart(view);
+
+	case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskRolesCompartment2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskRolesCompartment2EditPart(view);
+
+	case ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskObjectsCompartment2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CollaborativeTaskCollaborativeTaskTaskObjectsCompartment2EditPart(view);
+
+	case ciat.diagram.edit.parts.AbstractTaskAbstractTaskProcessNodesCompartment2EditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.AbstractTaskAbstractTaskProcessNodesCompartment2EditPart(view);
+
+	case ciat.diagram.edit.parts.DomainDiagramDomainDiagramSharedContextCompartmentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.DomainDiagramDomainDiagramSharedContextCompartmentEditPart(view);
+
+	case ciat.diagram.edit.parts.SharedObjectSharedObjectAttributesCompartmentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SharedObjectSharedObjectAttributesCompartmentEditPart(view);
+
+	case ciat.diagram.edit.parts.SharedObjectSharedObjectOperationsCompartmentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SharedObjectSharedObjectOperationsCompartmentEditPart(view);
+
+	case ciat.diagram.edit.parts.CTTDiagramCTTDiagramCttTasksCompartmentEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.CTTDiagramCTTDiagramCttTasksCompartmentEditPart(view);
+									
+	case ciat.diagram.edit.parts.InheritanceEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.InheritanceEditPart(view);
+					
+	case ciat.diagram.edit.parts.InheritanceConditionEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.InheritanceConditionEditPart(view);
+
+									
+	case ciat.diagram.edit.parts.ActingEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ActingEditPart(view);
+					
+	case ciat.diagram.edit.parts.ActingNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ActingNameEditPart(view);
+
+									
+	case ciat.diagram.edit.parts.AssociationEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.AssociationEditPart(view);
+					
+	case ciat.diagram.edit.parts.AssociationNameEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.AssociationNameEditPart(view);
+
+									
+	case ciat.diagram.edit.parts.ShAssociationLinkEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ShAssociationLinkEditPart(view);
+					
+									
+	case ciat.diagram.edit.parts.ShGeneralizationLinkEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ShGeneralizationLinkEditPart(view);
+					
+									
+	case ciat.diagram.edit.parts.ShAggregationLinkEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ShAggregationLinkEditPart(view);
+					
+									
+	case ciat.diagram.edit.parts.AggregationEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.AggregationEditPart(view);
+					
+									
+	case ciat.diagram.edit.parts.EnablingEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.EnablingEditPart(view);
+					
+	case ciat.diagram.edit.parts.EnablingELabelEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.EnablingELabelEditPart(view);
+
+									
+	case ciat.diagram.edit.parts.DisablingEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.DisablingEditPart(view);
+					
+	case ciat.diagram.edit.parts.DisablingDLabelEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.DisablingDLabelEditPart(view);
+
+									
+	case ciat.diagram.edit.parts.EnablingWithInformationPassingEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.EnablingWithInformationPassingEditPart(view);
+					
+	case ciat.diagram.edit.parts.EnablingWithInformationPassingEwLabelEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.EnablingWithInformationPassingEwLabelEditPart(view);
+
+									
+	case ciat.diagram.edit.parts.DisablingWithInformationPassingEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.DisablingWithInformationPassingEditPart(view);
+					
+	case ciat.diagram.edit.parts.DisablingWithInformationPassingDwLabelEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.DisablingWithInformationPassingDwLabelEditPart(view);
+
+									
+	case ciat.diagram.edit.parts.IndependentConcurrencyEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndependentConcurrencyEditPart(view);
+					
+	case ciat.diagram.edit.parts.IndependentConcurrencyIcLabelEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.IndependentConcurrencyIcLabelEditPart(view);
+
+									
+	case ciat.diagram.edit.parts.OrderIndependenceEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.OrderIndependenceEditPart(view);
+					
+	case ciat.diagram.edit.parts.OrderIndependenceOiLabelEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.OrderIndependenceOiLabelEditPart(view);
+
+									
+	case ciat.diagram.edit.parts.SuspendResumeEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SuspendResumeEditPart(view);
+					
+	case ciat.diagram.edit.parts.SuspendResumeSrLabelEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.SuspendResumeSrLabelEditPart(view);
+
+									
+	case ciat.diagram.edit.parts.ConcurrencyWithInformationPassingEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ConcurrencyWithInformationPassingEditPart(view);
+					
+	case ciat.diagram.edit.parts.ConcurrencyWithInformationPassingCLabelEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.ConcurrencyWithInformationPassingCLabelEditPart(view);
+
+									
+	case ciat.diagram.edit.parts.DeterministicChoiceEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.DeterministicChoiceEditPart(view);
+					
+	case ciat.diagram.edit.parts.DeterministicChoiceDtLabelEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.DeterministicChoiceDtLabelEditPart(view);
+
+									
+	case ciat.diagram.edit.parts.UndeterministicChoiceEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.UndeterministicChoiceEditPart(view);
+					
+	case ciat.diagram.edit.parts.UndeterministicChoiceUcLabelEditPart.VISUAL_ID:
+		return new ciat.diagram.edit.parts.UndeterministicChoiceUcLabelEditPart(view);
+
+							}
+		}
+		return createUnrecognizedEditPart(context, model);
+	}
+	
+		/**
+ * @generated
+ */
+	 private org.eclipse.gef.EditPart createUnrecognizedEditPart(org.eclipse.gef.EditPart context, Object model) {
+	 	// Handle creation of unrecognized child node EditParts here
+	 	return null;
+	 }
+	
+		/**
+ * @generated
+ */
+	public static org.eclipse.gef.tools.CellEditorLocator getTextCellEditorLocator(
+			org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart source) {
+		return org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
+	}
+	
+	}

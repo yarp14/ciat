@@ -1,0 +1,1661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+
+-->
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="ciat_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="ciat_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="ciat.diagram.part.CiatDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/CiatDiagramFile.gif"
+         extensions="ciat_diagram"
+         default="true"
+         class="ciat.diagram.part.CiatDiagramEditor"
+         matchingStrategy="ciat.diagram.part.CiatMatchingStrategy"
+         contributorClass="ciat.diagram.part.CiatDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="ciat.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/CiatDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="ciat.diagram.part.CiatCreationWizard"
+  	     id="ciat.diagram.part.CiatCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="org.chico.ciat.diagram.InitDiagram"
+            nameFilter="*.ciat"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="ciat.diagram.part.CiatInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.chico.ciat.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="CiatPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="ciat.diagram.part.CiatDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="CiatPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="ciat.diagram.part.CiatDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="CiatPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="ciat.diagram.part.CiatDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="CiatRender">
+         <Priority name="Lowest"/>
+         <ViewId id="ciat.diagram.part.CiatDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="ciat.diagram.providers.CiatMarkerNavigationProvider">
+         <MarkerType name="org.chico.ciat.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="Ciat Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="ciat.diagram.providers.CiatValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="ciat.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="org.chico.ciat.diagram.general"
+            name="%prefpage.org.chico.ciat.diagram.general"
+            class="ciat.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="org.chico.ciat.diagram.appearance"
+            name="%prefpage.org.chico.ciat.diagram.appearance"
+            category="org.chico.ciat.diagram.general"
+            class="ciat.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="org.chico.ciat.diagram.connections"
+            name="%prefpage.org.chico.ciat.diagram.connections"
+            category="org.chico.ciat.diagram.general"
+            class="ciat.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="org.chico.ciat.diagram.printing"
+            name="%prefpage.org.chico.ciat.diagram.printing"
+            category="org.chico.ciat.diagram.general"
+            class="ciat.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="org.chico.ciat.diagram.rulersAndGrid"
+            name="%prefpage.org.chico.ciat.diagram.rulersAndGrid"
+            category="org.chico.ciat.diagram.general"
+            class="ciat.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="org.chico.ciat.diagram"
+            labelProvider="ciat.diagram.sheet.CiatSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="org.chico.ciat.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="org.chico.ciat.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="ciat.diagram.sheet.CiatPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="ciat.diagram.navigator.CiatAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="ciat.diagram.providers.CiatViewProvider">
+         <Priority name="Lowest"/>
+         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
+            <method name="getType()" value="ciat"/>
+         </object>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Ciat"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3026,3027,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039,3040,3041,3042,3043,3044,3045,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3056"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4007,4008,4009,4010,4011,4012,4013,4014,4015,4016,4017"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="ciat.diagram.providers.CiatEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="Ciat"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,2002,2003,2004,3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3026,3027,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039,3040,3041,3042,3043,3044,3045,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3056"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001,4002,4003,4004,4005,4006,4007,4008,4009,4010,4011,4012,4013,4014,4015,4016,4017"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5006,5044,5051,5060,5001,5002,5003,5004,5005,5014,5007,5008,5009,5010,5011,5012,5013,5021,5015,5016,5017,5018,5019,5020,5028,5022,5023,5024,5025,5026,5027,5038,5029,5030,5031,5037,5032,5033,5034,5035,5036,5039,5040,5041,5042,5043,5050,5045,5046,5047,5048,5049,5052,5053,5054,5055,5056,5057,5058,5059"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7001,7002,7003,7004,7005,7006,7007,7008,7009,7010,7011,7012,7013,7014,7015,7016,7017,7018,7019,7020"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfCIATDiagramEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.CIATDiagramEditPart" id="CIATDiagram_1000"/>
+         <context elements="CIATDiagram_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfSociogramEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.SociogramEditPart" id="Sociogram_2001"/>
+         <context elements="Sociogram_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfProcessDiagramEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.ProcessDiagramEditPart" id="ProcessDiagram_2002"/>
+         <context elements="ProcessDiagram_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfDomainDiagramEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.DomainDiagramEditPart" id="DomainDiagram_2003"/>
+         <context elements="DomainDiagram_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfCTTDiagramEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.CTTDiagramEditPart" id="CTTDiagram_2004"/>
+         <context elements="CTTDiagram_2004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfRolEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.RolEditPart" id="Rol_3001"/>
+         <context elements="Rol_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfActorEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.ActorEditPart" id="Actor_3002"/>
+         <context elements="Actor_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfSoftwareAgentEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.SoftwareAgentEditPart" id="SoftwareAgent_3003"/>
+         <context elements="SoftwareAgent_3003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfTeamEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.TeamEditPart" id="Team_3004"/>
+         <context elements="Team_3004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfGroupEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.GroupEditPart" id="Group_3005"/>
+         <context elements="Group_3005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfIndividualTaskEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.IndividualTaskEditPart" id="IndividualTask_3006"/>
+         <context elements="IndividualTask_3006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfRol2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Rol2EditPart" id="Rol_3007"/>
+         <context elements="Rol_3007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfActor2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Actor2EditPart" id="Actor_3008"/>
+         <context elements="Actor_3008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfSoftwareAgent2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.SoftwareAgent2EditPart" id="SoftwareAgent_3009"/>
+         <context elements="SoftwareAgent_3009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfTeam2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Team2EditPart" id="Team_3010"/>
+         <context elements="Team_3010"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfGroup2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Group2EditPart" id="Group_3011"/>
+         <context elements="Group_3011"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfToolEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.ToolEditPart" id="Tool_3012"/>
+         <context elements="Tool_3012"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfObjectEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.ObjectEditPart" id="Object_3013"/>
+         <context elements="Object_3013"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfCooperativeTaskEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.CooperativeTaskEditPart" id="CooperativeTask_3014"/>
+         <context elements="CooperativeTask_3014"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfRol3EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Rol3EditPart" id="Rol_3015"/>
+         <context elements="Rol_3015"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfActor3EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Actor3EditPart" id="Actor_3016"/>
+         <context elements="Actor_3016"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfSoftwareAgent3EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.SoftwareAgent3EditPart" id="SoftwareAgent_3017"/>
+         <context elements="SoftwareAgent_3017"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfTeam3EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Team3EditPart" id="Team_3018"/>
+         <context elements="Team_3018"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfGroup3EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Group3EditPart" id="Group_3019"/>
+         <context elements="Group_3019"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfObject2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Object2EditPart" id="Object_3020"/>
+         <context elements="Object_3020"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfCollaborativeTaskEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.CollaborativeTaskEditPart" id="CollaborativeTask_3021"/>
+         <context elements="CollaborativeTask_3021"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfRol4EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Rol4EditPart" id="Rol_3022"/>
+         <context elements="Rol_3022"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfActor4EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Actor4EditPart" id="Actor_3023"/>
+         <context elements="Actor_3023"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfSoftwareAgent4EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.SoftwareAgent4EditPart" id="SoftwareAgent_3024"/>
+         <context elements="SoftwareAgent_3024"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfTeam4EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Team4EditPart" id="Team_3025"/>
+         <context elements="Team_3025"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfGroup4EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Group4EditPart" id="Group_3026"/>
+         <context elements="Group_3026"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfObject3EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Object3EditPart" id="Object_3027"/>
+         <context elements="Object_3027"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfAbstractTaskEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.AbstractTaskEditPart" id="AbstractTask_3028"/>
+         <context elements="AbstractTask_3028"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfIndividualTask2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.IndividualTask2EditPart" id="IndividualTask_3029"/>
+         <context elements="IndividualTask_3029"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfCooperativeTask2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.CooperativeTask2EditPart" id="CooperativeTask_3030"/>
+         <context elements="CooperativeTask_3030"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfCollaborativeTask2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.CollaborativeTask2EditPart" id="CollaborativeTask_3031"/>
+         <context elements="CollaborativeTask_3031"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfAbstractTask2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.AbstractTask2EditPart" id="AbstractTask_3032"/>
+         <context elements="AbstractTask_3032"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfInitEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.InitEditPart" id="Init_3033"/>
+         <context elements="Init_3033"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfEndEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.EndEditPart" id="End_3034"/>
+         <context elements="End_3034"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfTemporalConditionEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.TemporalConditionEditPart" id="TemporalCondition_3035"/>
+         <context elements="TemporalCondition_3035"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfNotificationEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.NotificationEditPart" id="Notification_3036"/>
+         <context elements="Notification_3036"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfConditionEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.ConditionEditPart" id="Condition_3037"/>
+         <context elements="Condition_3037"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfInit2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Init2EditPart" id="Init_3038"/>
+         <context elements="Init_3038"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfEnd2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.End2EditPart" id="End_3039"/>
+         <context elements="End_3039"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfTemporalCondition2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.TemporalCondition2EditPart" id="TemporalCondition_3040"/>
+         <context elements="TemporalCondition_3040"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfNotification2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Notification2EditPart" id="Notification_3041"/>
+         <context elements="Notification_3041"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfCondition2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.Condition2EditPart" id="Condition_3042"/>
+         <context elements="Condition_3042"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfSharedObjectEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.SharedObjectEditPart" id="SharedObject_3043"/>
+         <context elements="SharedObject_3043"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfExclusiveEditionAreaEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.ExclusiveEditionAreaEditPart" id="ExclusiveEditionArea_3044"/>
+         <context elements="ExclusiveEditionArea_3044"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfCollaborativeAreaEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.CollaborativeAreaEditPart" id="CollaborativeArea_3045"/>
+         <context elements="CollaborativeArea_3045"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfIndividualAreaEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.IndividualAreaEditPart" id="IndividualArea_3046"/>
+         <context elements="IndividualArea_3046"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfAttributeEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.AttributeEditPart" id="Attribute_3047"/>
+         <context elements="Attribute_3047"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfOperationEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.OperationEditPart" id="Operation_3048"/>
+         <context elements="Operation_3048"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfExclusiveEditionEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.ExclusiveEditionEditPart" id="ExclusiveEdition_3049"/>
+         <context elements="ExclusiveEdition_3049"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfCollaborativeVisualizationEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.CollaborativeVisualizationEditPart" id="CollaborativeVisualization_3050"/>
+         <context elements="CollaborativeVisualization_3050"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfIndividualVisualizationEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.IndividualVisualizationEditPart" id="IndividualVisualization_3051"/>
+         <context elements="IndividualVisualization_3051"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfUserTaskEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.UserTaskEditPart" id="UserTask_3052"/>
+         <context elements="UserTask_3052"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfCTTAbstractTaskEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.CTTAbstractTaskEditPart" id="CTTAbstractTask_3053"/>
+         <context elements="CTTAbstractTask_3053"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfInteractiveTaskEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.InteractiveTaskEditPart" id="InteractiveTask_3054"/>
+         <context elements="InteractiveTask_3054"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfCTTCollaborativeTaskEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.CTTCollaborativeTaskEditPart" id="CTTCollaborativeTask_3055"/>
+         <context elements="CTTCollaborativeTask_3055"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ciat.diagram.providers.assistants.CiatModelingAssistantProviderOfApplicationTaskEditPart">
+         <Priority name="Lowest"/>
+         <object class="ciat.diagram.edit.parts.ApplicationTaskEditPart" id="ApplicationTask_3056"/>
+         <context elements="ApplicationTask_3056"/>
+      </modelingAssistantProvider>
+      
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="ciat.diagram.providers.CiatIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="ciat.diagram.providers.CiatParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders" id="decorator-provider">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="ciat.diagram.providers.CiatShortcutsDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
+            <method name="getType()" value="2001,2002,2003,2004"/>
+         </object>
+         <context decoratorTargets="generated-top-nodes"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.CIATDiagram_1000"
+               name="%metatype.name.CIATDiagram_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CIATDiagram"
+               edithelper="ciat.diagram.edit.helpers.CIATDiagramEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Sociogram_2001"
+               name="%metatype.name.Sociogram_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Sociogram"
+               edithelper="ciat.diagram.edit.helpers.SociogramEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.ProcessDiagram_2002"
+               name="%metatype.name.ProcessDiagram_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ProcessDiagram"
+               edithelper="ciat.diagram.edit.helpers.ProcessDiagramEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.DomainDiagram_2003"
+               name="%metatype.name.DomainDiagram_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DomainDiagram"
+               edithelper="ciat.diagram.edit.helpers.DomainDiagramEditHelper">
+            <param name="semanticHint" value="2003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.CTTDiagram_2004"
+               name="%metatype.name.CTTDiagram_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CTTDiagram"
+               edithelper="ciat.diagram.edit.helpers.CTTDiagramEditHelper">
+            <param name="semanticHint" value="2004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Rol_3001"
+               name="%metatype.name.Rol_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Rol"
+               edithelper="ciat.diagram.edit.helpers.RolEditHelper">
+            <param name="semanticHint" value="3001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Actor_3002"
+               name="%metatype.name.Actor_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Actor"
+               edithelper="ciat.diagram.edit.helpers.ActorEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.SoftwareAgent_3003"
+               name="%metatype.name.SoftwareAgent_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SoftwareAgent"
+               edithelper="ciat.diagram.edit.helpers.SoftwareAgentEditHelper">
+            <param name="semanticHint" value="3003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Team_3004"
+               name="%metatype.name.Team_3004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Team"
+               edithelper="ciat.diagram.edit.helpers.TeamEditHelper">
+            <param name="semanticHint" value="3004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Group_3005"
+               name="%metatype.name.Group_3005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Group"
+               edithelper="ciat.diagram.edit.helpers.GroupEditHelper">
+            <param name="semanticHint" value="3005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.IndividualTask_3006"
+               name="%metatype.name.IndividualTask_3006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="IndividualTask"
+               edithelper="ciat.diagram.edit.helpers.IndividualTaskEditHelper">
+            <param name="semanticHint" value="3006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Rol_3007"
+               name="%metatype.name.Rol_3007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Rol_3001"/>
+            <param name="semanticHint" value="3007"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Actor_3008"
+               name="%metatype.name.Actor_3008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Actor_3002"/>
+            <param name="semanticHint" value="3008"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.SoftwareAgent_3009"
+               name="%metatype.name.SoftwareAgent_3009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.SoftwareAgent_3003"/>
+            <param name="semanticHint" value="3009"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Team_3010"
+               name="%metatype.name.Team_3010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Team_3004"/>
+            <param name="semanticHint" value="3010"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Group_3011"
+               name="%metatype.name.Group_3011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Group_3005"/>
+            <param name="semanticHint" value="3011"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Tool_3012"
+               name="%metatype.name.Tool_3012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Tool"
+               edithelper="ciat.diagram.edit.helpers.ToolEditHelper">
+            <param name="semanticHint" value="3012"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Object_3013"
+               name="%metatype.name.Object_3013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Object"
+               edithelper="ciat.diagram.edit.helpers.ObjectEditHelper">
+            <param name="semanticHint" value="3013"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.CooperativeTask_3014"
+               name="%metatype.name.CooperativeTask_3014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CooperativeTask"
+               edithelper="ciat.diagram.edit.helpers.CooperativeTaskEditHelper">
+            <param name="semanticHint" value="3014"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Rol_3015"
+               name="%metatype.name.Rol_3015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Rol_3001"/>
+            <param name="semanticHint" value="3015"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Actor_3016"
+               name="%metatype.name.Actor_3016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Actor_3002"/>
+            <param name="semanticHint" value="3016"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.SoftwareAgent_3017"
+               name="%metatype.name.SoftwareAgent_3017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.SoftwareAgent_3003"/>
+            <param name="semanticHint" value="3017"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Team_3018"
+               name="%metatype.name.Team_3018"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Team_3004"/>
+            <param name="semanticHint" value="3018"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Group_3019"
+               name="%metatype.name.Group_3019"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Group_3005"/>
+            <param name="semanticHint" value="3019"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Object_3020"
+               name="%metatype.name.Object_3020"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Object_3013"/>
+            <param name="semanticHint" value="3020"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.CollaborativeTask_3021"
+               name="%metatype.name.CollaborativeTask_3021"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CollaborativeTask"
+               edithelper="ciat.diagram.edit.helpers.CollaborativeTaskEditHelper">
+            <param name="semanticHint" value="3021"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Rol_3022"
+               name="%metatype.name.Rol_3022"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Rol_3001"/>
+            <param name="semanticHint" value="3022"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Actor_3023"
+               name="%metatype.name.Actor_3023"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Actor_3002"/>
+            <param name="semanticHint" value="3023"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.SoftwareAgent_3024"
+               name="%metatype.name.SoftwareAgent_3024"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.SoftwareAgent_3003"/>
+            <param name="semanticHint" value="3024"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Team_3025"
+               name="%metatype.name.Team_3025"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Team_3004"/>
+            <param name="semanticHint" value="3025"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Group_3026"
+               name="%metatype.name.Group_3026"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Group_3005"/>
+            <param name="semanticHint" value="3026"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Object_3027"
+               name="%metatype.name.Object_3027"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Object_3013"/>
+            <param name="semanticHint" value="3027"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.AbstractTask_3028"
+               name="%metatype.name.AbstractTask_3028"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AbstractTask"
+               edithelper="ciat.diagram.edit.helpers.AbstractTaskEditHelper">
+            <param name="semanticHint" value="3028"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.IndividualTask_3029"
+               name="%metatype.name.IndividualTask_3029"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.IndividualTask_3006"/>
+            <param name="semanticHint" value="3029"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.CooperativeTask_3030"
+               name="%metatype.name.CooperativeTask_3030"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.CooperativeTask_3014"/>
+            <param name="semanticHint" value="3030"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.CollaborativeTask_3031"
+               name="%metatype.name.CollaborativeTask_3031"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.CollaborativeTask_3021"/>
+            <param name="semanticHint" value="3031"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.AbstractTask_3032"
+               name="%metatype.name.AbstractTask_3032"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.AbstractTask_3028"/>
+            <param name="semanticHint" value="3032"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Init_3033"
+               name="%metatype.name.Init_3033"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Init"
+               edithelper="ciat.diagram.edit.helpers.InitEditHelper">
+            <param name="semanticHint" value="3033"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.End_3034"
+               name="%metatype.name.End_3034"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="End"
+               edithelper="ciat.diagram.edit.helpers.EndEditHelper">
+            <param name="semanticHint" value="3034"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.TemporalCondition_3035"
+               name="%metatype.name.TemporalCondition_3035"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="TemporalCondition"
+               edithelper="ciat.diagram.edit.helpers.TemporalConditionEditHelper">
+            <param name="semanticHint" value="3035"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Notification_3036"
+               name="%metatype.name.Notification_3036"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Notification"
+               edithelper="ciat.diagram.edit.helpers.NotificationEditHelper">
+            <param name="semanticHint" value="3036"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Condition_3037"
+               name="%metatype.name.Condition_3037"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Condition"
+               edithelper="ciat.diagram.edit.helpers.ConditionEditHelper">
+            <param name="semanticHint" value="3037"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Init_3038"
+               name="%metatype.name.Init_3038"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Init_3033"/>
+            <param name="semanticHint" value="3038"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.End_3039"
+               name="%metatype.name.End_3039"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.End_3034"/>
+            <param name="semanticHint" value="3039"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.TemporalCondition_3040"
+               name="%metatype.name.TemporalCondition_3040"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.TemporalCondition_3035"/>
+            <param name="semanticHint" value="3040"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Notification_3041"
+               name="%metatype.name.Notification_3041"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Notification_3036"/>
+            <param name="semanticHint" value="3041"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <specializationType
+               id="org.chico.ciat.diagram.Condition_3042"
+               name="%metatype.name.Condition_3042"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.chico.ciat.diagram.Condition_3037"/>
+            <param name="semanticHint" value="3042"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.SharedObject_3043"
+               name="%metatype.name.SharedObject_3043"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SharedObject"
+               edithelper="ciat.diagram.edit.helpers.SharedObjectEditHelper">
+            <param name="semanticHint" value="3043"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.ExclusiveEditionArea_3044"
+               name="%metatype.name.ExclusiveEditionArea_3044"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExclusiveEditionArea"
+               edithelper="ciat.diagram.edit.helpers.ExclusiveEditionAreaEditHelper">
+            <param name="semanticHint" value="3044"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.CollaborativeArea_3045"
+               name="%metatype.name.CollaborativeArea_3045"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CollaborativeArea"
+               edithelper="ciat.diagram.edit.helpers.CollaborativeAreaEditHelper">
+            <param name="semanticHint" value="3045"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.IndividualArea_3046"
+               name="%metatype.name.IndividualArea_3046"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="IndividualArea"
+               edithelper="ciat.diagram.edit.helpers.IndividualAreaEditHelper">
+            <param name="semanticHint" value="3046"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Attribute_3047"
+               name="%metatype.name.Attribute_3047"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Attribute"
+               edithelper="ciat.diagram.edit.helpers.AttributeEditHelper">
+            <param name="semanticHint" value="3047"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Operation_3048"
+               name="%metatype.name.Operation_3048"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Operation"
+               edithelper="ciat.diagram.edit.helpers.OperationEditHelper">
+            <param name="semanticHint" value="3048"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.ExclusiveEdition_3049"
+               name="%metatype.name.ExclusiveEdition_3049"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExclusiveEdition"
+               edithelper="ciat.diagram.edit.helpers.ExclusiveEditionEditHelper">
+            <param name="semanticHint" value="3049"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.CollaborativeVisualization_3050"
+               name="%metatype.name.CollaborativeVisualization_3050"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CollaborativeVisualization"
+               edithelper="ciat.diagram.edit.helpers.CollaborativeVisualizationEditHelper">
+            <param name="semanticHint" value="3050"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.IndividualVisualization_3051"
+               name="%metatype.name.IndividualVisualization_3051"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="IndividualVisualization"
+               edithelper="ciat.diagram.edit.helpers.IndividualVisualizationEditHelper">
+            <param name="semanticHint" value="3051"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.UserTask_3052"
+               name="%metatype.name.UserTask_3052"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="UserTask"
+               edithelper="ciat.diagram.edit.helpers.UserTaskEditHelper">
+            <param name="semanticHint" value="3052"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.CTTAbstractTask_3053"
+               name="%metatype.name.CTTAbstractTask_3053"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CTTAbstractTask"
+               edithelper="ciat.diagram.edit.helpers.CTTAbstractTaskEditHelper">
+            <param name="semanticHint" value="3053"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.InteractiveTask_3054"
+               name="%metatype.name.InteractiveTask_3054"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InteractiveTask"
+               edithelper="ciat.diagram.edit.helpers.InteractiveTaskEditHelper">
+            <param name="semanticHint" value="3054"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.CTTCollaborativeTask_3055"
+               name="%metatype.name.CTTCollaborativeTask_3055"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CTTCollaborativeTask"
+               edithelper="ciat.diagram.edit.helpers.CTTCollaborativeTaskEditHelper">
+            <param name="semanticHint" value="3055"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.ApplicationTask_3056"
+               name="%metatype.name.ApplicationTask_3056"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ApplicationTask"
+               edithelper="ciat.diagram.edit.helpers.ApplicationTaskEditHelper">
+            <param name="semanticHint" value="3056"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Inheritance_4001"
+               name="%metatype.name.Inheritance_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Inheritance"
+               edithelper="ciat.diagram.edit.helpers.InheritanceEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Acting_4002"
+               name="%metatype.name.Acting_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Acting"
+               edithelper="ciat.diagram.edit.helpers.ActingEditHelper">
+            <param name="semanticHint" value="4002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Association_4003"
+               name="%metatype.name.Association_4003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Association"
+               edithelper="ciat.diagram.edit.helpers.AssociationEditHelper">
+            <param name="semanticHint" value="4003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.ShAssociationLink_4004"
+               name="%metatype.name.ShAssociationLink_4004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ShAssociationLink"
+               edithelper="ciat.diagram.edit.helpers.ShAssociationLinkEditHelper">
+            <param name="semanticHint" value="4004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.ShGeneralizationLink_4005"
+               name="%metatype.name.ShGeneralizationLink_4005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ShGeneralizationLink"
+               edithelper="ciat.diagram.edit.helpers.ShGeneralizationLinkEditHelper">
+            <param name="semanticHint" value="4005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.ShAggregationLink_4006"
+               name="%metatype.name.ShAggregationLink_4006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ShAggregationLink"
+               edithelper="ciat.diagram.edit.helpers.ShAggregationLinkEditHelper">
+            <param name="semanticHint" value="4006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Aggregation_4007"
+               name="%metatype.name.Aggregation_4007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Aggregation"
+               edithelper="ciat.diagram.edit.helpers.AggregationEditHelper">
+            <param name="semanticHint" value="4007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Enabling_4008"
+               name="%metatype.name.Enabling_4008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Enabling"
+               edithelper="ciat.diagram.edit.helpers.EnablingEditHelper">
+            <param name="semanticHint" value="4008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.Disabling_4009"
+               name="%metatype.name.Disabling_4009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Disabling"
+               edithelper="ciat.diagram.edit.helpers.DisablingEditHelper">
+            <param name="semanticHint" value="4009"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.EnablingWithInformationPassing_4010"
+               name="%metatype.name.EnablingWithInformationPassing_4010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="EnablingWithInformationPassing"
+               edithelper="ciat.diagram.edit.helpers.EnablingWithInformationPassingEditHelper">
+            <param name="semanticHint" value="4010"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.DisablingWithInformationPassing_4011"
+               name="%metatype.name.DisablingWithInformationPassing_4011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DisablingWithInformationPassing"
+               edithelper="ciat.diagram.edit.helpers.DisablingWithInformationPassingEditHelper">
+            <param name="semanticHint" value="4011"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.IndependentConcurrency_4012"
+               name="%metatype.name.IndependentConcurrency_4012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="IndependentConcurrency"
+               edithelper="ciat.diagram.edit.helpers.IndependentConcurrencyEditHelper">
+            <param name="semanticHint" value="4012"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.OrderIndependence_4013"
+               name="%metatype.name.OrderIndependence_4013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="OrderIndependence"
+               edithelper="ciat.diagram.edit.helpers.OrderIndependenceEditHelper">
+            <param name="semanticHint" value="4013"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.SuspendResume_4014"
+               name="%metatype.name.SuspendResume_4014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SuspendResume"
+               edithelper="ciat.diagram.edit.helpers.SuspendResumeEditHelper">
+            <param name="semanticHint" value="4014"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.ConcurrencyWithInformationPassing_4015"
+               name="%metatype.name.ConcurrencyWithInformationPassing_4015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ConcurrencyWithInformationPassing"
+               edithelper="ciat.diagram.edit.helpers.ConcurrencyWithInformationPassingEditHelper">
+            <param name="semanticHint" value="4015"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.DeterministicChoice_4016"
+               name="%metatype.name.DeterministicChoice_4016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DeterministicChoice"
+               edithelper="ciat.diagram.edit.helpers.DeterministicChoiceEditHelper">
+            <param name="semanticHint" value="4016"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="ciat">
+         <metamodelType
+               id="org.chico.ciat.diagram.UndeterministicChoice_4017"
+               name="%metatype.name.UndeterministicChoice_4017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="UndeterministicChoice"
+               edithelper="ciat.diagram.edit.helpers.UndeterministicChoiceEditHelper">
+            <param name="semanticHint" value="4017"/>
+         </metamodelType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="org.chico.ciat.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="org.chico.ciat.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="org.chico.ciat.diagram.TypeContext">
+         <elementType ref="org.chico.ciat.diagram.CIATDiagram_1000"/>
+         <elementType ref="org.chico.ciat.diagram.Sociogram_2001"/>
+         <elementType ref="org.chico.ciat.diagram.ProcessDiagram_2002"/>
+         <elementType ref="org.chico.ciat.diagram.DomainDiagram_2003"/>
+         <elementType ref="org.chico.ciat.diagram.CTTDiagram_2004"/>
+         <elementType ref="org.chico.ciat.diagram.Rol_3001"/>
+         <elementType ref="org.chico.ciat.diagram.Actor_3002"/>
+         <elementType ref="org.chico.ciat.diagram.SoftwareAgent_3003"/>
+         <elementType ref="org.chico.ciat.diagram.Team_3004"/>
+         <elementType ref="org.chico.ciat.diagram.Group_3005"/>
+         <elementType ref="org.chico.ciat.diagram.IndividualTask_3006"/>
+         <elementType ref="org.chico.ciat.diagram.Rol_3007"/>
+         <elementType ref="org.chico.ciat.diagram.Actor_3008"/>
+         <elementType ref="org.chico.ciat.diagram.SoftwareAgent_3009"/>
+         <elementType ref="org.chico.ciat.diagram.Team_3010"/>
+         <elementType ref="org.chico.ciat.diagram.Group_3011"/>
+         <elementType ref="org.chico.ciat.diagram.Tool_3012"/>
+         <elementType ref="org.chico.ciat.diagram.Object_3013"/>
+         <elementType ref="org.chico.ciat.diagram.CooperativeTask_3014"/>
+         <elementType ref="org.chico.ciat.diagram.Rol_3015"/>
+         <elementType ref="org.chico.ciat.diagram.Actor_3016"/>
+         <elementType ref="org.chico.ciat.diagram.SoftwareAgent_3017"/>
+         <elementType ref="org.chico.ciat.diagram.Team_3018"/>
+         <elementType ref="org.chico.ciat.diagram.Group_3019"/>
+         <elementType ref="org.chico.ciat.diagram.Object_3020"/>
+         <elementType ref="org.chico.ciat.diagram.CollaborativeTask_3021"/>
+         <elementType ref="org.chico.ciat.diagram.Rol_3022"/>
+         <elementType ref="org.chico.ciat.diagram.Actor_3023"/>
+         <elementType ref="org.chico.ciat.diagram.SoftwareAgent_3024"/>
+         <elementType ref="org.chico.ciat.diagram.Team_3025"/>
+         <elementType ref="org.chico.ciat.diagram.Group_3026"/>
+         <elementType ref="org.chico.ciat.diagram.Object_3027"/>
+         <elementType ref="org.chico.ciat.diagram.AbstractTask_3028"/>
+         <elementType ref="org.chico.ciat.diagram.IndividualTask_3029"/>
+         <elementType ref="org.chico.ciat.diagram.CooperativeTask_3030"/>
+         <elementType ref="org.chico.ciat.diagram.CollaborativeTask_3031"/>
+         <elementType ref="org.chico.ciat.diagram.AbstractTask_3032"/>
+         <elementType ref="org.chico.ciat.diagram.Init_3033"/>
+         <elementType ref="org.chico.ciat.diagram.End_3034"/>
+         <elementType ref="org.chico.ciat.diagram.TemporalCondition_3035"/>
+         <elementType ref="org.chico.ciat.diagram.Notification_3036"/>
+         <elementType ref="org.chico.ciat.diagram.Condition_3037"/>
+         <elementType ref="org.chico.ciat.diagram.Init_3038"/>
+         <elementType ref="org.chico.ciat.diagram.End_3039"/>
+         <elementType ref="org.chico.ciat.diagram.TemporalCondition_3040"/>
+         <elementType ref="org.chico.ciat.diagram.Notification_3041"/>
+         <elementType ref="org.chico.ciat.diagram.Condition_3042"/>
+         <elementType ref="org.chico.ciat.diagram.SharedObject_3043"/>
+         <elementType ref="org.chico.ciat.diagram.ExclusiveEditionArea_3044"/>
+         <elementType ref="org.chico.ciat.diagram.CollaborativeArea_3045"/>
+         <elementType ref="org.chico.ciat.diagram.IndividualArea_3046"/>
+         <elementType ref="org.chico.ciat.diagram.Attribute_3047"/>
+         <elementType ref="org.chico.ciat.diagram.Operation_3048"/>
+         <elementType ref="org.chico.ciat.diagram.ExclusiveEdition_3049"/>
+         <elementType ref="org.chico.ciat.diagram.CollaborativeVisualization_3050"/>
+         <elementType ref="org.chico.ciat.diagram.IndividualVisualization_3051"/>
+         <elementType ref="org.chico.ciat.diagram.UserTask_3052"/>
+         <elementType ref="org.chico.ciat.diagram.CTTAbstractTask_3053"/>
+         <elementType ref="org.chico.ciat.diagram.InteractiveTask_3054"/>
+         <elementType ref="org.chico.ciat.diagram.CTTCollaborativeTask_3055"/>
+         <elementType ref="org.chico.ciat.diagram.ApplicationTask_3056"/>
+         <elementType ref="org.chico.ciat.diagram.Inheritance_4001"/>
+         <elementType ref="org.chico.ciat.diagram.Acting_4002"/>
+         <elementType ref="org.chico.ciat.diagram.Association_4003"/>
+         <elementType ref="org.chico.ciat.diagram.ShAssociationLink_4004"/>
+         <elementType ref="org.chico.ciat.diagram.ShGeneralizationLink_4005"/>
+         <elementType ref="org.chico.ciat.diagram.ShAggregationLink_4006"/>
+         <elementType ref="org.chico.ciat.diagram.Aggregation_4007"/>
+         <elementType ref="org.chico.ciat.diagram.Enabling_4008"/>
+         <elementType ref="org.chico.ciat.diagram.Disabling_4009"/>
+         <elementType ref="org.chico.ciat.diagram.EnablingWithInformationPassing_4010"/>
+         <elementType ref="org.chico.ciat.diagram.DisablingWithInformationPassing_4011"/>
+         <elementType ref="org.chico.ciat.diagram.IndependentConcurrency_4012"/>
+         <elementType ref="org.chico.ciat.diagram.OrderIndependence_4013"/>
+         <elementType ref="org.chico.ciat.diagram.SuspendResume_4014"/>
+         <elementType ref="org.chico.ciat.diagram.ConcurrencyWithInformationPassing_4015"/>
+         <elementType ref="org.chico.ciat.diagram.DeterministicChoice_4016"/>
+         <elementType ref="org.chico.ciat.diagram.UndeterministicChoice_4017"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.chico.ciat.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="org.chico.ciat.diagram"
+           properties="isURIEditorInput"
+           class="ciat.diagram.part.CiatUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.chico.ciat.diagram.ShortcutPropertyTester"
+           type="org.eclipse.gmf.runtime.notation.View"
+           namespace="org.chico.ciat.diagram"
+           properties="isShortcut"
+           class="ciat.diagram.part.CiatShortcutPropertyTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="org.chico.ciat.diagram.resourceContent"/>
+			<contentExtension pattern="org.chico.ciat.diagram.domainResourceContent"/>
+            <contentExtension pattern="org.chico.ciat.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="org.chico.ciat.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="org.chico.ciat.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="ciat.diagram.navigator.CiatNavigatorContentProvider" 
+            labelProvider="ciat.diagram.navigator.CiatNavigatorLabelProvider"
+            icon="icons/obj16/CiatDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="ciat_diagram"/>
+               </and>
+               <instanceof value="ciat.diagram.navigator.CiatAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="org.chico.ciat.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="ciat.diagram.navigator.CiatAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="org.chico.ciat.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="org.chico.ciat.diagram.navigatorSorter" 
+               class="ciat.diagram.navigator.CiatNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="ciat_diagram"/>
+                  </and>
+                  <instanceof value="ciat.diagram.navigator.CiatAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="org.chico.ciat.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="ciat.diagram.navigator.CiatDomainNavigatorContentProvider" 
+            labelProvider="ciat.diagram.navigator.CiatDomainNavigatorLabelProvider"
+            icon="icons/obj16/CiatDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="ciat"/>
+               </and>
+               <instanceof value="ciat.diagram.navigator.CiatDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="ciat.diagram.navigator.CiatDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="org.chico.ciat.diagram.navigatorActionProvider"
+            class="ciat.diagram.navigator.CiatNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="ciat.diagram.navigator.CiatAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="org.chico.ciat.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="org.chico.ciat.diagram.navigatorLinkHelper"
+            class="ciat.diagram.navigator.CiatNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="org.chico.ciat.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="ciat.diagram.navigator.CiatAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="ciat.diagram.part.CiatDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="ciat.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="ciat.diagram.updateDiagram"
+         contextId="ciat.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.chico.ciat.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="ciat.diagram.part.CiatDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="ciat.diagram.edit.parts.CIATDiagramEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="ciat.diagram.part.CiatDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.chico.ciat.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="ciat.diagram.part.CiatDiagramEditorID"
+         defaultHandler="ciat.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>

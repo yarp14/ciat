@@ -1,0 +1,7 @@
+# Tracing options for the org.chico.ciat.diagram plug-in
+
+# Common issues
+org.chico.ciat.diagram/debug=false
+
+# Visual IDs
+org.chico.ciat.diagram/debug/visualID=false

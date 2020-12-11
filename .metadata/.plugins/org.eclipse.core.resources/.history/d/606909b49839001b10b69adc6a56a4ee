@@ -1,0 +1,18 @@
+/*
+ * 
+ */
+package ciat.diagram.edit.helpers;
+
+/**
+ * @generated
+ */
+public class CiatBaseEditHelper extends org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase {
+
+		
+		
+	
+	
+	
+	
+	
+	}

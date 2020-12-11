@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmftool:ToolRegistry
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="ciatPalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Sociogram"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Sociogram"
+          description="Create new Sociogram">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Sociogram.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Actor"
+          description="Create new Actor">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Actor.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Rol"
+          description="Create new Rol">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Rol.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Software Agent"
+          description="Create new Software Agent">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/SoftwareAgent.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Group"
+          description="Create new Group">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Group.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Team"
+          description="Create new Team">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Team.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Acting"
+          description="Create new Acting">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Acting.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Inheritance"
+          description="Create new Inheritance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Inheritance.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Association"
+          description="Create new Association">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Association.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Process Diagram"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Process Diagram"
+          description="Create new Process Diagram">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/ProcessDiagram.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Initial"
+          description="Create new Initial">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Initial.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Final"
+          description="Create new Final">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Final.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Individual"
+          description="Create new Individual">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/IndividualInteractionTask.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Cooperative"
+          description="Create new Cooperative">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/CooperativeInteractionTask.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Cooperative Complex"
+          description="Create new Cooperative Complex">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/CooperativeInteractionTask.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Collaborative"
+          description="Create new Collaborative">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/CollaborativeInteractionTask.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Collaborative Complex"
+          description="Create new Collaborative Complex">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/CollaborativeInteractionTask.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Abstract"
+          description="Create new Abstract">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/AbstractTask.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Object"
+          description="Create new Object">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Object.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Tool"
+          description="Create new Tool">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Tool.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Temporal Condition"
+          description="Create new Temporal Condition">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/TemporalCondition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Notification"
+          description="Create new Notification">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Notification.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Condition"
+          description="Create new Condition">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Condition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Domain Diagram"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Domain Diagram"
+          description="Create new Domain Diagram">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/DomainDiagram.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Class"
+          description="Create new Class">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Object.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Attribute"
+          description="Create new Attribute">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Attribute.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Operation"
+          description="Create new Operation">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Operations.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Individual Area"
+          description="Create new Individual Area">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/IndividualVisualization.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Exclusive Area"
+          description="Create new Exclusive Area">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/ExclusiveEdition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Collaborative Area"
+          description="Create new Collaborative Area">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/CollaborativeVisualization.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Asociation"
+          description="Create new Asociation">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Association.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Generalization"
+          description="Create new Generalization">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Generalization.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Aggregation"
+          description="Create new Aggregation">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/Aggregation.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="CTT Diagram"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="CTTDiagram"
+          description="Create new CTTDiagram">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/CTTDiagram.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Abstract Task"
+          description="Create new Abstract Task">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/AbstractTask.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Application Task"
+          description="Create new Application Task">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/ApplicationTask.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Collaborative Task"
+          description="Create new Collaborative Task">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/CollaborativeTask.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Interactive Task"
+          description="Create new Interactive Task">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/InteractionTask.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="User Task"
+          description="Create new User Task">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/UserTask.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Exclusive Edition"
+          description="Create new Exclusive Edition">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/ExclusiveEdition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Collaborative Visualization"
+          description="Create new Collaborative Visualization">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/CollaborativeVisualization.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Individual Visualization"
+          description="Create new Individual Visualization">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/IndividualVisualization.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Dependencies"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Aggregation"
+          description="Create new Aggregation">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/AggregationTransition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Concurrency With Information Passing"
+          description="Create new Concurrency With Information Passing">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/ConcurrencyWithInformationPassingTransition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Deterministic Choice"
+          description="Create new Deterministic Choice">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/DeterministicChoiceTransition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Disabling"
+          description="Create new Disabling">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/DisablingTransition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Disabling With Information Passing"
+          description="Create new Disabling With Information Passing">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/DisablingWithInformationPassingTransition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Enabling"
+          description="Create new Enabling">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/EnablingTransition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Enabling With Information Passing"
+          description="Create new Enabling With Information Passing">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/EnablingWithInformationPassingTransition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Independent Concurrency"
+          description="Create new Independent Concurrency">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/IndependentConcurrencyTransition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Order Independence"
+          description="Create new Order Independence">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/OrderIndependenceTransition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Suspend Resume"
+          description="Create new Suspend Resume">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/SuspendResumeTransition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Undeterministic Choice"
+          description="Create new Undeterministic Choice">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="images/UndeterministicChoiceTransition.gif"
+            bundle="org.chico.ciat.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>
